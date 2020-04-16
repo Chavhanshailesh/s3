@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-
+        BUCKET_NAME="demo-react-app-shailesh"
     }
     stages{
         stage('first'){
