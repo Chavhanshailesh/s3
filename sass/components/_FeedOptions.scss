@@ -1,0 +1,72 @@
+
+.FeedOptions {
+  @include media(">small") {
+    float: right;
+  }
+}
+
+.FeedOptions-dropdown {
+  display: inline-block;
+
+  @include media(">small" "<=1024px") {
+    align-items: center;
+    display: inline-flex;
+    min-width: 200px;
+    vertical-align: middle; // for ie11
+
+    .Field {
+      width: 100%;
+    }
+  }
+
+  @include media(">1024px") {
+    .Field {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .Field-iconContainer {
+      margin-right: 2px;
+    }
+  }
+
+  > span {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  .selectize-input.input-active {
+    margin-right: -4px; // stop the width changing when focused
+  }
+}
+
+.FeedOptions-dropdown--filter {
+  @include media("<=small") {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.FeedOptions-dropdown + .FeedOptions-dropdown {
+  margin-left: 10px;
+  padding-left: 10px;
+  position: relative;
+
+  // faux border left
+  &::before {
+    background-color: color(medium);
+    content: "";
+    height: 16px;
+    left: -1px;
+    position: absolute;
+    top: 8px;
+    width: 1px;
+  }
+}
+
+.FeedOptions .dropdown--noBorder .item {
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+}

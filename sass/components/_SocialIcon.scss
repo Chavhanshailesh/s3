@@ -1,0 +1,8 @@
+
+$socials: twitter facebook linkedin;
+
+@each $social in $socials {
+  .SocialIcon--#{$social} {
+    fill: color($social);
+  }
+}

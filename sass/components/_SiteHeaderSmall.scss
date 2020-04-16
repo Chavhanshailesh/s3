@@ -1,0 +1,30 @@
+
+.SiteHeaderSmall {
+  align-items: center;
+  border-bottom: 1px solid color(border);
+  display: flex;
+  margin: -16px -16px 0;
+  padding: 16px 16px 10px;
+}
+
+.SiteHeaderSmall-image {
+  margin-right: 10px;
+  width: 50px;
+}
+
+.SiteHeaderSmall-text {
+  font-size: 12px;
+}
+
+.SiteHeaderSmall-text-heading {
+  font-size: 16px;
+}
+
+.SiteHeaderSmall--hasSpaceBeneath + .SiteHeader-tabs {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.SiteHeaderSmall ~ .Feed {
+  margin-top: 1px;
+}

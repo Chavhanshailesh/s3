@@ -1,0 +1,29 @@
+
+.Rsvp-note {
+  margin-bottom: sketch-size(medium);
+  text-align: center;
+}
+
+.Rsvp-noResultsContainer {
+  margin-bottom: sketch-size(medium);
+  padding-top: sketch-size(medium);
+}
+
+.Rsvp-bottom {
+  border-top: 1px solid rgba(black, 0.075);
+  padding-top: 16px;
+
+  @include media("<small") {
+    padding-left: sketch-size(medium);
+    padding-right: sketch-size(medium);
+  }
+}
+
+.Rsvp-bottom--no,
+.Rsvp-bottom--maybe,
+.Rsvp-bottom--hasNoDate:not(.Rsvp-bottom--yes),
+.Rsvp-bottom--hasNoSectionsMobile {
+  @include media("<=medium") {
+    display: none;
+  }
+}

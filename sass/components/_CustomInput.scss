@@ -1,0 +1,23 @@
+.CustomInput {
+  position: relative;
+}
+
+.CustomInput-field {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.CustomInput-label {
+  cursor: pointer;
+  opacity: 0.4;
+  transition: 0.2s;
+}
+
+.CustomInput:hover .CustomInput-label {
+  opacity: 0.75;
+}
+
+.CustomInput-field:checked + .CustomInput-label {
+  opacity: 1;
+}

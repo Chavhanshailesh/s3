@@ -1,0 +1,12 @@
+.ResetList {
+  border-top: 1px solid rgba(black, 0.075);
+  padding: 16px 72px 16px 0;
+  position: relative;
+}
+
+.ResetList-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

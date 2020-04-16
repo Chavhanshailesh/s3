@@ -1,0 +1,55 @@
+
+.ContactBarList {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 0;
+  height: 40px;
+  line-height: 1;
+  padding: 0 5px;
+  position: relative;
+  transition: 0.2s;
+  vertical-align: middle;
+
+  &.is-active,
+  &:hover {
+    border-color: color(medium);
+  }
+}
+
+.ContactBarList-panel {
+  cursor: default;
+  font-size: 14px;
+  line-height: 1.5;
+  min-width: 340px;
+  position: absolute;
+  z-index: 3;
+
+  .Panel {
+    margin-left: 6px;
+  }
+
+  &[data-placement="bottom-center"] .Panel {
+    margin-left: 7px;
+  }
+}
+
+.ContactBarList-header {
+  padding: 20px 20px 15px;
+}
+
+.ContactBarList-main {
+  padding: 0 20px 20px;
+}
+
+.ContactBarList-avatarContainer {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  width: 40px;
+}
+
+.ContactBarList-name {
+  display: inline-block;
+  vertical-align: middle;
+}

@@ -1,0 +1,167 @@
+.PostForm {
+  background: white;
+  border: 1px solid color(border);
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  @include media("<=small") {
+    border-radius: 0;
+    margin: -17px 0 0;
+  }
+}
+
+.PostForm-fieldContainer {
+  border-bottom: 1px solid transparent;
+  padding: 16px;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.PostForm-topics {
+  margin: 0 8px 8px;
+}
+
+.PostForm-tabs {
+  background-color: color(wash);
+  border-bottom: 1px solid color(border);
+  border-radius: 4px 4px 0 0;
+  margin-bottom: -1px;
+  padding-left: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.PostForm-tab {
+  color: color(secondary);
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  min-width: 50px;
+
+  &:hover,
+  &.is-current {
+    color: color(dark);
+  }
+}
+
+// Horrible IE hacks
+@media all and (-ms-high-contrast: none) {
+  .PostForm-tab {
+    margin-bottom: -1px;
+  }
+
+  *::-ms-backdrop,
+  .PostForm-tab {
+    margin-bottom: -1px;
+  }
+}
+
+
+.PostForm-tab {
+  &::before,
+  &::after {
+    border: 7px solid transparent;
+    border-bottom-color: color(border);
+    bottom: -1px;
+    content: '';
+    display: none;
+    left: 50%;
+    margin-left: -7px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &::after {
+    border-bottom-color: white;
+    bottom: -2px;
+  }
+
+  &.is-current::after,
+  &.is-current::before {
+    display: block;
+  }
+}
+
+.PostForm-tab.is-current .LabelledIcon-iconContainer {
+  color: inherit;
+  fill: currentColor;
+}
+
+.PostForm-selectContainer {
+  display: inline-block;
+  vertical-align: top;
+
+  & + & {
+    margin-left: 16px;
+  }
+}
+
+.PostForm-options {
+  background: white;
+  position: relative;
+  z-index: 1;
+
+  a,
+  .type--fauxLink {
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.PostForm-linkContainer {
+  bottom: 8px;
+  left: 8px;
+  position: absolute;
+  width: 224px;
+  z-index: 2;
+}
+
+.touch .PostForm-edit {
+  border-top: 1px solid color(border);
+}
+
+// Hack Froala to disappear but still be clickable
+.PostForm.is-closed {
+  .fr-element {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .fr-box,
+  .fr-wrapper,
+  .EmojiLauncher {
+    position: static;
+  }
+
+  .fr-placeholder,
+  .fr-toolbar,
+  .EmojiLauncher-iconContainer {
+    display: none;
+  }
+}
+
+.ImageWrapperGroup + .PostForm-fileList--post,
+.ImageWrapperGroup + .PostForm-fileList {
+  border-top: 1px solid color(border);
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.PostForm-fileList--post {
+  border-bottom: 1px solid color(border);
+  margin-top: 16px;
+  padding-bottom: 15px;
+
+  @include media("<=small") {
+    background: white;
+    border-top: 1px solid color(border);
+    margin: 0;
+    padding: 8px;
+  }
+}

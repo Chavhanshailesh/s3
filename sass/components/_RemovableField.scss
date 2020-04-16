@@ -1,0 +1,20 @@
+
+.RemovableField {
+  padding-right: 36px;
+  position: relative;
+}
+
+.RemovableField-button {
+  fill: color(icon);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.2s fill;
+  width: 24px;
+
+  &:hover,
+  &:focus {
+    fill: color(dark);
+  }
+}

@@ -1,0 +1,38 @@
+
+.Dashboard-listHeader {
+  padding: 8px 0;
+  position: relative;
+
+  &::after,
+  &::before {
+    background: color(border);
+    content: '';
+    left: -16px;
+    height: 1px;
+    position: absolute;
+    right: -16px;
+  }
+
+  &::after {
+    top: -1px;
+  }
+
+  &::before {
+    bottom: 0;
+  }
+}
+
+.Dashboard-searchContainer {
+  margin-top: -16px;
+  margin-bottom: 32px;
+
+  @include media(">medium") {
+    margin-top: -32px;
+  }
+}
+
+.Dashboard-mobileTiles {
+  background: color(fill);
+  margin-top: -16px;
+  padding-top: 16px;
+}

@@ -1,0 +1,72 @@
+
+.Notification {
+  display: block;
+  padding: 10px;
+  transition: 0.1s background;
+  position: relative;
+
+  &::after {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--branding-primary-color);
+    opacity: 0.1;
+    content: '';
+  }
+
+  &.is-read {
+    background: color(wash);
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+a.Notification:hover {
+  background: color(white);
+  text-decoration: none;
+}
+
+.Notification-inner {
+  padding-right: 16px;
+  position: relative;
+  z-index: 1;
+
+  .NotificationList--hasReadIndicator &::after {
+    border-radius: 50%;
+    content: "";
+    height: 7px;
+    opacity: 1;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 7px;
+  }
+
+  .is-read &::after {
+    opacity: 0;
+  }
+}
+
+.Notification-avatarContainer {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+}
+
+.Notification-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.3;
+  margin-left: 50px;
+  min-height: 40px;
+  min-width: 0;
+  position: relative;
+}

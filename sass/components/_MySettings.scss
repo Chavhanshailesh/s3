@@ -1,0 +1,9 @@
+.MySettings-logout {
+  position: absolute;
+  right: 0;
+  top: 4px;
+
+  @include media(">small") {
+    display: none;
+  }
+}

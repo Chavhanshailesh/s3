@@ -1,0 +1,17 @@
+// The designs show this header right up against the site navigation header.
+// We would really need a modifier on <main> to remove any padding
+.HomeDefault-header {
+  background-color: white;
+  margin-top: -14px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+
+  @include media(">medium") {
+    margin-top: -31px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+  }
+}

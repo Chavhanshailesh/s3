@@ -1,0 +1,106 @@
+
+.Mention {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  max-width: 100%;
+  min-height: 40px;
+  overflow: hidden;
+  padding-left: 48px;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &.active,
+  &.is-active {
+    background: color(fill);
+  }
+}
+
+.Mention--compact {
+  min-height: 32px;
+  padding-left: 40px;
+}
+
+.Mention--topic {
+  min-height: 32px;
+  padding-left: 8px;
+}
+
+.Mention--large {
+  border-bottom: 1px solid rgba(black, 0.075);
+  min-height: 64px;
+  padding-left: 64px;
+
+  &:last-of-type {
+    border: none;
+  }
+}
+
+.Mention-emblemContainer {
+  left: 8px;
+  position: absolute;
+  top: 4px;
+  width: 32px;
+
+  .Mention--compact & {
+    top: 6px;
+    width: 20px;
+  }
+
+  .Mention--large & {
+    top: 6px;
+    width: 48px;
+  }
+}
+
+.Mention-name {
+  display: inline-block;
+  padding: 12px 16px 12px 0;
+  white-space: nowrap;
+
+  .Mention--compact & {
+    padding: 8px 8px 8px 0;
+  }
+
+  .Mention--file & {
+    padding: 24px 16px 12px 0;
+  }
+
+  .Mention--topic & {
+    padding: 10px 8px 8px 0;
+  }
+}
+
+.Mention-info {
+  padding: 4px 0;
+
+  .Mention--large & {
+    padding: 6px 0;
+  }
+}
+
+.Mention-noMatch {
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  min-height: 32px;
+  overflow: hidden;
+  padding: 8px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .Field:not(.Field--compact):not(.search) {
+    padding-left: 16px;
+  }
+}
+
+.Mention-stamp {
+  margin-bottom: 2px;
+}
+
+.Mention-externalContainer {
+  display: block;
+  margin-top: 2px;
+}

@@ -1,0 +1,89 @@
+
+.ManageBar {
+  align-items: center;
+  background-color: #444;
+  color: white;
+  display: flex;
+}
+
+.ManageBar-close {
+  flex-basis: 200px;
+}
+
+.ManageBar-close-button {
+  fill: white;
+  padding: 15px;
+  width: 50px;
+}
+
+.ManageBar-nav {
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+
+.ManageBar-select {
+  border-right: 1px solid color(secondary);
+  width: 200px;
+
+  .Field,
+  .dropdown,
+  .selectize-control {
+    background-color: transparent;
+  }
+
+  .selectize-control {
+    width: 100%;
+  }
+
+  .Field-iconContainer {
+    fill: white;
+  }
+
+  .selectize-input,
+  .Field.focus .selectize-input,
+  .Field .selectize-control::after {
+    border-color: transparent;
+  }
+
+  .selectize-dropdown {
+    background-color: #3e3e3e;
+    border: none;
+    border-top: 1px solid color(secondary);
+    margin-top: 1px;
+  }
+
+  .selectize-dropdown-content .option {
+    padding-right: 16px;
+  }
+
+  .selectize-dropdown-content .active {
+    background-color: #565656;
+  }
+
+  // TODO: this fix is required on all selectize dropdowns, but breaks those with placeholder text
+  .selectize-input > input {
+    height: 0 !important; // fix jumping content in <select> type selectizes
+  }
+}
+
+.ManageBar-item {
+  border-radius: 5px;
+  padding: 7px 16px;
+
+  &:hover {
+    background-color: #525252;
+    text-decoration: none;
+  }
+
+  &.isActive {
+    background-color: #646464;
+  }
+}
+
+
+.has-manageBar.panel-open-right {
+  body > .CustomizationPanel {
+    // Move brand editor down by height of the manage bar
+    margin-top: 50px;
+  }
+}

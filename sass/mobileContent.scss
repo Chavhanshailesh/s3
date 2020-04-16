@@ -1,0 +1,187 @@
+@import "~include-media-or/dist/include-media-or";
+@import "~froala-editor/css/froala_editor.pkgd.css";
+@import "legacy/old-config";
+@import "config";
+@import "base/*";
+@import "theme/theme";
+@import "tools/mixins";
+@import "vendor/froala";
+
+body,
+input,
+button,
+textarea,
+select {
+  font-family: "system-ui", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, sans-serif;
+}
+
+/* table */
+
+table {
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: right;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 16px;
+  clear: both;
+
+  @media only (min-width: 767px) {
+    table-layout: fixed;
+  }
+}
+
+/* th & td */
+
+th,
+td {
+  @include line;
+
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: right;
+  text-overflow: ellipsis;
+
+  &::before {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+  }
+}
+
+/* th */
+
+th {
+  color: $tertiary;
+  padding-bottom: 4px;
+  text-align: right;
+}
+
+/* tr */
+
+tr.ui-sortable-helper {
+  display: table;
+  table-layout: fixed;
+}
+
+/* td */
+
+td {
+  padding: 16px 0;
+
+  &::before {
+    background: rgba(black, 0.075);
+  }
+}
+
+/* video-fluid */
+
+.video-fluid {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-content & {
+    @media (min-width: 1024px) {
+      padding-bottom: 56.125%; /* weird rounding issue when in modal */
+    }
+  }
+}
+
+.video-fluid--mobileOnly {
+  @media (max-width: 767px) {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    max-width: 100%;
+
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}
+
+// Make the vidyard JS embed behave the
+// same as the iframe embed - SV2-13640
+.Content .vidyard_player > span {
+  margin: 0 !important;
+
+  @include media($breakpoint-smallDown) {
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+@import "components/ResponsiveTable";
+@import "components/Content";
+
+.Content {
+  font-size: 14px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    margin-top: 20px;
+    padding: 0;
+
+    .is-android & {
+      font-weight: 500;
+    }
+  }
+
+  & > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
+
+body {
+  @include media($breakpoint-smallDown) {
+    overflow-x: visible;
+  }
+}

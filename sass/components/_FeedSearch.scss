@@ -1,0 +1,18 @@
+
+.FeedSearch {
+  display: none;
+
+  @include media(">small") {
+    display: block;
+    float: left;
+  }
+}
+
+.FeedSearch-button {
+  position: relative;
+  top: 8px;
+
+  &:hover {
+    color: color(secondary);
+  }
+}

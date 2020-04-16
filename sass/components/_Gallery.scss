@@ -1,0 +1,359 @@
+.Gallery,
+.Gallery-mask {
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: translateZ(0);
+  width: 100%;
+  z-index: 7;
+}
+
+.Gallery-mask {
+  background: rgba(black, 0.88);
+  z-index: 1;
+}
+
+.Gallery-closeContainer {
+  cursor: pointer;
+  fill: color(medium);
+  padding: 4px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 24px;
+  z-index: 8;
+
+  &:hover {
+    fill: color(tertiary);
+  }
+
+  .has-flashes & {
+    display: none;
+  }
+}
+
+.Gallery-inner {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  @include media("<=small") {
+    position: fixed;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @include media(">medium") {
+    height: 0;
+    left: 50%;
+    max-height: 900px;
+    max-width: 1440px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+  }
+}
+
+.Gallery-actionContainer {
+  bottom: 16px;
+  position: absolute;
+  right: 16px;
+  z-index: 3;
+
+  @include media("<=small") {
+    border-top: 1px solid color(medium);
+    bottom: 0;
+    left: 16px;
+    padding: 6px 16px;
+    text-align: center;
+
+    @supports (bottom: max(0)) {
+      bottom: calc(0 + constant(safe-area-inset-bottom)) !important;
+      bottom: calc(0 + env(safe-area-inset-bottom)) !important;
+    }
+  }
+}
+
+.Gallery-count {
+  color: color(medium);
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 8px;
+  padding-right: 16px;
+  position: relative;
+
+  &::after {
+    background: rgba(black, 0.075);
+    bottom: 2px;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 1px;
+  }
+
+  @include media("<=small") {
+    left: 0;
+    position: absolute;
+    top: 8px;
+  }
+}
+
+.Gallery-mediaContainer {
+  background: black;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+
+  @include media(">medium") {
+    border: 2px solid black;
+    box-shadow: 0 12px 24px rgba(black, 0.3);
+    height: 0;
+    padding-bottom: 75%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.Gallery-image {
+  left: 50%;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+
+  @supports (object-fit: contain) {
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
+.Gallery-iframeContainer {
+  left: 0;
+  padding-bottom: 56.25%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+
+  &.Gallery-mediaContainer--video {
+    padding-bottom: 56.25%;
+  }
+
+  &.Gallery-iframeContainer--youtube {
+    padding-bottom: 75%;
+  }
+}
+
+.Gallery-iframe,
+.Gallery-fauxIframe iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 6;
+}
+
+.Gallery-description {
+  color: white;
+  margin-right: 240px;
+  position: relative;
+  word-wrap: break-word;
+  z-index: 3;
+
+  @include media("<=small") {
+    margin-right: 0;
+  }
+}
+
+.Gallery-footer {
+  background: linear-gradient(rgba(black, 0), black);
+  bottom: -1px;
+  left: 0;
+  padding: 32px 16px 48px;
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+
+  @supports (padding-bottom: max(0)) {
+    padding-bottom: calc(48px + constant(safe-area-inset-bottom));
+    padding-bottom: calc(48px + env(safe-area-inset-bottom));
+  }
+
+  @include media(">small") {
+    padding: 48px 24px 16px;
+  }
+
+  @include media(">medium") {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 0.3s;
+  }
+
+  .Gallery-mediaContainer:hover & {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.Gallery-button {
+  cursor: pointer;
+  fill: white;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+
+  @include media("<=small") {
+    display: none;
+  }
+
+  .Icon {
+    margin-top: -22px;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    transition: 0.3s opacity;
+    width: 24px;
+
+    @include media(">medium") {
+      filter: drop-shadow(0 0 4px black);
+      opacity: 0;
+
+      .Gallery-mediaContainer:hover & {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .Gallery-mediaContainer:hover &:hover .Icon {
+    @include media(">medium") {
+      opacity: 1;
+    }
+  }
+
+  .Gallery-mediaContainer--video & {
+    height: 44px;
+    margin-top: -22px;
+    top: 50%;
+    width: 48px;
+    z-index: 7;
+
+    .Icon {
+      margin-top: 0;
+      top: 0;
+    }
+  }
+}
+
+.Gallery-button--left {
+  left: 0;
+  width: 50%;
+
+  .Icon {
+    left: 16px;
+    left: calc(16px + env(safe-area-inset-left));
+  }
+}
+
+.Gallery-button--right {
+  right: 0;
+  width: 50%;
+
+  .Icon {
+    right: 16px;
+    right: calc(16px + env(safe-area-inset-left));
+  }
+}
+
+.Gallery-metaContainer {
+  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(black, rgba(black, 0));
+  color: white;
+  display: none;
+  left: 0;
+  left: env(safe-area-inset-left);
+  opacity: 0;
+  padding: 16px 16px 32px;
+  position: absolute;
+  top: -1px;
+  transform: translateY(-100%);
+  transition: 0.3s;
+  width: 100%;
+  z-index: 4;
+
+  @include media(">small") {
+    display: block;
+  }
+
+  .has-touchAbility &,
+  .Gallery-mediaContainer:hover & {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.Gallery-meta-albumName {
+  float: right;
+  max-width: 300px;
+
+  @include media("<medium") {
+    // stop it crashing with the close button
+    float: none;
+    margin-left: 40px;
+  }
+}
+
+.Gallery-slide {
+  border: 1px solid black;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  .LoadingDots {
+    animation: none;
+  }
+
+  &.is-selected .LoadingDots {
+    animation: grow 1s ease-in-out infinite;
+  }
+}
+
+.Gallery {
+  .flickity-viewport {
+    height: 100%;
+    padding-bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .flickity-enabled {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.Gallery-loader {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  .Gallery-image.flickity-lazyloaded + & {
+    display: none;
+  }
+}

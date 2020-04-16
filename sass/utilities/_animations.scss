@@ -1,0 +1,44 @@
+// Animtion names, need matching keyframes
+$animation-names: rotate;
+
+@each $name in $animation-names {
+  .u-animation-#{$name} {
+    animation-name: $name;
+  }
+}
+
+// Timing fucntion
+
+$animation-timing: ease ease-in-out linear;
+
+@each $timing in $animation-timing {
+  .u-animation-timing--#{$timing} {
+    animation-timing-function: $timing;
+  }
+}
+
+// Durations
+
+@for $i from 1 through 10 {
+  .u-animation-duration--#{$i * 100} {
+    animation-duration: $i * 0.1s;
+  }
+}
+
+// Iterations
+
+$animation-iterations: 1 2 infinite;
+
+@each $iteration in $animation-iterations {
+  .u-animation-iteration--#{$iteration} {
+    animation-iteration-count: $iteration;
+  }
+}
+
+// Key frames
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,28 @@
+
+.AddFrom {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+
+
+  &:not(.Button) {
+    display: inline;
+    font-size: inherit;
+    line-height: inherit;
+    padding-bottom: 0;
+  }
+}
+
+.AddFrom-input {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .touch-none & {
+    visibility: hidden;
+  }
+}

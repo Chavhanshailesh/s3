@@ -1,0 +1,152 @@
+.Feed,
+.Feed--site {
+  //Turn off chrome's scroll anchoring feature - SV2-16493
+  overflow-anchor: none;
+
+  @include media("<=small") {
+    background: color(wash);
+    margin: -16px -17px 0;
+    min-height: 100vh;
+    padding-bottom: 24px;
+    position: relative;
+    top: 16px;
+  }
+}
+
+.Feed--inContent {
+  @include media("<=small") {
+    min-height: 0;
+    padding-bottom: 8px;
+  }
+}
+
+.Feed--site,
+.Feed--insidePage,
+.Feed--singlePost {
+  @include media("<=small") {
+    margin: -33px -17px 0;
+    top: 0;
+  }
+}
+
+.Feed--singlePost .Feed-postContainer {
+  background: white;
+  border: 1px solid color(border);
+  border-radius: 4px;
+}
+
+.Feed--singlePost.with-preview .Feed-inner {
+  margin-top: 12px;
+  $arrow-size: 8px;
+
+  &::before,
+  &::after {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    transform: translate(-50%, 1px); //1px = border
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+  }
+
+  &::after {
+    border-bottom-color: white;
+    border-width: calc(#{$arrow-size} - 1px);
+  }
+
+  &::before {
+    border-bottom-color: color(border);
+    border-width: $arrow-size;
+  }
+}
+
+.Feed-list {
+  @include media("<=small") {
+    margin: 16px 0;
+  }
+}
+
+.Feed-searchForm {
+  @include media("<=small") {
+    padding: 0  16px;
+  }
+}
+
+.page-bg .Feed-inner {
+  @include media(">medium") {
+    background: color(pageBackground);
+    border: 1px solid color(border);
+    border-radius: 4px;
+    padding: 8px;
+  }
+}
+
+.page-bg .Page .Feed-inner {
+  @include media(">medium") {
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+}
+
+.Feed-iframeContainer iframe {
+  width: 100%;
+}
+
+.Feed-postContainer {
+  background-color: color(wash);
+  border: 1px solid color(borderLight);
+  border-radius: 2px;
+  padding: 8px;
+
+  .ListingItem-descriptionContainer {
+    max-height: 64px;
+    overflow: hidden;
+  }
+}
+
+.Feed-popular-carousel {
+  background: white;
+  border: 1px solid color(border);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 15px 15px 0;
+
+  .TileSlider {
+    overflow: visible;
+
+    .flickity-enabled {
+      margin: 0 -14px;
+      overflow: hidden;
+      padding: 0 15px;
+    }
+  }
+
+  .TileSlider--flush .flickity-resize .flickity-slider {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .TileSlider--flush .TileSlider-item {
+    border-right: 0;
+    width: 170px;
+
+    .CarouselItem {
+      border: 0;
+      padding: 0 5px;
+    }
+
+    .CarouselItem .CarouselItem-info {
+      padding: 16px 0;
+    }
+  }
+}
+
+.Feed-popular-carousel .header {
+  padding-bottom: 12px;
+  border-bottom: 1px solid color(borderLight);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}

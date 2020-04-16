@@ -1,0 +1,132 @@
+.Icon {
+  display: block;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  &::before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.Icon svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+Icons that break the mould
+
+standard viewBox example:
+
+viewBox="0 0 WIDTH HEIGHT"
+
+name: viewBox
+*/
+
+$IconMap: (
+  action: 0 0 23.3 18.4,
+  align-center: 0 0 511.6 402,
+  align-justify: 0 0 511.6 402,
+  align-left: 0 0 511.6 402,
+  align-right: 0 0 511.6 402,
+  arrow-left: 0 0 420.3 444.8,
+  arrows-v: 0 0 640 1792,
+  apple: 0 0 416.9 512,
+  book: 0 0 17.5 23.3,
+  bookmark: 0 0 11.6 23.3,
+  briefcase: 0 0 23.3 20.4,
+  burger: 0 0 980 795.1,
+  cake: 0 0 1792 1792,
+  camera: 0 0 23.3 17.5,
+  cell: 0 0 14.5 23.3,
+  chat: 0 0 23.3 21.8,
+  check: 0 0 23 18,
+  chevron-left: 0 0 224.3 407.4,
+  chevron-right: 0 0 224.3 407.4,
+  code: 0 0 398.4 231.6,
+  cursor: 0 0 14.5 23.3,
+  database: 0 0 17.5 23.3,
+  descend: 0 0 23.265 14.545,
+  download: 0 0 20.4 23.3,
+  ellipsis: 0 0 23.3 5.8,
+  ellipsischat: 0 0 23.3 21.8,
+  exchange: 0 0 511.6 383.7,
+  exit: 0 0 17.5 23.3,
+  file: 0 0 17.5 23.3,
+  flag: 0 0 17.5 23.3,
+  folder: 0 0 23.3 17.5,
+  hash-tag: 0 0 28 32,
+  header: 0 0 1668 1536,
+  heart: 0 0 23.3 20.4,
+  leaf: 0 0 511.6 404.5,
+  lightbulb: 0 0 15.5 23.3,
+  list-ul: 0 0 511.6 402,
+  location: 0 0 15.5 23.3,
+  lock: 0 0 17.5 23.3,
+  mail: 0 0 23.272 17.454,
+  navigatedown: 0 0 23.3 15.5,
+  navigateleft: 0 0 15.5 23.3,
+  navigateright: 0 0 15.5 23.3,
+  navigateup: 0 0 23.3 15.5,
+  notebook: 0 0 20.4 23.3,
+  outlook: 0 0 16.4 15.1,
+  outlook365: 0 0 171.9 205.1,
+  picture: 0 0 23.3 17.5,
+  pulse: 0 0 31.7 20,
+  push-pin: 0 0 45.2 61.9,
+  question: 0 0 263.8 365.4,
+  replay: 0 0 22.3 22.3,
+  rotate-left: 0 0 190.4 214.4,
+  rotate-right: 0 0 190.4 214.4,
+  salesforce: 0 0 256 180,
+  settings: 0 0 22.1 23,
+  text-height: 0 0 510.7 438.5,
+  table: 0 0 475.1 402,
+  tabs-new: 0 0 148 31,
+  tabs-current: 0 0 148 31,
+  trash: 0 0 21.3 23.3,
+  trophy: 0 0 1664 1536,
+  twitter: 0 0 612 497.1,
+  unlock: 0 0 328.9 438.5,
+  upload: 0 0 20.4 23.3,
+  uploadcloud: 0 0 23.3 17.5,
+  video: 0 0 23.3 14.5,
+  view: 0 0 23.3 15.5
+);
+
+@each $IconName, $IconViewBox in $IconMap {
+  .Icon:not(.Icon--line).Icon--#{$IconName}::after {
+    padding-bottom: (nth($IconViewBox, 4) / nth($IconViewBox, 3)) * 100%;
+  }
+}
+
+// This uses stroke instead of fill
+.Icon--check:not(.Icon--line) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+
+.Icon--check-input,
+.Icon--check-indeterminate {
+  fill: currentColor;
+}
+
+.Icon--like-filled {
+  transition: none;
+}

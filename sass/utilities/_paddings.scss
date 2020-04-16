@@ -1,0 +1,27 @@
+
+@each $name, $size in $sizes {
+  .u-pad--#{$name} {
+    padding: $size !important;
+  }
+
+  .u-pad-b--#{$name} {
+    padding-bottom: $size !important;
+  }
+
+  .u-pad-t--#{$name} {
+    padding-top: $size !important;
+  }
+
+  .u-pad-l--#{$name} {
+    padding-left: $size !important;
+  }
+
+  .u-pad-r--#{$name} {
+    padding-right: $size !important;
+  }
+
+  .u-pad-tb--#{$name} {
+    padding-bottom: $size !important;
+    padding-top: $size !important;
+  }
+}

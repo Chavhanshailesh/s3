@@ -1,0 +1,79 @@
+
+.MobileNavigationControls {
+  display: none;
+
+  @include media($breakpoint-smallDown) {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.MobileNavigationControls--hasLogo {
+  padding: 4px 0;
+}
+
+.MobileNavigationControls-button {
+  background: none;
+  display: inline-block;
+  font-size: 18px;
+  height: 39px;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: 48px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: rgba(black, 0.1);
+  }
+
+  &[disabled] {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+.MobileNavigationControls-button .Icon {
+  fill: var(--branding-header-icon-color, color(secondary));
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+
+  .MobileNavigationControls:not(.MobileNavigationControls--hasLogo) & {
+    fill: color(secondary) !important;
+  }
+
+  .p-primary-header .MobileNavigationControls--hasLogo &,
+  .p-dark-header .MobileNavigationControls--hasLogo & {
+    fill: white;
+  }
+}
+
+.MobileNavigationControls-button--menu {
+  height: auto;
+  padding: 4px;
+  width: 39px;
+}
+
+.MobileNavigationControls-button--search {
+  margin-left: auto;
+}
+
+html:not(.view-app) {
+  .MobileNavigationControls-button--arrow,
+  .MobileNavigationControls-button--reload {
+    @include media($breakpoint-smallDown) {
+      display: none;
+    }
+  }
+}
+
+.MobileNavigationControls-logoContainer {
+  margin: 4px 8px;
+  max-width: 155px;
+}

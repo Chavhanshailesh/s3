@@ -1,0 +1,47 @@
+.UserAvatarList-inner {
+  display: flex;
+  flex-direction: row-reverse;
+  float: left;
+  position: relative;
+}
+
+.UserAvatarList-item {
+  border: 2px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: -6px;
+  position: relative;
+  vertical-align: top;
+  width: 40px;
+
+  &:last-child {
+    margin-left: 0;
+  }
+}
+
+//
+// Item Modifiers
+
+.UserAvatarList-item--noBorder {
+  border: 0;
+  z-index: 0;
+}
+
+.UserAvatarList-item--washBg {
+  border-color: color(wash);
+}
+
+//
+// Modifiers
+
+.UserAvatarList--honeycomb {
+  padding: 0 2.5% 12px;
+
+  & > ul:nth-child(odd) {
+    margin-right: 5%;
+  }
+
+  & > ul:nth-child(even) {
+    margin-left: 5%;
+  }
+}

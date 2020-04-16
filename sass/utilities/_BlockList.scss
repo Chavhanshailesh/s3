@@ -1,0 +1,66 @@
+.u-blockList {
+  font-size: 0;
+  margin: 0 -8px;
+}
+
+.u-blockList--noBottom {
+  margin-bottom: -16px;
+}
+
+.u-blockList--flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.u-blockList > li {
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  vertical-align: top;
+}
+
+.u-blockList > li > .IconToggle {
+  height: 100%;
+}
+
+.u-blockList--small {
+  margin: 0 -4px;
+}
+
+.u-blockList--small > li {
+  margin-bottom: 4px;
+  padding: 0 4px;
+}
+
+$BlockList-breakpoints: (
+  small: null,
+  medium: map-get($breakpoints, small),
+  large:  map-get($breakpoints, medium)
+);
+
+@each $sizeName, $sizeValue in $BlockList-breakpoints {
+  @for $i from 1 through $columns {
+    .u-blockList-#{$sizeName}-#{$i} > li {
+      @if $sizeValue == null {
+        width: 100% / $i;
+      }
+
+      @else {
+        @media (min-width: $sizeValue) {
+          width: 100% / $i;
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through $columns {
+  .u-blockList-#{$i} > li {
+    width: 100% / $i;
+  }
+}
+
+.u-blockList--disc {
+  list-style: disc;
+}

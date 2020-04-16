@@ -1,0 +1,25 @@
+
+.MobileBarLink {
+  align-items: center;
+  border-top: 1px solid color(border);
+  color: color(primary);
+  display: flex;
+  padding: size(medium);
+  position: relative;
+
+  > .Icon {
+    margin-right: 10px;
+    width: 28px;
+  }
+}
+
+.MobileBarLink-text {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.MobileBarLink-viewArrow {
+  display: block;
+  fill: color(tertiary);
+  width: 14px;
+}

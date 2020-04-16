@@ -1,0 +1,138 @@
+
+.LabelledIcon {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+  line-height: 24px;
+
+  // TODO: this to be removed when all in React
+  &:not([class*="type--b"]) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.LabelledIcon--wrap {
+  display: inline-block;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.LabelledIcon--inlineBlock {
+  display: inline-block;
+}
+
+.LabelledIcon--link,
+// TODO: this to be removed when all in React
+.LabelledIcon--brand {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.LabelledIcon--brand {
+  color: var(--branding-primary-color);
+}
+
+.LabelledIcon[disabled],
+.LabelledIcon[disabled] * {
+  color: color(tertiary);
+  pointer-events: none;
+}
+
+.LabelledIcon-iconContainer {
+  color: color(medium);
+  display: inline-block;
+  fill: color(medium);
+  font-size: 12px;
+  line-height: 1;
+  margin-right: 0.5ch;
+  position: relative;
+  width: 12px;
+
+  .LabelledIcon--large & {
+    top: 3px;
+    width: 16px;
+  }
+}
+
+.LabelledIcon-iconContainer--currentColor {
+  color: currentColor;
+  fill: currentColor;
+}
+
+// name: width topOffset
+
+$IconSizes: (
+  book: 8px 1px,
+  download: 0 3px,
+  cake: 0 1px,
+  calendar: 0 1px,
+  chat: 0 1px,
+  clock: 0 1px,
+  file: 8px 0,
+  globe: 0 1px,
+  link: 0 2px,
+  navigateleft: 6px 0,
+  navigateright: 6px 0,
+  navigatedown: 0 -1px,
+  navigateup: 0 -1px,
+  plus: 0 1px,
+  users: 0 2px,
+  slack: 0 2px,
+  trophy: 0 1px,
+  view: 16px 1px
+);
+
+@each $IconName, $IconSize in $IconSizes {
+  .LabelledIcon-iconContainer--#{$IconName} {
+    @if nth($IconSize, 2) != 0 {
+      top: nth($IconSize, 2);
+    }
+
+    @if nth($IconSize, 1) != 0 {
+      width: nth($IconSize, 1);
+    }
+  }
+}
+
+.LabelledIcon-iconContainer--cell {
+  margin-left: 2px;
+  margin-right: 6px;
+  width: 8px;
+}
+
+.LabelledIcon-iconContainer--navigatedown {
+  margin-right: 6px;
+}
+
+.LabelledIcon-iconContainer--calendar {
+  margin-right: 6px;
+}
+
+.LabelledIcon-iconContainer--download {
+  margin-right: 6px;
+}
+
+.LabelledIcon-iconContainer--location {
+  margin-right: 6px;
+  top: 3px;
+  width: 10px;
+}
+
+.LabelledIcon--line .LabelledIcon-iconContainer {
+  margin-right: 6px;
+  top: 0;
+  vertical-align: text-bottom;
+  width: 16px;
+}
+
+.LabelledIcon--line .LabelledIcon-iconContainer--external {
+  // Ensure siblings are vertically aligned with the icons square, not the whole icon
+  top: -1px;
+}

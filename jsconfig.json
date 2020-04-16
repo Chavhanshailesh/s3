@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./js",
+    "jsx": "react"
+  },
+  "paths": {
+    "storybook": "./storybook",
+    "dist": "./dist",
+    "api": "./api",
+    "test": "./test",
+    "records": "./api/src/records",
+    "endpoints": "./api/src/endpoints",
+    "responses": "./api/src/responses.js",
+    "utils": "./api/src/utils.js",
+    "spec": "./api/spec",
+    "translations": "./translations"
+  },
+  "exclude": ["node_modules", "dist", "docs/node_modules"]
+}

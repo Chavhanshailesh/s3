@@ -1,0 +1,151 @@
+
+.Tabs {
+  border-bottom: 1px solid color(border);
+  font-size: 0;
+  min-height: 40px;
+  overflow-y: hidden;
+}
+
+.Tabs--noBorder {
+  border-bottom: none;
+}
+
+.Tabs:not(.Tabs--fullWidth) .Tabs-list {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+.touch .Tabs-list::-webkit-scrollbar {
+  display: none;
+}
+
+.Tabs-item {
+  display: inline-block;
+  font-size: 14px;
+  position: relative;
+  vertical-align: top;
+}
+
+.Tabs-item--right {
+  @include media(">medium") {
+    float: right;
+  }
+}
+
+.Tabs--notPadded .Tabs-item {
+  @include media(">medium") {
+    margin-left: 32px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+
+.Tabs--notPadded.Tabs--fullWidth .Tabs-item {
+  @include media(">small") {
+    margin: 0;
+  }
+}
+
+.Tabs--fullWidth .Tabs-item {
+  text-align: center;
+}
+
+.Tabs--fullWidthMobile .Tabs-item {
+  @include media("<small") {
+    text-align: center;
+  }
+}
+
+// Both <a/> and <Button/> have this class
+.Tabs-button {
+  color: color(secondary);
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  line-height: 39px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+
+  &::after {
+    background: var(--branding-primary-color);
+    bottom: 0;
+    content: "";
+    display: none;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .Tabs--noBorder & {
+    line-height: 40px;
+  }
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &.is-active {
+    color: inherit;
+  }
+
+  &.is-active::after {
+    display: block;
+  }
+
+  .touch &:active {
+    background-color: color(pale);
+    text-decoration: none;
+  }
+}
+
+.Tabs--notPadded .Tabs-button {
+  color: color(secondary);
+  opacity: 1;
+
+  @include media(">medium") {
+    padding: 0;
+  }
+
+  &.is-active,
+  &:hover {
+    color: inherit;
+    opacity: 1;
+  }
+}
+
+$tab-total: 5;
+
+@for $i from 1 through $tab-total {
+  .Tabs--fullWidth.Tabs--#{$i} .Tabs-item {
+    width: (100% / $i);
+  }
+
+  .Tabs--fullWidthMobile.Tabs--#{$i} .Tabs-item {
+    @include media("<=small") {
+      width: (100% / $i);
+    }
+  }
+}
+
+.Tabs-iconContainer {
+  display: inline-block;
+  fill: color(icon);
+  vertical-align: middle;
+  width: 16px;
+}
+
+.Tabs-badgeContainer {
+  display: inline-block;
+  margin-left: 2px;
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
+  width: 18px;
+}

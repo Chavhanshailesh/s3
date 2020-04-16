@@ -1,0 +1,78 @@
+
+.IconToggleGroup {
+  display: flex;
+  flex-direction: row;
+  font-size: 0;
+}
+
+.IconToggleGroup--minimal {
+  text-align: center;
+}
+
+.IconToggleGroup-item {
+  display: inline-block;
+  font-size: 14px;
+
+  .IconToggleGroup--1.IconToggleGroup--fullWidth & {
+    display: block;
+    width: 100%;
+  }
+
+  .IconToggleGroup--2.IconToggleGroup--fullWidth & {
+    width: 50%;
+  }
+
+  .IconToggleGroup--3.IconToggleGroup--fullWidth & {
+    width: 33.33333%;
+  }
+
+  .IconToggleGroup--4.IconToggleGroup--fullWidth & {
+    width: 25%;
+  }
+
+  .IconToggleGroup--5.IconToggleGroup--fullWidth & {
+    width: 20%;
+  }
+
+  .IconToggleGroup & .IconToggle--index0 {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .IconToggleGroup--2 & .IconToggle--index1,
+  .IconToggleGroup--3 & .IconToggle--index2,
+  .IconToggleGroup--4 & .IconToggle--index3,
+  .IconToggleGroup--5 & .IconToggle--index4 {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .IconToggleGroup--3 & .IconToggle--index1,
+  .IconToggleGroup--4 & .IconToggle--index1,
+  .IconToggleGroup--4 & .IconToggle--index2,
+  .IconToggleGroup--5 & .IconToggle--index1,
+  .IconToggleGroup--5 & .IconToggle--index2,
+  .IconToggleGroup--5 & .IconToggle--index3 {
+    border-radius: 0;
+  }
+
+  .IconToggleGroup--darkIcon & .IconToggle:not(.IconToggle--index0) .IconToggle-label::after {
+    border-left-width: 0;
+  }
+}
+
+.IconToggleGroup--2.IconToggleGroup--minimal .IconToggleGroup-item {
+  width: 50%;
+}
+
+.IconToggleGroup--3.IconToggleGroup--minimal .ToggleGroup-item {
+  width: 33.33333%;
+}
+
+.IconToggleGroup .IconToggle {
+  min-height: 100%;
+}
+
+.IconToggleGroup--fullWidth .IconToggle {
+  min-width: 0;
+}

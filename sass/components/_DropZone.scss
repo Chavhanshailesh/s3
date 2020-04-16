@@ -1,0 +1,186 @@
+
+.DropZone {
+  background: white;
+  border: 2px dashed color(light);
+  border-radius: 4px;
+  padding: 10px 15px;
+  position: relative;
+
+  &.is-dragging {
+    background: color(wash);
+  }
+}
+
+.DropZone-inner {
+  padding-left: 72px;
+  position: relative;
+}
+
+.DropZone-iconContainer {
+  fill: color(border);
+  left: 0;
+  position: absolute;
+  width: 60px;
+}
+
+.DropZone-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  position: relative;
+}
+
+.DropZone-title {
+  margin-bottom: 4px;
+}
+
+.DropZone-optionalNote {
+  line-height: 1;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.DropZone-input {
+  margin: 16px auto 0;
+  max-width: 260px;
+  text-align: left;
+  width: 100%;
+
+  input[type=text].Field-input {
+    height: 40px;
+    padding: 8px 16px;
+
+    &:not(:placeholder-shown) {
+      padding: 16px 40px 0 16px;
+    }
+  }
+
+  &.DropZone-input--noLabel input[type=text].Field-input:not(:placeholder-shown) {
+    padding: 8px 40px 8px 16px;
+  }
+
+  .Field-iconContainer {
+    top: 12px;
+  }
+}
+
+.DropZone-split {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+
+  @include media(">small") {
+    width: 50%;
+
+    &:first-child {
+      padding-right: 32px;
+    }
+
+    & + & {
+      border-left: 1px solid rgba(black, 0.075);
+      padding-left: 32px;
+    }
+  }
+}
+
+.DropZone-helperText {
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
+
+//
+// Modifiers
+
+.DropZone--large {
+  padding: 20px;
+  text-align: center;
+
+  .DropZone-inner {
+    padding-left: 0;
+  }
+
+  .DropZone-body {
+    min-height: 0;
+  }
+
+  .DropZone-title {
+    margin: 0;
+  }
+
+  .DropZone-iconContainer {
+    display: inline-block;
+    fill: currentColor;
+    margin-right: 5px;
+    position: relative;
+    vertical-align: middle;
+    width: 50px;
+  }
+
+  .DropZone-noteContainer {
+    margin-top: 8px;
+  }
+}
+
+.DropZone--small {
+  padding: 10px 5px;
+
+  .DropZone-inner {
+    padding-left: 0;
+  }
+
+  .DropZone-iconContainer {
+    margin: 0 auto;
+    position: relative;
+    width: 30px;
+  }
+
+  .DropZone-body {
+    display: block;
+    min-height: 0;
+  }
+
+  .DropZone-title {
+    font-size: 0;
+    margin: 0;
+
+    .AddFrom {
+      display: inline-block;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}
+
+// not just small, but not as tall
+.DropZone--compact {
+  background: white;
+  border: 0;
+  padding: 5px;
+
+  .DropZone-title {
+    margin: 0;
+  }
+
+  .DropZone-inner {
+    padding-left: 32px;
+  }
+
+  .DropZone-body {
+    min-height: 28px;
+  }
+
+  .DropZone-iconContainer {
+    fill: currentColor;
+    height: 28px;
+    width: 28px;
+  }
+}
+
+.DropZone--noUpload:not(.DropZone--compact) {
+  border-style: solid;
+  border-width: 1px;
+}

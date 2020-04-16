@@ -1,0 +1,64 @@
+
+.CampaignItem {
+  background: white;
+  border: 1px solid color(border);
+  border-radius: 2px;
+  height: 100%;
+  padding-bottom: 57px;
+  position: relative;
+}
+
+.CampaignItem-coverImage {
+  background-color: color(pale);
+  border-bottom: 1px solid color(border);
+  display: block;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.CampaignItem-inner {
+  padding: 16px;
+
+  .CampaignItem--hasAudienceCount & {
+    padding-bottom: 16px + 41px;
+  }
+}
+
+
+.CampaignItem-stripContainer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transform: translateZ(0);
+  width: 100%;
+}
+
+.CampaignItem-iconContainer {
+  fill: color(medium);
+  left: 50%;
+  max-width: 48px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
+
+.CampaignItem-shareImage {
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 10px;
+  width: 160px;
+}
+
+.CampaignItem-audienceCount {
+  bottom: 57px;
+  left: 0;
+  padding: 0 15px 10px;
+  position: absolute;
+  width: 100%;
+}
+
+.CampaignItem-audienceCount-inner {
+  border-top: 1px solid color(border);
+  padding-top: 10px;
+}

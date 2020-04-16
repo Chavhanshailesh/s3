@@ -1,0 +1,139 @@
+.Tooltip {
+  position: relative;
+}
+
+%tooltipStyle {
+  background: color(dark);
+  border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(black, 0.1);
+  color: white;
+  display: none;
+  font-size: 14px;
+  line-height: 1.25;
+  padding: 8px 16px;
+  position: absolute;
+  text-align: left;
+  text-transform: none;
+  white-space: pre;
+  z-index: 12;
+}
+
+%arrowStyle {
+  background: color(dark);
+  content: '';
+  height: 8px;
+  left: 50%;
+  position: absolute;
+  transform: rotate(45deg) translateX(-50%);
+  width: 8px;
+  z-index: 11;
+}
+
+.Tooltip-htmlContent {
+  @extend %tooltipStyle;
+
+  &::before {
+    @extend %arrowStyle;
+
+    display: none;
+    font-size: 14px;
+    line-height: 1.5;
+    position: absolute;
+  }
+
+  .Tooltip:hover & {
+    display: block;
+  }
+}
+
+.Tooltip[data-title] {
+  &::after {
+    @extend %tooltipStyle;
+
+    content: attr(data-title);
+    font-weight: 300;
+  }
+
+  &::before {
+    @extend %arrowStyle;
+
+    display: none;
+  }
+
+  &.Tooltip--onHover:hover::after,
+  &.Tooltip--onHover:hover::before,
+  &.is-active::after,
+  &.is-active::before {
+    display: block;
+  }
+
+  &.Tooltip-customWidth::after {
+    width: 215px;
+    white-space: normal;
+  }
+}
+
+.ChartTooltip {
+  position: absolute;
+}
+
+[class*="Tooltip--bottom"] {
+  &::after {
+    top: calc(100% + 8px);
+  }
+
+  &::before {
+    bottom: -15px;
+  }
+}
+
+[class*="Tooltip--top"] {
+  &::after,
+  .Tooltip-htmlContent {
+    bottom: calc(100% + 8px);
+  }
+
+  &::before {
+    top: -10px;
+  }
+
+  .Tooltip-htmlContent::before {
+    top: 100%;
+    margin-top: -1px;
+  }
+}
+
+.Tooltip--bottomLeft {
+  &::after {
+    left: -8px;
+  }
+}
+
+.Tooltip--bottomRight {
+  &::after {
+    right: -8px;
+  }
+}
+
+.Tooltip--topRight {
+  &::after {
+    right: -8px;
+  }
+}
+
+.Tooltip--bottomCenter,
+.Tooltip--topCenter {
+  &::after,
+  .Tooltip-htmlContent {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// Hacks
+
+.Tooltip.ImageOptions {
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}

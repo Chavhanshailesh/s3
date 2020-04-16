@@ -1,0 +1,22 @@
+.DividerList {
+  display: flex;
+  justify-content: center;
+}
+
+.DividerList-item {
+  border-right: 1px solid color(border);
+  padding: 0 20px;
+
+  .DividerList--small & {
+    padding: 0 10px;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+}

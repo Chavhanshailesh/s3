@@ -1,0 +1,28 @@
+
+.PeopleList {
+  padding: 16px 0;
+  position: relative;
+
+  & + & {
+    padding-top: 0;
+  }
+}
+
+.PeopleList-count {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.PeopleList-listContainer {
+  float: right;
+}
+
+.PeopleList-listContainer-item {
+  border-radius: 50%;
+  width: 40px;
+  display: inline-block;
+  margin-left: 4px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}

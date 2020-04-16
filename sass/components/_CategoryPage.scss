@@ -1,0 +1,126 @@
+$CategoryPagePadding: size(mediumlarge);
+
+.CategoryPage {
+  background: white;
+  position: relative;
+
+  @include media(">small") {
+    margin-left: - $CategoryPagePadding;
+    padding: $CategoryPagePadding;
+  }
+}
+
+.CategoryPage-wrapperHeader {
+  position: relative;
+  top: -16px;
+}
+
+.CategoryPage-header {
+  border-bottom: 1px solid color(border);
+  margin-bottom: size(small);
+  padding-bottom: size(small);
+}
+
+.CategoryPage-header-countRemaining {
+  position: absolute;
+  right: $CategoryPagePadding;
+  z-index: 1;
+}
+
+.CategoryPage-header--compact {
+  @include media(">small") {
+    margin: 0;
+    min-height: 0;
+    padding: 8px 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  h2 {
+    line-height: 1;
+  }
+}
+
+.CategoryPage-iconContainer {
+  display: inline-block;
+  fill: color(medium);
+  margin-right: 0.5ch;
+  font-size: 20px;
+  width: 11px;
+}
+
+.CategoryPage-iconContainer--small {
+  width: 8px;
+}
+
+.CategoryPage-iconContainer--medium {
+  width: 9px;
+}
+
+
+.CategoryPage-inner {
+  position: relative;
+
+  @include media("<=small") {
+    display: none;
+  }
+
+  @include media(">small") {
+    min-height: 224px;
+  }
+}
+
+.CategoryPage-inner--sites {
+  @include media(">small") {
+    min-height: 240px;
+  }
+
+  .ListingItem-thumb {
+    left: 0;
+  }
+}
+
+.CategoryPage-listItem {
+  padding: 0 0 8px 0;
+
+  @include media(">small") {
+    padding: 0 15px 8px 15px;
+  }
+
+  &:last-child {
+    padding-bottom: 16px;
+
+    @include media(">small") {
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.CategoryPage-footer {
+  padding: 0 15px 16px;
+}
+
+.CategoryPage-drag {
+  cursor: move;
+  height: 32px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  @include media("<=small") {
+    display: none;
+  }
+}
+
+.CategoryPage .DragHandle {
+  height: 50px;
+  width: calc(100% - 80px);
+}

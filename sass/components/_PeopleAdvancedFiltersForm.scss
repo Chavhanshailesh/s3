@@ -1,0 +1,21 @@
+.PeopleAdvancedFilters-panelWrapper {
+  z-index: 5;
+  margin-top: 10px;
+}
+
+.PeopleAdvancedFilters-panel {
+  width: 490px;
+  padding: 20px;
+}
+
+.PeopleAdvancedFilters-rightFilters {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  max-width: 320px;
+}
+
+.PeopleAdvancedFilters-button {
+  margin-left: 10px;
+  white-space: nowrap;
+}

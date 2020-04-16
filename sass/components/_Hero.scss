@@ -1,0 +1,102 @@
+.Hero {
+  min-height: 96px;
+  padding-bottom: 30px;
+
+  @include media(">small") {
+    padding-bottom: 40px;
+  }
+}
+
+.Hero--event {
+  position: relative;
+
+  @include media(">small") {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+
+    &::after {
+      border-bottom: 1px solid rgba(black, 0.075);
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.Hero--edit {
+  @include media(">small") {
+    padding-bottom: 30px;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.Hero--event .Hero-eventInner {
+  padding-left: 0;
+  position: relative;
+
+  @include media(">small") {
+    padding-left: 100px;
+  }
+}
+
+.Hero-calendarContainer {
+  left: 0;
+  position: absolute;
+  top: 6px;
+  width: 80px;
+
+  @include media("<=small") {
+    display: none;
+  }
+}
+
+.Hero-actionBarContainer {
+  float: right;
+  position: relative;
+  z-index: 1;
+
+  @include media(">small") {
+    margin-top: -26px;
+  }
+
+  @include media("<=small") {
+    border-bottom: 1px solid color(border);
+    border-top: 1px solid color(border);
+    float: none;
+    margin: 0 -16px;
+    padding: 12px 0;
+  }
+}
+
+.Hero-inner {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.Hero-innerContainer {
+  @include media("<=small") {
+    padding-bottom: 15px;
+  }
+}
+
+.Hero-breadcrumbContainer {
+  margin-bottom: sketch-size(medium);
+}
+
+.Hero-heading {
+  margin-bottom: sketch-size(medium);
+}

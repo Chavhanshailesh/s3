@@ -1,0 +1,19 @@
+
+.TextOnLine {
+  align-items: center;
+  color: color(tertiary);
+  display: flex;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  &::after {
+    background-color: color(light);
+    content: '';
+    display: block;
+    height: 1px;
+    margin-left: 1ch;
+    width: 100%;
+  }
+}

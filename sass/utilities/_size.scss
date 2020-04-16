@@ -1,0 +1,67 @@
+/**
+ * @define utilities
+ * Sizing utilities
+ */
+
+/* Intrinsic widths
+   ========================================================================== */
+
+/**
+ * Make an element shrink wrap its content.
+ */
+
+.u-sizeFit {
+  flex-basis: auto !important;
+}
+
+/**
+ * Make an element fill the remaining space.
+ *
+ * 1. Be explicit to work around IE10 bug with shorthand flex
+ *    http://git.io/vllC7
+ * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes
+ *    http://git.io/vllMt
+ */
+
+.u-sizeFill {
+  flex: 1 1 0% !important; /* 1 */
+  flex-basis: 0% !important; /* 2 */
+}
+
+.u-sizeFill--noMinWidth {
+  min-width: 0;
+}
+
+/**
+ * An alternative method to make an element fill the remaining space.
+ * Distributes space based on the initial width and height of the element
+ *
+ * http://www.w3.org/TR/css-flexbox/images/rel-vs-abs-flex.svg
+ */
+
+.u-sizeFillAlt {
+  flex: 1 1 auto !important;
+  flex-basis: auto !important;
+}
+
+/**
+ * Make an element the width of its parent.
+ */
+.u-sizeFull {
+  width: 100% !important;
+}
+
+/* A readable line length for text */
+.u-size-readable {
+  max-width: 85ch !important;
+}
+
+.u-size-maxWidth--600 {
+  max-width: 600px;
+}
+
+.u-size--169 {
+  height: 0 !important;
+  padding-bottom: 56.25% !important;
+  position: relative !important;
+}

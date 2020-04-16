@@ -1,0 +1,83 @@
+
+.TileSlider {
+  overflow: hidden;
+  padding: 8px;
+
+  .flickity-viewport {
+    overflow: visible;
+  }
+
+  .flickity-viewport {
+    padding-bottom: 0;
+  }
+
+  .flickity-slider {
+    position: relative;
+    height: auto;
+    width: auto;
+  }
+}
+
+.TileSlider--flush .flickity-resize .flickity-slider {
+  height: 100%;
+}
+
+.TileSlider--2 {
+  margin-left: -8px;
+}
+
+.TileSlider--flush {
+  padding: 0;
+  margin: 0 -1px;
+  border-radius: 0 0 4px 4px;
+}
+
+.TileSlider-item {
+  .TileSlider--2 & {
+    display: inline-block;
+    padding-left: 8px;
+    vertical-align: top;
+    width: 50%;
+  }
+
+  .TileSlider--3plus & {
+    margin-left: 8px;
+    width: 40%;
+  }
+}
+
+.TileSlider-details {
+  padding: 8px 0;
+  text-align: center;
+}
+
+.TileSlider:not(.TileSlider--flush) .flickity-prev-next-button {
+  &.next {
+    right: -8px;
+  }
+
+  &.previous {
+    left: -8px;
+  }
+}
+
+.TileSlider--flush .TileSlider-item {
+  border-right: 1px solid color(border);
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  width: 200px;
+}
+
+.TileSlider--flush .flickity-resize .TileSlider-item {
+  min-height: 100%;
+}
+
+.TileSlider--flush .TileSlider-item:last-child {
+  border: none;
+}
+
+.TileSlider--flushNarrow .TileSlider-item:first-child,
+.TileSlider--flushNarrow .TileSlider-item {
+  width: 50%;
+}

@@ -1,0 +1,22 @@
+
+.u-fadeInUp,
+.u-fadeInDown {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: 0.15s !important;
+}
+
+.u-fadeInUp.is-hidden,
+.u-fadeInDown.is-hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.u-fadeInUp.is-hidden {
+  transform: translate3d(0, 16px, 0) !important;
+}
+
+.u-fadeInDown.is-hidden {
+  transform: translate3d(0, -16px, 0) !important;
+}

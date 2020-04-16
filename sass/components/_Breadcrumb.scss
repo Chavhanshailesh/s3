@@ -1,0 +1,108 @@
+
+.Breadcrumb {
+  min-height: 40px;
+  padding-left: 52px;
+  position: relative;
+}
+
+.Breadcrumb--simple {
+  min-height: 0;
+  padding-left: 0;
+}
+
+.Breadcrumb--mediaManager {
+  padding-left: 0;
+  position: relative;
+  top: -16px;
+
+  @include media("<=small") {
+    margin-top: 8px;
+    top: -8px;
+  }
+}
+
+.Breadcrumb-imageContainer {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+}
+
+.Breadcrumb-inner--profile {
+  padding: 8px 0;
+}
+
+.Breadcrumb-chevronContainer {
+  display: inline-block;
+  fill: color(medium);
+  margin: 0 8px;
+  position: relative;
+  vertical-align: middle;
+  width: 8px;
+
+  .Breadcrumb--mediaManager & {
+    width: 6px;
+  }
+}
+
+.Breadcrumb-chevronContainer--line {
+  margin: 0 4px;
+  width: 10px;
+}
+
+.Breadcrumb-title {
+  display: inline-block;
+
+  a {
+    color: inherit;
+  }
+}
+
+.Breadcrumb-item {
+  display: inline-block;
+}
+
+.Breadcrumb-item--select {
+  vertical-align: middle;
+
+  .dropdown {
+    display: block;
+  }
+
+  @include media("<=medium") {
+    .dropdown {
+      max-width: 160px;
+    }
+
+    .selected {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+  }
+}
+
+.Breadcrumb-button {
+  text-transform: uppercase;
+
+  .Breadcrumb--mediaManager & {
+    text-transform: none;
+  }
+}
+
+.Breadcrumb-favoriteHack {
+  display: inline-block;
+  margin-right: 12px;
+  position: relative;
+  top: -6px;
+}
+
+.Breadcrumb-followButton {
+  margin-left: size(medium);
+  margin-top: size(small);
+
+  @include media($breakpoint-smallDown) {
+    float: right;
+  }
+}

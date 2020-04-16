@@ -1,0 +1,40 @@
+
+// Config
+@import "./config";
+
+// 3rd Party
+@import "~include-media-or/dist/include-media-or";
+//@import "~froala-editor/css/froala_editor.pkgd.css";
+//@import "~react-day-picker/lib/style.css";
+
+// Tools
+@import "tools/mixins";
+@import "base/reset"; // imported before anything else
+
+// Legacy
+@import "legacy/old-config";
+@import "legacy/screen";
+@import "legacy/customization";
+@import "legacy/colorpicker";
+
+// Base
+@import "base/elements";
+@import "base/type"; // TODO: isn't this really a component?
+@import "base/print";
+
+// Third Party
+@import "vendor/*";
+
+// Components
+@import "components/*.scss";
+@import "components/behaviour/*";
+@import "components/modals/content/*";
+
+// Utilities
+@import "utilities/*";
+
+// Theme
+@import "theme/theme";
+
+// Old style branding selectors - must be loaded last
+@import "legacy/legacyBranding";

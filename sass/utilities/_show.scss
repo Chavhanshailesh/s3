@@ -1,0 +1,13 @@
+.u-sm-show {
+  @include media(">small") {
+    display: none !important;
+  }
+}
+
+.u-lg-show {
+  display: none !important;
+
+  @include media(">medium") {
+    display: block !important;
+  }
+}

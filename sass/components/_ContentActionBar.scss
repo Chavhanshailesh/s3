@@ -1,0 +1,14 @@
+
+.ContentActionBar {
+  border: solid rgba(black, 0.075);
+  border-width: 1px 0 0;
+  margin: 32px -16px -32px;
+  padding: 12px 0;
+}
+
+.ContentActionBar-inner {
+  @include media(">small") {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}

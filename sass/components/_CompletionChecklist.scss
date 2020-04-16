@@ -1,0 +1,91 @@
+
+.CompletionChecklist {
+  @include media('<=medium') {
+    border: 0;
+  }
+}
+
+.CompletionChecklist-header {
+  border-bottom: 1px solid color(border);
+  padding: 16px;
+}
+
+.CompletionChecklist-progressCount {
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: -8px;
+  width: 28px;
+}
+
+.CompletionChecklist-progressContainer {
+  padding-right: 40px;
+}
+
+.CompletionChecklist-list {
+  padding: 8px 16px;
+}
+
+.CompletionChecklist-Item {
+  color: var(--branding-primary-color);
+  cursor: pointer;
+  font-weight: bold;
+  min-height: 40px;
+  position: relative;
+  text-align: left;
+  text-decoration: underline;
+  width: 100%;
+
+  &.is-complete {
+    color: color(secondary);
+    cursor: default;
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+
+.CompletionChecklist-itemMain {
+  border-bottom: 1px solid color(border);
+  margin-left: 40px;
+  min-height: 40px;
+  padding: 11px 48px 11px 0;
+
+  .CompletionChecklist-list > :last-child & {
+    border: 0;
+  }
+}
+
+.CompletionChecklist-iconContainer {
+  fill: currentColor;
+  left: 0;
+  margin-top: -14px;
+  position: absolute;
+  top: 50%;
+  width: 28px;
+
+  &.is-complete {
+    fill: color(primary);
+  }
+}
+
+.CompletionChecklist-Checkbox {
+  border: 1px solid color(border);
+  border-radius: 50%;
+  height: 26px;
+  margin-top: -13px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 26px;
+
+  &.is-complete {
+    background: var(--branding-primary-color);
+    border: 0;
+  }
+
+  .Icon {
+    fill: white;
+    margin: 3px;
+    width: 20px;
+  }
+}

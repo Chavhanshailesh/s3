@@ -1,0 +1,45 @@
+.EmojiLauncher {
+  position: relative;
+}
+
+.EmojiLauncher-input {
+  @include media(">small") {
+    padding-right: 24px;
+  }
+}
+
+.EmojiLauncher-iconContainer {
+  bottom: 0;
+  cursor: pointer;
+  fill: color(tertiary);
+  opacity: 0;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  transition: 0.2s fill, 0.2s opacity;
+  width: 32px;
+  z-index: 3;
+
+  &:hover {
+    fill: color(primary);
+  }
+
+  &.is-visible,
+  .EmojiLauncher:hover &,
+  .EmojiLauncher-input:focus + &,
+  &:focus {
+    opacity: 1;
+  }
+
+  &:focus {
+    fill: color(primary);
+  }
+
+  .touch & {
+    display: none;
+  }
+
+  @include media("<=small") {
+    display: none;
+  }
+}

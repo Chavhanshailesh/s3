@@ -1,0 +1,74 @@
+/*
+* Colour picker
+* Used in the 'brand editor', possibly elsewhere
+*/
+
+/* Common stuff */
+
+.picker-wrapper,
+.slide-wrapper {
+  position: relative;
+  float: left;
+}
+
+.picker-indicator,
+.slide-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.picker,
+.slide {
+  cursor: crosshair;
+  float: left;
+}
+
+.picker *,
+.slide * {
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Small skin */
+
+.cp-small {
+  border: 1px solid $medium;
+  padding: 7px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(000, 000, 000, 0.2);
+  position: absolute;
+  top: 47px;
+  left: 0;
+  z-index: 3;
+  width: 126px;
+}
+
+.cp-small .picker {
+  width: 80px;
+  height: 80px;
+}
+
+.cp-small .slide {
+  width: 16px;
+  height: 80px;
+}
+
+.cp-small .slide-wrapper {
+  margin-left: 11px;
+}
+
+.cp-small .picker-indicator {
+  width: 1px;
+  height: 1px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.cp-small .slide-indicator {
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background-color: black;
+}

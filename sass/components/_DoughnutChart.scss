@@ -1,0 +1,46 @@
+.DoughnutChart {
+  position: relative;
+}
+
+.DoughnutChart-value {
+  font-size: 22px;
+  font-weight: bold;
+  left: 50%;
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+}
+
+.DoughnutChart-note {
+  font-size: 14px;
+  left: 0;
+  line-height: 1.1;
+  margin-top: 2px;
+  min-width: 100%;
+  opacity: 0.5;
+}
+
+.DoughnutChart-blank-wrapper {
+  margin: 0 auto;
+  max-width: 247px;
+}
+
+.DoughnutChart-blank {
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    border-radius: 50%;
+    border: 58px solid #ccc;
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}

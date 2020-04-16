@@ -1,0 +1,31 @@
+
+.ChartKey {
+  margin: 20px auto 5px;
+  max-width: 276px;
+  width: 100%;
+}
+
+li.ChartKey-item {
+  padding-left: 30px;
+  position: relative;
+
+  &:last-child .ChartKey-body {
+    border: none;
+  }
+}
+
+.ChartKey-body {
+  border-bottom: 1px solid color(border);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.ChartKey-legend {
+  margin-left: -30px;
+}
+
+.ChartKey-percentage {
+  font-weight: bold;
+}

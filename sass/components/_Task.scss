@@ -1,0 +1,42 @@
+.Task {
+  background: white;
+  border: 1px solid color(border);
+  border-radius: 4px;
+  padding: 46px 15px 15px;
+  position: relative;
+  text-align: center;
+}
+
+.Task-title {
+  margin-bottom: 4px;
+}
+
+.Task-note {
+  color: color(tertiary);
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  margin-top: 34px;
+}
+
+.Task-close {
+  cursor: pointer;
+  fill: color(medium);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 28px;
+
+  &:hover {
+    fill: color(primary);
+  }
+  // Firefox bug - Tooltip inside button, button eats mouse events
+  &:hover .Tooltip::after,
+  &:hover .Tooltip::before {
+    display: block;
+  }
+}
+
+.Task .Button {
+  margin: 20px 0 0;
+}

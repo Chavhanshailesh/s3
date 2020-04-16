@@ -1,0 +1,145 @@
+/* colours */
+
+$wash: #fafafa;
+
+$fill: #f5f5f5;
+
+$pale: #ebebeb;
+
+$light: #e5e5e5;
+
+$neutral: #d9d9d9;
+
+$medium: #ccc; /* borders & icons */
+
+$tertiary: #999;
+
+$secondary: #666;
+
+$primary: #333;
+
+$dark: #262626;
+
+$brand: #1abc9c;
+
+$green: #008e39;
+
+$blue: #009ab0;
+
+$red: #c81424;
+
+$orange: #ff6a23;
+
+$yellow: #ffa42a;
+
+$gold: #ffc800;
+
+/* icon */
+
+%icon {
+  padding: 0 15px 0 32px;
+
+  .ss-standard {
+    font-size: 10px;
+    line-height: 28px;
+    width: 30px;
+    text-align: center;
+    color: currentColor;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+
+    span {
+      position: relative;
+    }
+  }
+}
+
+/* line */
+
+@mixin line {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: $medium;
+  }
+}
+
+@mixin lines {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: $medium;
+  }
+}
+
+/* border */
+
+%border {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* clearfix */
+
+@mixin clearfix {
+  zoom: 1;
+
+  &::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+%clearfix {
+  @include clearfix;
+}
+
+/* placeholder-text */
+
+@mixin placeholder-text($color, $opacity) {
+  &::-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    color: rgba($color, $opacity);
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+    @content;
+  }
+}
+
+/* transition */
+
+%transition {
+  @media (min-width: 1025px) {
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s, opacity 0.2s, fill 0.2s;
+  }
+}

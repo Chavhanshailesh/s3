@@ -1,0 +1,13 @@
+.AddContentButton {
+  border: 1px solid;
+  border-color: var(--branding-header-icon-color, color(addContentButton));
+  border-radius: 50%;
+  fill: var(--branding-header-icon-color, color(addContentButton));
+  padding: 6px 6px 6px 5px;
+  transition: border-color 0.1s ease-in-out;
+  width: 100%;
+
+  &:hover {
+    border-color: color(tertiary);
+  }
+}

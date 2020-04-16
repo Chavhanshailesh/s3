@@ -1,0 +1,55 @@
+.u-border {
+  border: 1px solid color(medium);
+}
+
+.u-border-bottom {
+  border-bottom: 1px solid color(border);
+}
+
+.u-border-left {
+  border-left: 1px solid color(border);
+}
+
+.u-border-top {
+  border-top: 1px solid color(border);
+}
+
+.u-border-right {
+  border-right: 1px solid color(border);
+}
+
+.u-border-top--secondary {
+  border-top-color: color(secondary);
+}
+
+.u-border-top--light {
+  border-top-color: color(borderLight);
+}
+
+//
+// Dashed borders
+.u-border--dashed {
+  border: 1px dashed color(border);
+}
+
+//
+// Border radius
+.u-borderRadius--2 {
+  border-radius: 2px;
+}
+
+.u-borderRadius--4 {
+  border-radius: 4px;
+}
+
+//
+// Repeating borders
+.u-borderList {
+  & > li {
+    border-bottom: 1px solid color(border);
+  }
+
+  & > li:last-child {
+    border: 0;
+  }
+}

@@ -1,0 +1,64 @@
+.PageOptionsMenu {
+  border-radius: 8px;
+  bottom: 32px;
+  box-shadow: 0 2px 8px rgba(black, 0.2);
+  overflow: hidden;
+  position: fixed;
+  right: 32px;
+  z-index: 2;
+
+  @include media("<=small") {
+    display: none;
+  }
+
+  .touch & {
+    display: none;
+  }
+}
+
+.PageOptionsMenu-link {
+  display: block;
+  height: 48px;
+  line-height: 48px;
+  position: relative;
+  width: 40px;
+
+  &::before {
+    background-color: rgba(black, 0.1);
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.PageOptionsMenu-link {
+  & + & {
+    border-top: 1px solid white;
+  }
+}
+
+.PageOptionsMenu-link .Icon {
+  fill: white;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+}
+
+.PageOptionsMenu-link--settings .Icon {
+  width: 18px;
+}
+
+.PageOptionsMenu-link--compose .Icon {
+  margin: -2px 0 0 2px;
+  width: 20px;
+}

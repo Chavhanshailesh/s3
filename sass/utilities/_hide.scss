@@ -1,0 +1,24 @@
+.u-sm-hide {
+  @include media($breakpoint-smallDown) {
+    display: none !important;
+  }
+}
+
+.u-hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.u-visibilityHidden {
+  visibility: hidden !important;
+}
+
+// This sometimes doesn't work after dynamic update of contents, on iOS at least
+// @see https://simpplr.atlassian.net/browse/SV2-11305
+.u-hideIfEmpty:empty {
+  display: none !important;
+}
+
+.touch .u-hideOnTouch {
+  display: none !important;
+}

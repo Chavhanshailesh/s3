@@ -1,0 +1,128 @@
+.Tile {
+  background-color: white;
+  border: 1px solid color(border);
+  border-radius: 4px;
+  margin-bottom: 32px;
+  position: relative;
+  width: 100%;
+  zoom: 1;
+
+  @include media("<small") {
+    margin-bottom: 16px;
+  }
+
+  .Modal-content > & {
+    margin-bottom: 0;
+  }
+}
+
+.Tile-tabs {
+  background: white;
+  margin-bottom: -1px;
+  margin-top: -16px;
+}
+
+.Tile--box {
+  border-radius: 0;
+  margin-bottom: 0;
+  padding: 0 16px;
+}
+
+.Tile--box + .Tile--box {
+  border-top: 0;
+}
+
+.Tile-header {
+  border-bottom: 1px solid color(border);
+  padding: 12px 16px;
+
+  @include media(">medium") {
+    padding-right: 40px; // space for the options menu
+  }
+
+  &[draggable="true"] {
+    cursor: move;
+  }
+
+  // hidden but still draggable
+  .Tile--hiddenHeader & {
+    border-bottom: 0;
+    height: 40px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.Tile-header--alt {
+  margin: 0 -16px 16px;
+}
+
+.Tile-heading {
+  color: color(primary);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.Tile-main {
+  padding: 16px 16px 0;
+}
+
+.Tile .no-results {
+  border: none;
+  background: none;
+}
+
+.Tile-main .no-results {
+  margin-bottom: 16px;
+}
+
+.Tile-heading-iconContainer {
+  cursor: default;
+  display: inline-block;
+  fill: color(medium);
+  font-size: 10px;
+  margin-right: 6px;
+  position: relative;
+  vertical-align: text-top;
+  width: 8px;
+}
+
+.Tile-optionsContainer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.Tile-userCount {
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.Tile-loaderContainer {
+  margin-top: -16px;
+  min-height: 112px;
+  position: relative;
+}
+
+.Tile-iframe {
+  @include media(">small") {
+    margin-bottom: 16px;
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+
+.Tile-contentList {
+  &.has-loaded {
+    overflow-y: scroll;
+  }
+}
+
+.Tile--homeDefault {
+  .Tile-tabs {
+    margin-top: -8px;
+  }
+}

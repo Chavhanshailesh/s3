@@ -1,0 +1,84 @@
+
+.AddSection {
+  background: color(pageBackground);
+  cursor: pointer;
+  min-height: 48px;
+  padding-left: 48px;
+  position: relative;
+}
+
+
+.AddSection-iconContainer {
+  border-right: 1px solid rgba(black, 0.075);
+  fill: color(medium);
+  left: 0;
+  padding: 12px;
+  position: absolute;
+  top: 0;
+  width: 48px;
+
+  .AddSection:hover & {
+    fill: color(primary);
+  }
+}
+
+.AddSection-text {
+  padding: 14px 16px;
+}
+
+//
+// Modifiers
+
+.AddSection--large {
+  border: 1px solid color(border);
+  border-radius: 4px;
+  color: color(note);
+  padding: 100px 16px 60px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  .AddSection-inner {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .AddSection-iconContainer {
+    border: 1px solid color(note);
+    border-radius: 50%;
+    display: block;
+    fill: color(note);
+    left: 50%;
+    margin-bottom: 10px;
+    margin-left: -16px;
+    padding: 6px;
+    position: relative;
+    transition: transform 0.1s ease-in-out;
+    width: 32px;
+  }
+
+  &:hover .AddSection-iconContainer {
+    fill: color(note);
+  }
+
+  .touch-none &:hover .AddSection-iconContainer {
+    transform: scale(1.05);
+  }
+}
+
+.AddSection--theme {
+  background: color(wash);
+  border: 2px dashed color(formBorder);
+
+  .AddSection-iconContainer {
+    border: 1px solid currentColor;
+    fill: currentColor;
+  }
+
+  &:hover .AddSection-iconContainer {
+    fill: currentColor;
+  }
+}

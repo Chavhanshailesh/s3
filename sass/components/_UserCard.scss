@@ -1,0 +1,107 @@
+.UserCard {
+  height: 100%;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+.UserCard--withButton {
+  padding-bottom: 60px;
+}
+
+.UserCard--withHireDate {
+  padding-bottom: 40px;
+}
+
+.UserCard--withButton.UserCard--withHireDate {
+  padding-bottom: 80px;
+}
+
+.UserCard--withCelebrations {
+  padding-bottom: 102px;
+}
+
+.UserCard-avatarContainer {
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  width: 100px;
+}
+
+.UserCard-favoriteContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.UserCard--featured {
+  color: white;
+}
+
+.UserCard-featuredCount {
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 38px;
+}
+
+.UserCard-featuredText {
+  font-weight: 500;
+  margin: 18px auto;
+  max-width: 128px;
+
+  & + & {
+    margin: 18px auto 38px;
+  }
+}
+
+.UserCard-footer {
+  bottom: 15px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.UserCard-text {
+  max-width: 72px;
+}
+
+.UserCard-avatarIcon {
+  position: absolute;
+  right: -16px;
+  top: 0;
+}
+
+.UserCard--horizontal {
+  display: flex;
+  text-align: left;
+  padding: 0;
+
+  .UserCard-avatarContainer {
+    margin: 0 10px 0 0;
+    width: 65px;
+  }
+
+  .UserDetails {
+    margin-top: 5px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+  }
+}
+
+.UserDetails--large {
+  .type--title {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.UserDetails-orgChartLink {
+  display: inline-block;
+  margin-left: 6px;
+  position: relative;
+  top: -2px;
+}
+
+.UserCard--withButton.UserCard--withHireDate .UserCard-hireDare {
+  margin-bottom: 8px;
+}

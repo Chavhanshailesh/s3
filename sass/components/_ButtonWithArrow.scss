@@ -1,0 +1,31 @@
+
+.ButtonWithArrow {
+  align-items: center;
+  background-color: white;
+  border: 1px solid color(formBorder);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  width: 100%;
+}
+
+.ButtonWithArrow-text {
+  align-items: center;
+  display: flex;
+  font-size: 15px;
+  font-weight: 500;
+
+  .Icon {
+    fill: black;
+    margin-right: 10px;
+    width: 28px;
+  }
+}
+
+.ButtonWithArrow-arrow {
+  .Icon {
+    fill: color(tertiary);
+    width: 16px;
+  }
+}

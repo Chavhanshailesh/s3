@@ -1,0 +1,78 @@
+.ListingItem--serviceNow {
+  .ListingItem-inner {
+    display: inline-block;
+    width: calc(100% - 40px);
+    vertical-align: middle;
+  }
+
+  .LabelledIcon-iconContainer {
+    width: 24px;
+  }
+}
+
+.ServiceNow-externalLink {
+  display: none;
+  padding-left: 14px;
+  width: 40px;
+  vertical-align: middle;
+
+  .ListingItem--serviceNow:hover & {
+    display: inline-block;
+  }
+}
+
+.InfoBox-serviceNowConnect {
+  .InfoBox-inner {
+    max-width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    p {
+      line-height: 18px;
+    }
+  }
+}
+
+.ServiceNow-ticketListing {
+  .ServiceNowTicketFilters-rightFilters {
+    .Field--staticLabel .single .selectize-input {
+      padding: 16px 45px 0 16px;
+    }
+  }
+
+  .Table-cell--desc {
+    padding-right: 95px;
+  }
+}
+
+.ServiceNowNewTicketForm {
+  .Field-textarea {
+    border: none;
+    min-height: 230px;
+  }
+
+  .Strip {
+    padding: 12px 24px;
+  }
+
+  .Strip--modal {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .DropZone--compact {
+    .DropZone-inner {
+      padding-left: 25px;
+    }
+
+    .DropZone-iconContainer {
+      width: 18px;
+      padding-top: 5px;
+    }
+  }
+
+  .PostForm-fileList--post {
+    padding: 0 8px 15px;
+  }
+}

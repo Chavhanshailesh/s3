@@ -1,0 +1,43 @@
+
+.ResponsiveTable {
+  @include media("<=small") {
+    .ResponsiveTable-inner > table {
+      max-width: none;
+    }
+  }
+
+  @include media("<=medium") {
+    td,
+    th {
+      font-size: 10px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    // Ensure we can always see the second column on file tables
+    .thumbnail {
+      max-width: 70vw;
+    }
+  }
+}
+
+.ResponsiveTable--wide {
+  @include media("<=medium") {
+    margin: 0 -16px 16px;
+
+    .ResponsiveTable-inner {
+      padding-left: 16px;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .ResponsiveTable-inner > table {
+      border-right: 16px solid white;
+      min-width: auto;
+    }
+  }
+
+  .Content & .ResponsiveTable-inner > table {
+    box-shadow: inset -1px 1px 0 #ccc;
+  }
+}

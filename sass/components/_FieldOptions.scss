@@ -1,0 +1,12 @@
+
+.FieldOptions {
+  padding-bottom: 16px;
+
+  @include media(">small") {
+    padding-left: 32px;
+  }
+
+  .page-loading & {
+    display: none;
+  }
+}

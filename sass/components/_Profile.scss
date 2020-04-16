@@ -1,0 +1,132 @@
+
+.Profile-coverContainer {
+  margin: -1px -1px 0;
+}
+
+.Profile-avatarContainer {
+  margin: 0 auto 16px;
+  width: 130px;
+}
+
+.Profile-main {
+  margin-bottom: 15px;
+  margin-top: -65px;
+  padding: 0 20px;
+  position: relative;
+  text-align: center;
+
+  .type--title {
+    font-size: 18px;
+  }
+
+  .Button {
+    vertical-align: top;
+  }
+
+  .Button + .Button {
+    margin-left: 16px;
+  }
+
+  @include media($breakpoint-smallUp) {
+    margin-bottom: 25px;
+  }
+}
+
+.Profile-lower {
+  padding: 20px;
+}
+
+.Profile-info {
+  font-size: 15px;
+  width: 100%;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.Profile-listContainer {
+  .DefinitionList-content {
+    border-bottom: 1px solid color(border);
+    margin-bottom: sketch-size(small);
+    padding-bottom: sketch-size(small);
+
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .DefinitionList-title {
+    margin-bottom: 4px;
+  }
+
+  .DefinitionList-title,
+  .DefinitionList-content {
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  @include media(">large") {
+    flex: 0 0 182px;
+  }
+}
+
+.Profile-uploadInput {
+  cursor: pointer;
+  opacity: 0;
+}
+
+.Profile-favoriteContainer {
+  position: absolute;
+  right: 12px;
+  top: 75px;
+
+  .Icon {
+    width: 28px;
+  }
+}
+
+.Profile-contentLists {
+  // TODO. add the prop to remove this once newsletter branch merged. size="small"
+  .ListingItem-descriptionContainer {
+    display: none;
+  }
+}
+
+.Profile-addExpertise {
+  @include media($breakpoint-smallUp) {
+    max-width: 420px;
+  }
+}
+
+.Profile-main .UserDetails {
+
+  // Align with the Org Chart link
+  .type--h5 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .type--title {
+    margin-bottom: 0;
+  }
+}
+
+.managersTile-item {
+  padding: 12px 16px;
+  position: relative;
+
+  .type--stamp {
+    margin-bottom: 5px;
+  }
+}
+
+
+.Profile-contactContainer {
+  padding-bottom: 12px;
+}
+
+.Profile-contactContainer--mobile {
+  padding: 12px 16px;
+}

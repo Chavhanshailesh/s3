@@ -1,0 +1,12 @@
+.MoreOfType {
+  border-radius: 2px;
+  border: 1px dashed color(medium);
+  display: inline-block;
+  padding: 3px 7px;
+  position: relative;
+
+  &:not(a):not(button) {
+    color: color(tertiary);
+    pointer-events: none;
+  }
+}

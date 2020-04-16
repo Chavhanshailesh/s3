@@ -1,0 +1,20 @@
+.List-heading {
+  border-bottom: 1px solid color(medium);
+  margin-bottom: 16px;
+  padding-right: 32px;
+  padding: 0 0 8px 0;
+  position: relative;
+}
+
+.List-group {
+  margin-bottom: 32px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.List-loaderContainer {
+  min-height: 256px;
+  position: relative;
+}

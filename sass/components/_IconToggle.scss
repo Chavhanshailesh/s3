@@ -1,0 +1,231 @@
+
+.IconToggle {
+  background: white;
+  border-radius: 4px;
+  color: inherit;
+  display: inline-block;
+  min-width: 160px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  .ToggleGroup--minimal & {
+    min-width: 0;
+  }
+
+  &.IconToggle--large {
+    padding-top: 15px;
+  }
+
+  &.is-disabled {
+    cursor: default;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.IconToggle--horizontal {
+  padding: 4px 0;
+}
+
+.IconToggle--hasNote {
+  padding: 0 0 8px;
+}
+
+.IconToggle-label {
+  border-radius: inherit;
+  cursor: pointer;
+  color: color(secondary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0 16px 8px;
+  transition: 0.2s background;
+  user-select: none;
+
+  .IconToggle--horizontal & {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+  }
+
+  .IconToggle--hasBorder &::after {
+    border: 1px solid color(formBorder);
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  //TODO: refactor this into a prop
+  .Modal-content--lightBorders .IconToggle--hasBorder &::after {
+    border-color: mix(color(border), color(formBorder), 50%);
+  }
+
+  .is-disabled & {
+    color: color(medium);
+  }
+
+  .IconToggle--large & {
+    padding-bottom: 13px;
+  }
+}
+
+.IconToggle-input {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &[disabled] {
+    opacity: 0 !important;
+  }
+}
+
+.IconToggle-iconContainer {
+  color: color(tertiary);
+  fill: color(tertiary);
+  height: 48px;
+  margin: 0 auto -8px;
+  pointer-events: none;
+  position: relative;
+  top: 0;
+  transition: 0.2s;
+  width: 48px;
+
+  .is-disabled & {
+    opacity: 0.5;
+  }
+
+  .IconToggle--large & {
+    height: 35px;
+    margin: 0 auto 13px;
+    width: 35px;
+  }
+
+  &.IconToggle-iconContainer--tabs-current,
+  &.IconToggle-iconContainer--tabs-new {
+    width: 140px;
+  }
+
+  .IconToggle--horizontal & {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  .Icon {
+    left: 50%;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+  }
+
+  .IconToggle--large & .Icon {
+    margin: 0;
+    width: 100%;
+  }
+
+  .IconToggle--horizontal & .Icon {
+    margin: 0;
+  }
+}
+
+$socials: twitter facebook linkedin;
+
+@each $social in $socials {
+  .IconToggle-iconContainer--#{$social} .Icon {
+    fill: color($social);
+  }
+}
+
+.IconToggle--horizontal .IconToggle-iconContainer--twitter {
+  margin-left: -10px;
+}
+
+.IconToggle--horizontal .IconToggle-iconContainer--linkedin,
+.IconToggle--horizontal .IconToggle-iconContainer--facebook {
+  margin-left: -12px;
+}
+
+.IconToggle-iconContainer--check .Icon {
+  width: 26px;
+}
+
+.IconToggle-iconContainer--delete .Icon {
+  width: 20px;
+}
+
+.IconToggle-iconContainer--question .Icon {
+  width: 16px;
+}
+
+.IconToggle--darkIcon .IconToggle-iconContainer {
+  color: color(secondary);
+  fill: color(secondary);
+}
+
+.IconToggle.is-active .IconToggle-iconContainer,
+.IconToggle:hover .IconToggle-iconContainer,
+.IconToggle--darkIcon .IconToggle-input:checked + .IconToggle-iconContainer,
+.IconToggle-input:checked + .IconToggle-iconContainer {
+  color: color(dark);
+  fill: color(dark);
+}
+
+.IconToggle-input:checked + .IconToggle-iconContainer {
+  color: color(brand);
+}
+
+.ToggleGroup--minimal .IconToggle-input:checked + .IconToggle-iconContainer {
+  fill: color(brand);
+}
+
+.IconToggle:hover .IconToggle-input[disabled] + .IconToggle-iconContainer {
+  color: color(medium);
+  fill: color(medium);
+}
+
+.IconToggle.is-active .IconToggle-label::after,
+.IconToggle-input:checked ~ .IconToggle-label::after {
+  border-color: color(brand);
+  border-width: 2px !important;
+  left: -1px;
+  width: calc(100% + 2px);
+  z-index: 2;
+}
+
+.IconToggle-input[disabled] ~ .IconToggle-label::after {
+  border-color: color(formBorder);
+}
+
+//TODO: refactor this into a prop
+.Modal-content--lightBorders .IconToggle-input[disabled] ~ .IconToggle-label::after {
+  border-color: mix(color(border), color(formBorder), 50%);
+}
+
+.IconToggle-note {
+  bottom: 0;
+  color: color(note);
+  font-size: 8px;
+  left: 0;
+  letter-spacing: 0.05em;
+  line-height: 14px;
+  position: absolute;
+  pointer-events: none;
+  text-transform: uppercase;
+  width: 100%;
+}

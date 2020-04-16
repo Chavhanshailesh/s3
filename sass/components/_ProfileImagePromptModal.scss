@@ -1,0 +1,39 @@
+.ProfileImagePromptModal {
+  padding: 20px;
+  text-align: center;
+}
+
+.ProfileImagePromptModal-wrapper {
+  margin: 0 auto 20px;
+  width: 122px;
+}
+
+.ProfileImagePromptModal-avatar {
+  border-radius: 50%;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.ProfileImagePromptModal-icon {
+  fill: white;
+  left: 50%;
+  margin: -28px 0 0 -28px;
+  position: absolute;
+  top: 50%;
+  width: 56px;
+}
+
+.ProfileImagePromptModal-button {
+  display: inline-block;
+  position: relative;
+
+  .touch-none &:hover .Button::after {
+    opacity: 0.1;
+  }
+}
+
+.ProfileImagePromptModal-uploadInput {
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}

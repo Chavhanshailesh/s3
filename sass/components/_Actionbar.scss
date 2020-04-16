@@ -1,0 +1,75 @@
+.ActionBar {
+  margin: 0 -15px;
+  text-align: center;
+}
+
+.ActionBar-item {
+  display: inline-block;
+  padding: 0 15px;
+
+  & + & {
+    border-left: 1px solid color(border);
+  }
+}
+
+.ActionBar-count {
+  color: color(secondary);
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.ActionBar-count--withModal {
+  text-decoration: underline;
+}
+
+.ActionBar-button,
+.ActionBar-iconContainer {
+  display: inline-block;
+  vertical-align: middle;
+  width: 28px;
+
+  .touch-none & {
+    transition: 0.2s fill;
+  }
+}
+
+.ActionBar-button--favorite:hover {
+  fill: darken(color(yellow), 10%);
+}
+
+.ActionBar-button--favorite.is-favorited {
+  fill: color(yellow);
+  stroke: darken(color(yellow), 10%);
+  stroke-width: 1px;
+}
+
+.ActionBar-text {
+  display: inline-block;
+  font-size: 13px;
+  margin-left: 7px;
+  position: relative;
+  top: 2px;
+}
+
+.ActionBar--small {
+  margin: 0 -10px;
+
+  .ActionBar-item {
+    padding: 0 10px;
+  }
+
+  .ActionBar-button,
+  .ActionBar-iconContainer {
+    width: 20px;
+  }
+}
+
+.ActionBar--left {
+  text-align: left;
+}
+
+.ActionBar--noBorder .ActionBar-item {
+  border: 0;
+}

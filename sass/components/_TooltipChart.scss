@@ -1,0 +1,68 @@
+
+.TooltipChart {
+  background: color(dark);
+  border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(black, 0.1);
+  color: white;
+  display: none;
+  padding: 11px 16px;
+  font-size: 12px;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  text-transform: none;
+  transform: translate(-50%, calc(-100% - 12px));
+  white-space: nowrap;
+  z-index: 3;
+
+  &::before {
+    background: color(dark);
+    bottom: -7px;
+    content: '';
+    font-size: 14px;
+    height: 8px;
+    left: 50%;
+    line-height: 1.25;
+    position: absolute;
+    transform: rotate(45deg) translateX(-4px);
+    width: 8px;
+    z-index: 2;
+  }
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.TooltipChart-title {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.TooltipChart-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.TooltipChart-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.TooltipChart-value {
+  padding-left: 20px;
+}
+
+.TooltipChart-color {
+  align-self: center;
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 12px;
+  margin-right: 6px;
+  width: 12px;
+}

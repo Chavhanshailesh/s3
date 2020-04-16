@@ -1,0 +1,34 @@
+
+
+.GlobalSearchMobile {
+  background: white;
+  bottom: 40px;
+  left: 0;
+  padding: 24px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 40px;
+
+  // iPhone X Notch in landscape
+  @supports (padding: min(0)) {
+    @media (orientation: landscape) {
+      padding-left: calc(env(safe-area-inset-left) + 24px); // unquote() becuase Sass has it's own max() function, we want the CSS one
+      padding-right: calc(env(safe-area-inset-right) + 24px);
+    }
+  }
+
+  .Header-wrapper--hasMobileLogo & {
+    top: 48px;
+  }
+
+  .touch.fixfixed & {
+    bottom: 0;
+    top: 0;
+    z-index: 12;
+  }
+}
+
+.GlobalSearchMobile .GlobalSearch {
+  display: inline-block;
+}

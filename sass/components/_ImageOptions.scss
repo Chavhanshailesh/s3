@@ -1,0 +1,149 @@
+.ImageOptions {
+  background: color(dark);
+  border-radius: 2px;
+  opacity: 0;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  transform: translateY(-8px);
+  transition: 0.3s opacity, 0.3s transform;
+  z-index: 2;
+
+  .touch &,
+  &.is-static,
+  .ImageOptions-trigger:hover & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ImageOptions--small {
+  right: 8px;
+  top: 8px;
+}
+
+.ImageOptions--largeOffset {
+  right: 24px;
+  top: 16px;
+}
+
+.ImageOptions--tiny {
+  right: 0;
+  top: 0;
+}
+
+.ImageOptions--left {
+  left: 16px;
+  right: auto;
+
+  &.ImageOptions--small {
+    left: 8px;
+  }
+
+  &.ImageOptions--tiny {
+    left: 0;
+    right: auto;
+  }
+}
+
+.ImageOptions-button {
+  cursor: pointer;
+  display: inline-block;
+  fill: white;
+  padding: 8px;
+  vertical-align: top;
+  width: 32px;
+
+  .ImageOptions--small & {
+    width: 28px;
+  }
+
+  .ImageOptions--tiny & {
+    display: block;
+    padding: 6px;
+    width: 20px;
+  }
+
+  &:hover {
+    fill: color(medium);
+  }
+
+  & + &,
+  .OptionsMenu + & {
+    border-left: 1px solid rgba(white, 0.175);
+  }
+}
+
+
+.ImageOptions-button--edit {
+  width: 31px;
+}
+
+.ImageOptions-button--new {
+  padding: 4px;
+}
+
+.ImageOptions-button--externalLink,
+.OptionsMenu .ImageOptions-button {
+  padding: 6px;
+}
+
+.ImageOptions-text {
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 14px;
+  padding: 8px;
+  position: relative;
+  vertical-align: top;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  .ImageOptions.is-static & {
+    cursor: auto;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.ImageOptions--count {
+  bottom: 5px;
+  line-height: 16px;
+  padding: 3px 5px;
+  pointer-events: none;
+  right: 5px;
+  top: auto;
+
+  .ImageOptions-text {
+    font-size: 11px;
+    padding: 0;
+    top: 1px;
+  }
+}
+
+.ImageOptions-iconContainer {
+  display: inline-block;
+  fill: white;
+  margin-right: 5px;
+  vertical-align: top;
+  width: 14px;
+
+  .ImageOptions-text + & {
+    margin-left: 11px;
+    position: relative;
+
+    &::after {
+      background: rgba(white, 0.2);
+      bottom: 2px;
+      content: "";
+      left: -6px;
+      position: absolute;
+      top: 2px;
+      width: 1px;
+    }
+  }
+}

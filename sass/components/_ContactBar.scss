@@ -1,0 +1,121 @@
+
+.ContactBar {
+  text-align: center;
+}
+
+.ContactBar-item {
+  display: inline-block;
+  padding: 0 20px;
+  position: relative;
+  text-align: center;
+  width: 158px;
+
+  .ContactBar--1 & {
+    width: 100%;
+  }
+
+  .ContactBar--2 & {
+    width: 260px;
+  }
+
+  .ContactBar--3 & {
+    width: 210px;
+  }
+
+  & + &::after {
+    background: color(border);
+    background: linear-gradient(transparent, rgba(black, 0.1), transparent);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1px;
+  }
+}
+
+.ContactBar-iconContainer {
+  margin: 0 auto 8px;
+  width: 28px;
+}
+
+.ContactBar-link {
+  color: inherit;
+  display: block;
+
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .ContactBar-value {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ContactBar-text {
+  color: color(secondary);
+  display: block;
+
+  .ContactBar-link:hover & {
+    color: color(primary);
+  }
+}
+
+.ContactBar-label {
+  display: none;
+}
+
+//
+// Modifiers
+
+.ContactBar--stacked {
+  .ContactBar-item {
+    border-bottom: 1px solid color(border);
+    display: block;
+    padding: 8px 8px 8px 44px;
+    text-align: left;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .ContactBar-iconContainer {
+    left: 0;
+    margin-top: -14px;
+    position: absolute;
+    top: 50%;
+  }
+
+  .ContactBar-label {
+    color: color(primary);
+    display: block;
+    font-weight: bold;
+  }
+}
+
+.ContactBar--iconOnly {
+  .ContactBar-iconContainer {
+    margin: 10px auto;
+    width: 20px;
+  }
+
+  .ContactBar-item {
+    padding: 0 10px;
+    width: auto;
+  }
+}

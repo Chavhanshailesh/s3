@@ -1,0 +1,11 @@
+.LoadingBlock {
+  background: white;
+  clear: both;
+  padding: 31px 15px;
+  position: relative;
+  text-align: center;
+}
+
+.LoadingBlock--hasBorder {
+  border: 1px solid $light;
+}

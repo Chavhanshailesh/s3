@@ -1,0 +1,40 @@
+.CoverImageOptions {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 1;
+}
+
+.CoverImageOptions-Button {
+  background: rgba(black, 0.2);
+  border-color: transparent;
+
+  &.ImageUploadButton {
+    fill: white;
+  }
+}
+
+.CoverImageOptions-dropdown {
+  position: absolute;
+  right: 105px;
+  top: 63px;
+  transform: translateX(50%);
+  min-width: 210px;
+  z-index: 2;
+
+  @include media(">medium") {
+    right: 20px;
+  }
+}
+
+
+.CoverImageOptions-trigger {
+  .CoverImageOptions {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &:hover .CoverImageOptions {
+    opacity: 1;
+  }
+}

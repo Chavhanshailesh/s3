@@ -1,0 +1,15 @@
+
+.SelectorResults-calendarContainer {
+  left: 8px;
+  position: absolute;
+  top: 6px;
+  width: 48px;
+
+  .Field:not(.Field--compact) & {
+    left: 16px;
+  }
+
+  .search & {
+    width: 32px;
+  }
+}

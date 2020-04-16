@@ -1,0 +1,45 @@
+
+.OrgChartLink {
+  background: color(pale);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+
+  @include media($breakpoint-smallDown) {
+    display: none;
+  }
+}
+
+.OrgChartLink-icon {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+//
+// Sizes
+
+.OrgChartLink--normal {
+  height: 21px;
+  width: 21px;
+
+  .OrgChartLink-icon {
+    padding: 5px;
+  }
+}
+
+.OrgChartLink--small {
+  height: 15px;
+  width: 15px;
+
+  .OrgChartLink-icon {
+    padding: 3px;
+  }
+}
+

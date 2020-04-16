@@ -1,0 +1,35 @@
+
+.UserPopover {
+  .Panel {
+    left: 50%;
+    margin-top: 10px;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 192px;
+    z-index: 4;
+
+    // A little help so you can hover slightly outisde the avatar
+    &::before {
+      bottom: 100%;
+      content: "";
+      display: block;
+      height: 60px;
+      left: 50%;
+      margin-left: -25px;
+      position: absolute;
+      width: 50px;
+    }
+
+    .touch & {
+      @media (max-width: 1024px) {
+        display: none !important;
+      }
+    }
+  }
+
+  .UserCard-favoriteContainer {
+    right: 10px;
+    top: 10px;
+  }
+}

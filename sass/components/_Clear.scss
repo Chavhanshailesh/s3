@@ -1,0 +1,68 @@
+.Clear {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid color(medium);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  height: 16px;
+  line-height: 0;
+  padding: 3px;
+  right: 0;
+  text-align: center;
+  top: 0;
+  user-select: none;
+  vertical-align: top;
+  width: 16px;
+}
+
+.Clear--noBorder {
+  background: none;
+  border: 0;
+  height: 20px;
+  padding-left: 0;
+  position: relative;
+  width: 20px;
+
+  .Icon {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &::after {
+    bottom: -2px;
+    content: '';
+    left: -2px;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+  }
+}
+
+.Clear .Icon {
+  @extend %transition;
+
+  fill: color(medium);
+  width: 8px;
+}
+
+.Clear:hover .Icon {
+  fill: color(secondary);
+}
+
+//
+// Modifiers
+
+.Clear--noBorder .Icon {
+  width: 10px;
+}
+
+.Clear--noTop {
+  padding-top: 0;
+}
+
+.Clear--lineIcon {
+  .Icon {
+    width: 20px;
+  }
+}

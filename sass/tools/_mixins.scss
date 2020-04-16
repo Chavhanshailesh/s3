@@ -1,0 +1,22 @@
+
+@mixin active-hover {
+  .touch-none &:hover,
+  .touch &:active {
+    @content;
+  }
+}
+
+@mixin absolute-cover-after($opacity: 1) {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: -1;
+    opacity: $opacity;
+  }
+}

@@ -1,0 +1,110 @@
+
+.ToggleGroup {
+  font-size: 0;
+  display: flex;
+}
+
+.ToggleGroup-help {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.ToggleGroup-item {
+  background: white;
+  border: 1px solid color(medium);
+  cursor: pointer;
+  font-size: 14px;
+
+  @include media("<=small") {
+    & + & {
+      border-top: none;
+    }
+  }
+
+  &--hasBorder {
+    padding: 5px 0;
+    position: relative;
+
+    &::after {
+      background-color: color(borderLight);
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 30px;
+      position: absolute;
+      right: 0;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  .ToggleGroup--light & {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  @include media(">small") {
+    display: inline-block;
+
+    .ToggleGroup--2:not(.ToggleGroup--stacked) & {
+      width: 50%;
+    }
+
+    .ToggleGroup--3:not(.ToggleGroup--stacked) & {
+      width: 33.33333%;
+    }
+
+    .ToggleGroup--10:not(.ToggleGroup--stacked) & {
+      width: 10%;
+    }
+
+    .ToggleGroup--2:not(.ToggleGroup--stacked) & + &,
+    .ToggleGroup--3:not(.ToggleGroup--stacked) & + & {
+      border-left: none;
+    }
+  }
+
+  .ToggleGroup--1 &,
+  .ToggleGroup--stacked & {
+    display: block;
+    width: 100%;
+  }
+
+  .ToggleGroup--stacked & + & {
+    border-left: 1px solid color(medium);
+    border-top: none;
+  }
+
+  .ToggleGroup--light & + & {
+    border-color: transparent;
+  }
+}
+
+.ToggleGroup--stacked {
+  display: inline-block;
+}
+
+// ToggleGroups that appear in a more standard radio and label list format
+.ToggleGroup--light.ToggleGroup--stacked {
+  .ToggleGroup-item {
+    cursor: inherit;
+  }
+
+  .ToggleField-input {
+    width: 20px;
+  }
+
+  .ToggleField-button {
+    top: 5px;
+  }
+
+  .ToggleField-label {
+    display: inline-block;
+    padding-bottom: 5px;
+    padding-left: 20px + 10px; // radio button size plus padding
+    padding-top: 5px;
+  }
+}

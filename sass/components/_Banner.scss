@@ -1,0 +1,157 @@
+.Banner {
+  margin-bottom: sketch-size(xxlarge);
+  text-align: center;
+  transition: margin 0.3s linear;
+
+  @include media($breakpoint-smallDown) {
+    margin: -16px -16px sketch-size(xxlarge);
+  }
+
+  @include media(">medium") {
+    margin-bottom: sketch-size(xxxlarge);
+  }
+}
+
+.Banner--fullscreen {
+  margin: 0 -16px sketch-size(xxlarge);
+
+  @include media(">medium") {
+    margin: 0 -33px sketch-size(xxxlarge);
+  }
+}
+
+.Banner-image-placeholder {
+  fill: color(medium);
+  width: 78px;
+}
+
+.Banner-coverImage {
+  background-color: color(pale);
+  display: block;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+
+  .Loader-item {
+    background: color(medium);
+  }
+}
+
+.Banner-imageContainer {
+  display: inline-block;
+  max-height: 1440px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+  vertical-align: top;
+  width: 100% !important;
+}
+
+.Banner-image {
+  border-radius: 2px;
+  margin: 0 auto;
+  width: auto;
+
+  // attempt to fix SV2-13247. Not confirmed.
+  will-change: content;
+
+  .Banner--fullscreen & {
+    border-radius: 4px 4px 0 0;
+    width: 100%;
+  }
+
+  .Banner--fullscreen.Banner--hasAdminBar & {
+    border-radius: 0;
+  }
+}
+
+.Banner-hiddenText {
+  display: none;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s margin;
+
+  .Banner--hidden & {
+    display: block;
+  }
+
+  .Banner-imageContainer:hover & {
+    margin-top: -24px;
+  }
+}
+
+.Banner-overlay {
+  background: color(dark);
+  border-radius: 2px;
+  bottom: 16px;
+  color: white;
+  left: 50%;
+  opacity: 0;
+  padding: 10px 20px 0;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, 16px);
+  transition: 0.3s opacity, 0.3s transform;
+  width: 255px;
+
+  .Banner-imageContainer:hover & {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+.Banner-figcaption {
+  color: color(tertiary);
+  font-size: 12px;
+  font-style: italic;
+  margin: 0 auto;
+  padding-top: 5px;
+  text-align: center;
+  word-wrap: break-word;
+
+  .Banner--fullscreen & {
+    margin: 0 16px;
+
+    @include media(">medium") {
+      margin: 0 32px;
+    }
+  }
+}
+
+.Banner--hidden {
+  max-width: 1120px;
+  padding: 0 16px;
+
+  @include media("<=small") {
+    padding: 0;
+  }
+
+  figcaption {
+    display: none;
+  }
+
+  img {
+    opacity: 0.2;
+    width: auto;
+  }
+
+  .Banner-imageContainer {
+    max-height: 200px;
+  }
+}
+
+.Banner-loading {
+  bottom: 0;
+  height: 4px;
+  position: absolute;
+  width: 100%;
+}
+
+.Banner-loading-bar {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}

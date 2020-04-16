@@ -1,0 +1,156 @@
+
+.Emblem {
+  background-color: color(pale);
+  border-radius: 2px;
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+  transform: translateZ(0);
+  vertical-align: top;
+  width: 100%;
+
+  &::after {
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    border-radius: inherit;
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .Image {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.Emblem a,
+.Emblem img {
+  border-radius: inherit;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.Emblem--round {
+  border-radius: 50%;
+}
+
+.Emblem--noImage {
+  background: color(fill);
+
+  &.Emblem--profile {
+    background-color: var(--branding-primary-color);
+  }
+}
+
+.Emblem-element {
+  background-position: center;
+  background-size: cover;
+  border-radius: inherit;
+  overflow: hidden;
+  width: 100%;
+}
+
+.Emblem-iconContainer {
+  fill: black;
+  left: 50%;
+  max-width: 22px;
+  opacity: 0.2;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+
+  .Emblem--large & {
+    max-width: 56px;
+  }
+
+  .Emblem--site & {
+    margin-top: 1px;
+    width: 60%;
+  }
+
+  .Emblem--notification & {
+    width: 70%;
+    max-width: 28px;
+  }
+}
+
+.Emblem-iconContainer--line {
+  max-width: 28px;
+}
+
+.Emblem-iconContainer--signpost {
+  margin-top: 2px;
+}
+
+.Emblem-iconContainer--icon-avatar {
+  i {
+    margin: 0 auto;
+  }
+}
+
+.Emblem-avatarIcon {
+  background: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  bottom: -10px;
+  display: block;
+  fill: color(secondary);
+  left: 12px;
+  pointer-events: none;
+  position: absolute;
+  width: 22px;
+  z-index: 2;
+
+  @include media(">small") {
+    bottom: -4px;
+    left: 24px;
+  }
+}
+
+.Emblem-avatarIcon--edit {
+  background: white;
+  bottom: -4px;
+  box-shadow: inset 0 0 0 1px color(medium);
+  padding: 4px;
+  z-index: 2;
+
+  @include media(">small") {
+    padding: 6px;
+    width: 30px;
+  }
+}
+
+//
+// Modifiers
+//
+
+.Emblem--avatar {
+  .Emblem-iconContainer {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+.Emblem--siteHeader {
+  @include media(">small") {
+    .p-primary-header &::after {
+      border-color: #ccc;
+    }
+
+    .p-dark-header &::after {
+      border-color: #ccc;
+    }
+  }
+}

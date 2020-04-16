@@ -1,0 +1,18 @@
+
+.ProgressBar {
+  position: relative;
+}
+
+.ProgressBar-value {
+  border-radius: inherit;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: width 1s;
+}
+
+.ProgressBar--rounded {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}

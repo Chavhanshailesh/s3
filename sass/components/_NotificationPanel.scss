@@ -1,0 +1,90 @@
+
+.NotificationPanel {
+  width: 452px;
+  top: 20px !important;
+  left: 16px !important;
+}
+
+.NotificationPanel-window {
+  max-height: 485px;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 2;
+}
+
+.NotificationPanel-footer {
+  background: white;
+  border-top: 1px solid color(border);
+
+  & > * {
+    display: inline-block;
+    padding: 7px;
+    font-size: 12px;
+  }
+}
+
+.NotificationPanel-groupHeader {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+  color: color(tertiary);
+  padding: 7px 7px;
+  border-bottom: 1px solid color(border);
+  background-color: color(fill);
+}
+
+.NotificationPanel-groupBadgeContainer {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.NotificationMobilePanel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 8;
+
+  @supports (height: max(0)) {
+    bottom: calc(56px + constant(safe-area-inset-bottom));
+    bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+
+  .NotificationPanel-window {
+    top: 40px;
+    bottom: 0;
+    position: absolute;
+    max-height: none;
+  }
+}
+
+.NotificationMobilePanel-header {
+  height: 40px;
+
+  h3 {
+    padding: 10px 0 10px 16px;
+    font-size: 16px;
+    line-height: 20px;
+    float: left;
+  }
+}
+
+.NotificationMobilePanel-close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+
+  .Icon {
+    width: 20px;
+    height: 20px;
+  }
+}

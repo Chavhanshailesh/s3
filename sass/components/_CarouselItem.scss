@@ -1,0 +1,141 @@
+$border-radius: 2px;
+
+.CarouselItem {
+  background: white;
+  border: 1px solid color(border);
+  border-radius: $border-radius;
+  overflow: hidden;
+  position: relative;
+
+  @include media("<=small") {
+    border-right: 0;
+  }
+}
+
+.CarouselItem-mediaContainer {
+  border-radius: $border-radius $border-radius 0 0;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  .CarouselItem--hasPortraitMedia & {
+    padding-bottom: 114.75%;
+  }
+
+  .Image {
+    position: static;
+  }
+
+  .Image--missing::after {
+    display: none;
+  }
+
+  .Image--square.Image--missing {
+    padding-bottom: 114.75%;
+  }
+}
+
+.CarouselItem-media {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.CarouselItem-stampContainer {
+  left: 8px;
+  position: absolute;
+  top: 8px;
+
+  .Stamp {
+    vertical-align: top;
+  }
+}
+
+//
+// Modifiers
+
+.CarouselItem--wide {
+  .CarouselItem-info {
+    border-top: 0;
+  }
+
+  .CarouselItem-mediaContainer {
+    @include media(">medium") {
+      padding-bottom: 37.5%;
+      width: 66.75%;
+    }
+  }
+}
+
+.CarouselItem--fullHeight {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.CarouselItem--event {
+  &.CarouselItem--wide {
+    .CalendarDayNew {
+      padding: size(large);
+      padding-bottom: size(medium);
+    }
+
+    .CalendarDayNew-eventWeekday {
+      font-size: 36px;
+      font-weight: 200;
+    }
+
+    .CalendarDayNew-eventDate {
+      font-size: 100px;
+      font-weight: 100;
+      line-height: 1;
+    }
+  }
+}
+
+// -----------------
+// CarouselItem-info
+// -----------------
+
+.CarouselItem-info {
+  background: white;
+  border-top: 1px solid color(border);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  height: 100px;
+  padding: 16px;
+}
+
+//
+// Modifiers
+
+.CarouselItem-info--brand {
+  background: color(brand);
+  border-top: 1px solid rgba(white, 0.2);
+  color: white;
+}
+
+.CarouselItem-info--album {
+  border-top: 0;
+}
+
+.CarouselItem-info--wide:not(.CarouselItem-info--brand) {
+  @include media(">medium") {
+    height: 100%;
+    padding: size(large);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33.25%;
+  }
+}
+
+.CarouselItem-info-metaContainer {
+  margin-top: auto;
+}

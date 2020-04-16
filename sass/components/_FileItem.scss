@@ -1,0 +1,131 @@
+
+.FileItem {
+  position: relative;
+}
+
+.FileItem-mediaContainer {
+  background-color: color(wash);
+  border: 1px solid color(borderLight);
+  border-radius: 2px;
+}
+
+.FileItem-mediaContainer-inner {
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.FileItem-extensionContainer {
+  width: 70px;
+}
+
+.FileItem-img {
+  width: 100%;
+}
+
+.FileItem-body {
+  padding-top: 7px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.FileItem-loading {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.FileItem-name {
+  color: color(primary);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.FileItem-footer {
+  margin-top: 4px;
+}
+
+.FileItem-providerIcon {
+  background: white;
+  border: 1px solid color(borderPanel);
+  border-radius: 2px;
+  bottom: 3px;
+  height: 24px;
+  padding: 2px;
+  position: absolute;
+  right: 3px;
+  width: 24px;
+}
+
+
+// Modifiers
+
+.FileItem--single {
+  background-color: color(wash);
+  border: 1px solid color(borderLight);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+
+  .FileItem-mediaContainer {
+    background: white;
+    flex: 0 0 85px;
+  }
+
+  .FileItem-extensionContainer {
+    width: 100%;
+  }
+
+  .FileItem-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    min-height: 85px;
+    min-width: 0;
+    padding: 0 0 0 10px;
+  }
+}
+
+.FileItem--small {
+  padding: 5px;
+
+  .FileItem-mediaContainer {
+    background: white;
+    flex: 0 0 48px;
+  }
+
+  .FileItem-body {
+    min-height: 48px;
+  }
+}
+
+.FileItem--noPreview.FileItem--single {
+  .FileItem-mediaContainer {
+    background: none;
+    border: 0;
+    flex: 0 0 70px;
+  }
+
+  .FileItem-body {
+    min-height: 70px;
+  }
+
+  .FileItem-mediaContainer-inner {
+    overflow: visible;
+    padding-bottom: 126%;
+  }
+}
+
+.FileItem--noPreview.FileItem--single.FileItem--small {
+  .FileItem-mediaContainer {
+    flex: 0 0 35px;
+  }
+
+  .FileItem-body {
+    min-height: 35px;
+  }
+}

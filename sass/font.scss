@@ -1,0 +1,30 @@
+
+@font-face {
+  font-family: "SimpplrFont";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url("/fonts/Graphik-Regular-Web.woff2") format("woff2"),
+    url("/fonts/Graphik-Regular-Web.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SimpplrFont";
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url("/fonts/Graphik-Medium-Web.woff2") format("woff2"),
+    url("/fonts/Graphik-Medium-Web.woff") format("woff");
+}
+
+// NOTE: This is the same font file as 'bold', it's a legacy thing because for Museo
+// (the old font), we used the 500 font as our bold and so we have font-weight: 500
+// in a lot places.
+@font-face {
+  font-family: "SimpplrFont";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url("/fonts/Graphik-Medium-Web.woff2") format("woff2"),
+    url("/fonts/Graphik-Medium-Web.woff") format("woff");
+}

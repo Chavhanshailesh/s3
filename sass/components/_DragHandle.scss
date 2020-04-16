@@ -1,0 +1,52 @@
+.DragHandle {
+  border-top: 2px solid color(medium);
+  cursor: move;
+  display: inline-block;
+  padding-top: 2px;
+  transition: 0.2s border-color;
+  width: 20px;
+
+  .Clear + & {
+    margin-left: 8px;
+  }
+}
+
+.DragHandle::before,
+.DragHandle::after {
+  border-top: 2px solid color(medium);
+  content: "";
+  display: block;
+  padding-top: 2px;
+  transition: 0.2s border-color;
+}
+
+.DragHandle:hover,
+.DragHandle:hover::before,
+.DragHandle:hover::after {
+  border-color: color(secondary);
+}
+
+.DragHandle--full,
+.DragHandle--top {
+  border: none;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  &::after,
+  &::before {
+    display: none;
+  }
+}
+
+.DragHandle--top {
+  height: 32px;
+}
+
+.DragHandle--clearOffset {
+  transform: translateY(3px);
+}

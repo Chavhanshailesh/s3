@@ -1,0 +1,36 @@
+
+.Celebration {
+  display: inline-block;
+  margin: 0 8px;
+  vertical-align: top;
+}
+
+.Celebration-date {
+  margin-bottom: 15px;
+}
+
+.Celebration-date-icon {
+  fill: currentColor;
+  width: 28px;
+}
+
+.Celebration-date-label {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.Celebration-date-icon,
+.Celebration-date-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Celebration-since {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.Celebration-type {
+  margin: 2px 0 10px;
+}

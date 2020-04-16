@@ -1,0 +1,17 @@
+
+.TileGridlink {
+  display: block;
+  padding-bottom: 100%;
+}
+
+.TileGridname {
+  left: 0;
+  max-height: 100%;
+  padding: 0 10px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  word-break: break-word;
+}

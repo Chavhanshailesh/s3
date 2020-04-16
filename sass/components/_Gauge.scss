@@ -1,0 +1,62 @@
+
+
+.Gauge {
+  display: inline-block;
+  position: relative;
+  padding: 0 8px;
+  vertical-align: top;
+  width: 25%;
+}
+
+.Gauge-inner {
+  padding-bottom: 100%;
+}
+
+.Gauge-svg {
+  width: 100%;
+}
+
+.Gauge-text {
+  padding: 16px;
+  text-align: center;
+}
+
+.Gauge-meter,
+.Gauge-value {
+  fill: none;
+  stroke-width: 1px;
+}
+
+.Gauge-meter {
+  stroke: color(pale);
+}
+
+.Gauge:nth-child(1) .Gauge-value {
+  stroke: #27b53b;
+}
+
+.Gauge:nth-child(2) .Gauge-value {
+  stroke: #2775b5;
+}
+
+.Gauge:nth-child(3) .Gauge-value {
+  stroke: #833ca2;
+}
+
+.Gauge:nth-child(4) .Gauge-value {
+  stroke: #ef951b;
+}
+
+.Gauge-number {
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.Gauge-property {
+  color: color(tertiary);
+  display: block;
+  line-height: 1;
+  font-size: 10px;
+  margin-top: 6px;
+}

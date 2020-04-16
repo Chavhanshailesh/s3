@@ -1,0 +1,188 @@
+.Modal-wrap {
+  background-color: rgba(black, 0.8);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  z-index: 7;
+  transition: all 0.4s linear 0s;
+
+  .modal-open & {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.Modal-mask {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 30px;
+  top: 0;
+}
+
+.Modal {
+  -webkit-overflow-scrolling: touch;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all 0.3s linear 0s;
+  visibility: hidden;
+  z-index: 7;
+
+  .touch.fixfixed & {
+    position: absolute;
+  }
+
+  .modal-open & {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.Modal-inner {
+  @include clearfix;
+
+  background-color: white;
+  border: 1px solid black;
+  margin: 16px;
+  max-width: 1120px;
+  position: relative;
+  transform: translate(0, -25%);
+  transition: transform 0.3s ease-out 0s;
+  z-index: 2;
+
+  .modal-open & {
+    transform: translate(0, 0);
+  }
+
+  @include media(">small") {
+    margin: 64px auto;
+    width: 80%;
+  }
+
+  .Modal--mini & {
+    @include media(">small") {
+      width: 480px;
+    }
+  }
+
+  .Modal--small & {
+    @include media(">small") {
+      width: 640px;
+    }
+  }
+
+  .Modal--medium & {
+    @include media(">medium") {
+      width: 60%;
+    }
+  }
+}
+
+.Modal-header {
+  @include clearfix;
+  @include line;
+
+  color: #fff;
+  font-weight: bold;
+  min-height: 48px;
+  padding: 14px 56px 14px 16px;
+}
+
+.Modal-closeContainer {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+
+  &::after {
+    background-color: rgba(black, 0.1);
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.2s opacity;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.Modal-closeContainer .Icon {
+  fill: white;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  z-index: 2;
+}
+
+.Modal-heading {
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.Modal-content {
+  @include clearfix;
+
+  padding: 16px;
+}
+
+.Modal-content + .Modal-content {
+  border-top: 1px solid color(border);
+}
+
+.Modal-content--forms {
+  background: color(wash);
+  padding: 24px 24px 8px;
+
+  .Field {
+    background-color: transparent; // for when a field has an error
+  }
+}
+
+.Modal-content--noPaddingbottom {
+  padding-bottom: 0;
+}
+
+.Modal-content--noPaddingTop {
+  padding-top: 0;
+}
+
+.Modal-dropzoneContainer {
+  margin-top: -8px;
+
+  @include media(">small") {
+    margin-top: 0;
+    padding: 8px 16px 16px;
+  }
+}
+
+.Modal-typeToConfirm {
+  .Field-input {
+    text-transform: uppercase;
+    &::-moz-placeholder { text-transform: initial; }
+    &:-ms-input-placeholder { text-transform: initial; }
+    &::-webkit-input-placeholder { text-transform: initial; }
+  }
+}

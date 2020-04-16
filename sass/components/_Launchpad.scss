@@ -1,0 +1,101 @@
+.Launchpad {
+  cursor: default;
+  white-space: normal;
+
+  .no-results {
+    border: none;
+  }
+}
+
+.Launchpad-header {
+  width: 100%;
+  z-index: 2;
+}
+
+.Launchpad-search {
+  background: color(fill);
+  border-bottom: 1px solid color(border);
+  padding: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.Launchpad-main {
+  background: white;
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 284px;
+  position: relative;
+  z-index: 2;
+}
+
+.Launchpad-main--links {
+  max-height: 333px;
+}
+
+.Launchpad-item--list {
+  padding: 5px;
+}
+
+.Launchpad-link {
+  display: block;
+  height: 94px;
+  position: relative;
+  transition: 0.2s background;
+
+  .Launchpad-item.is-active & {
+    background: color(fill);
+  }
+
+  .Launchpad-item--list & {
+    border-radius: 2px;
+    color: color(secondary);
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    height: auto;
+    padding: 5px 11px; // 11 becuase the parent has 5px, making 16px - one of our sizes
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.Launchpad-image {
+  left: 50%;
+  margin: 0 auto;
+  max-height: 40px;
+  max-width: 110px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+
+  .Launchpad-list--squareLogos & {
+    max-height: 50px;
+  }
+}
+
+.Launchpad-name {
+  left: 0;
+  max-height: 100%;
+  padding: 0 10px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  word-break: break-word;
+
+  .Launchpad-item--list & {
+    padding: 0;
+    position: relative;
+    transform: none;
+    text-align: left;
+  }
+}

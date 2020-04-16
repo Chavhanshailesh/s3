@@ -1,0 +1,1053 @@
+.Field {
+  background: white;
+  font-size: 0;
+  min-height: 48px;
+  position: relative;
+}
+
+.Field--compact {
+  min-height: 32px;
+}
+
+.Field--minimal {
+  text-align: left;
+  width: 100%;
+}
+
+.Field--noBorder {
+  .fr-toolbar {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+  }
+
+  .fr-wrapper {
+    border: 0 !important;
+  }
+
+  // mobile reply
+  .fr-element {
+    border-top: 0 !important;
+  }
+}
+
+.Field--inToolbar {
+  float: left;
+  margin-right: -1px;
+}
+
+.Field[data-field-name="navigation_linkColor"] {
+  margin-top: 48px;
+  position: relative;
+
+  &::after {
+    content: 'Link styles:';
+    top: -32px;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+  }
+}
+
+input[type=number].Field-input,
+input[type=tel].Field-input,
+input[type=password].Field-input,
+input[type=text].Field-input,
+.Field-textarea,
+.Field-search {
+  border: 1px solid color(formBorder);
+  border-radius: 4px;
+  font-size: 14px;
+  height: 48px;
+  padding: 16px;
+  text-indent: 0;
+  transition: 0.2s border-color, 0.2s padding;
+  width: 100%;
+
+  .has-error & {
+    border-color: color(red) !important;
+  }
+
+  .Field--inToolbar & {
+    border: solid color(medium);
+    border-width: 0 1px;
+    font-size: 12px;
+    padding-right: 32px !important;
+    width: 118px;
+  }
+
+  .Field.focus &,
+  &:focus {
+    border-color: color(brand);
+  }
+
+  .Field--inToolbar.focus & {
+    border-color: color(medium);
+  }
+
+  &:focus,
+  .Field--staticLabel & {
+    padding: 24px 16px 8px;
+
+    .Field--hasIcon > & {
+      padding-right: 40px;
+    }
+  }
+}
+
+.Field-input--dayPicker {
+  caret-color: transparent;
+}
+
+input[type="number"].Field-input {
+  -moz-appearance: textfield;
+}
+
+// This cannot be nested in the above becuase browsers that don't support :placeholder-shown will ignore EVERY rule in a
+// comma seperated list that containa :placeholder-shown.
+// stylelint-disable no-duplicate-selectors
+input[type=password].Field-input,
+input[type=number].Field-input,
+input[type=tel].Field-input,
+input[type=text].Field-input,
+.Field-textarea,
+.Field-search {
+  &:not(:placeholder-shown) {
+    padding: 24px 16px 8px;
+  }
+}
+
+.Field--color .Field-input {
+  padding: 24px 46px 8px 26px !important;
+}
+
+.Field--color.Field--hasNoInternalLabel .Field-input {
+  padding: 8px 46px 8px 26px !important;
+}
+
+.Field--hasNoInternalLabel input[type=number],
+.Field--hasNoInternalLabel input[type=text] {
+  padding: 0 0 0 16px !important;
+}
+
+.Field-search {
+  &:not(:placeholder-shown),
+  .Field--staticLabel & {
+    padding: 16px;
+  }
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+.Field-textarea {
+  min-height: 80px;
+  overflow: hidden;
+
+  &:focus,
+  &:not(:placeholder-shown),
+  .Field--staticLabel & {
+    padding: 32px 16px 8px;
+
+    .Field--hasIcon & {
+      padding-right: 40px;
+    }
+  }
+}
+
+.Field--compact input[type=tel],
+.Field--compact input[type=password],
+.Field--compact input[type=text] {
+  height: 32px;
+  padding: 8px;
+
+  &:not(:placeholder-shown) {
+    padding: 8px;
+  }
+}
+
+.Field--compact .Field-textarea {
+  padding: 8px 16px 8px;
+}
+
+.Field--font .Field-textarea {
+  min-height: 200px;
+}
+
+.Field-label {
+  color: color(tertiary);
+  font-size: 12px;
+  left: 12px;
+  line-height: 1;
+  opacity: 0;
+  padding: 0 4px;
+  pointer-events: none;
+  position: absolute;
+  right: 16px;
+  text-align: left;
+  top: 16px;
+  transition: 0.2s;
+
+  .Field--splitLeft & {
+    z-index: auto;
+  }
+
+  .Field-input:focus ~ & {
+    z-index: 4;
+  }
+
+  .Field--staticLabel.Field--compact & {
+    left: 6px;
+    top: 11px;
+  }
+
+  .Field.full:not(.Field--staticLabel) & {
+    display: none;
+  }
+}
+
+// Show and hide labels/placeholders as values are entered.
+// Behaviour differs for IE and Edge as they don't support :placeholder-shown
+input[type=text].Field-input,
+input[type=tel].Field-input,
+input[type=password].Field-input,
+.Field-textarea {
+
+  // Remove the placeholder when focusing, show the label
+  &:focus {
+    @include placeholder-text(transparent, 0);
+
+    & + .Field-label {
+      opacity: 1;
+      top: 8px;
+      z-index: 2;
+    }
+  }
+
+  // For browsers that support it, add the placeholder back, and hide the label
+  &:placeholder-shown {
+    @include placeholder-text($primary, 0.6);
+
+    &:focus + .Field-label {
+      opacity: 0;
+    }
+  }
+
+  .Field:not(.Field--staticLabel) &:placeholder-shown {
+    padding: 16px;
+  }
+
+  // For browsers that support it, put the label up the top when the field has a value
+  &:not(:placeholder-shown) {
+    & + .Field-label {
+      opacity: 1;
+      top: 8px;
+      z-index: 2;
+    }
+  }
+}
+
+.Field--staticLabel .Field-label {
+  opacity: 1;
+  top: 8px;
+  z-index: 2;
+}
+
+.Field-label-note {
+  float: right;
+}
+
+.Field-select {
+  -webkit-appearance: none;
+  background: white;
+  border-radius: 0;
+  color: color(primary);
+  font-size: 14px;
+  width: 100%;
+
+  .Field--compact & {
+    min-height: 32px;
+  }
+}
+
+.Field-nativeSelect .NativeSelect {
+  width: 100%;
+  min-height: 48px;
+
+  .Field--compact & {
+    min-height: 32px;
+  }
+}
+
+.Field .NativeSelect {
+  font-size: 14px;
+  padding: 21px 42px 7px 15px;
+  background-position-x: calc(100% - 15px);
+}
+
+.Field .DayPicker-Caption .NativeSelect {
+  padding: 7px 21px 7px 7px;
+  -webkit-padding-end: 28px;
+  background-position: calc(100% - 9px) center;
+}
+
+.Field.Field--hasLabelAbove .NativeSelect {
+  padding: 15px 0 15px 15px;
+}
+
+.Field-iconContainer {
+  color: color(medium);
+  fill: currentColor;
+  margin-right: 16px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 16px;
+  width: 16px;
+  z-index: 2;
+
+  .Field--compact & {
+    margin-right: 12px;
+  }
+
+  .Field--inToolbar & {
+    top: 8px;
+  }
+}
+
+.Field-iconContainer--navigatedown {
+  fill: color(secondary);
+  top: 20px;
+  width: 10px;
+
+  .Field--compact & {
+    top: 13px;
+    width: 8px;
+  }
+}
+
+.Field-iconContainer--link {
+  width: 18px;
+}
+
+.Field-iconContainer--location {
+  top: 14px;
+  width: 12px;
+}
+
+.Field-iconContainer--cell {
+  top: 14px;
+  width: 12px;
+}
+
+.Field-iconContainer--search {
+  .Field--compact & {
+    top: 9px;
+    width: 14px;
+  }
+}
+
+.Field-iconContainer--calendar {
+  .Field-input:focus ~ & {
+    z-index: 2;
+  }
+}
+
+.Field-iconContainer--nonLegacy {
+  bottom: 10px;
+  margin-right: 10px;
+  top: 10px;
+  width: 28px;
+}
+
+.not-full:not(.has-options) .Field-iconContainer--hideNoOptions {
+  display: none;
+}
+
+.Field-deleteContainer {
+  cursor: pointer;
+  fill: color(medium);
+  margin-right: 16px;
+  position: absolute;
+  right: 28px;
+  top: 18px;
+  width: 10px;
+  z-index: 2;
+
+  &:hover {
+    fill: color(tertiary);
+  }
+}
+
+.Field-loaderContainer {
+  margin-right: 16px;
+  pointer-events: none;
+  position: absolute;
+  right: 28px;
+  top: 16px;
+  width: 16px;
+  z-index: 2;
+}
+
+.Field-error {
+  color: color(red);
+  font-size: 14px;
+  position: relative;
+  top: 4px;
+}
+
+.Field-info {
+  color: color(tertiary);
+  font-size: 14px;
+  position: relative;
+  top: 4px;
+}
+
+.Field-duo {
+  position: relative;
+
+  input[type=text].Field-input {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .selectize-input {
+    border-radius: 0 4px 4px 0;
+  }
+
+  .Field {
+    .selectize-control::after {
+      border-radius: 0;
+    }
+  }
+
+  &.Field-duo--noTime {
+    input[type=text].Field-input {
+      border-radius: 4px;
+    }
+  }
+}
+
+.Field--splitLeft {
+  transition: 0.3s;
+  width: calc(100% - 111px);
+
+  input[type="text"].Field-input {
+    padding: 24px 16px 8px;
+
+    &:focus {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:focus + .Field-label {
+      z-index: 2;
+    }
+  }
+
+  .Field-duo--noTime & {
+    transition: 0.3s;
+    width: 100%;
+  }
+}
+
+.Field--splitRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 112px;
+
+  .Field-select {
+    padding: 16px 8px;
+  }
+
+  .Field-duo--noTime &,
+  .Field-duo--noTime & input {
+    transition: 0.3s 0.3s;
+    visibility: hidden;
+  }
+}
+
+.Field-hash {
+  color: color(tertiary);
+  font-size: 16px;
+  left: 16px;
+  pointer-events: none;
+  position: absolute;
+  top: 16px;
+}
+
+.Field-inputWrapper {
+  position: relative;
+
+  .Field--number & {
+    max-width: 180px;
+  }
+
+  .Field--hasIcon & .Field-input {
+    padding-right: 40px !important;
+  }
+}
+
+.Field-color {
+  background-color: color(brand);
+  border-left: 1px solid color(medium);
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  height: 46px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 40px;
+}
+
+.Field-clearContainer {
+  position: absolute;
+  right: 56px;
+  top: 25px;
+
+  .Field--hasNoInternalLabel & {
+    top: 16px;
+  }
+}
+
+// Whereas Field--compact is about reducing the size and padding,
+// Field--minimal is a field that doesn't have floating labels or icons or any other junk
+// It just so happens that Field--minimal is smaller than Field--compact
+.Field--minimal {
+  .Field-textarea {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px;
+    min-height: 32px;
+    overflow: hidden;
+  }
+}
+
+.Field--minimal.Field--compact {
+  .Field-textarea {
+    padding: 4px 8px;
+    text-align: center;
+  }
+}
+
+.Field--minimal.Field--large {
+  .Field-textarea {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    min-height: 46px;
+    padding: 15px 8px;
+    overflow: auto !important;
+    text-align: left;
+  }
+}
+
+.Field--minimal.Field--pageTitle {
+  .Field-textarea {
+    border-width: 0 0 1px;
+    color: color(darkest);
+    padding: 0;
+
+    @include media(">small") {
+      font-size: 36px;
+    }
+  }
+}
+
+.Field--minimal.Field--compact {
+  .Field-textarea {
+    height: 32px;
+  }
+}
+
+.Field .NativeSelect {
+  width: 100%;
+}
+
+.Field.has-error .NativeSelect {
+  border-color: color(red) !important;
+}
+
+.Field--reactSelect {
+  input[type="text"] {
+    min-height: 30px;
+    height: auto !important;
+    text-indent: 0 !important;
+  }
+}
+
+// Dutty Selectize overrides
+
+.Field {
+  .selectize-input > input {
+    height: 0; // stop content jumping when the selectize is focused. This input is hidden off page
+  }
+
+  .multi .selectize-input > input {
+    height: 24px;
+  }
+
+  &:not(.Field--compact) .selectize-input > input {
+    height: 30px;
+  }
+
+  // Stop dropdown clearing in safari SV2-15084
+  &.Field--noTextInput .selectize-input > input {
+    height: 0 !important;
+  }
+
+  .item {
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .multi .selectize-input {
+    min-height: 48px;
+    padding: 7px 16px 0 7px;
+  }
+
+  &--hasIcon .multi .selectize-input {
+    padding-right: 40px;
+  }
+
+  &.Field--compact .multi .selectize-input {
+    min-height: 32px;
+    padding: 3px 8px 0 8px;
+  }
+
+  &.Field--staticLabel .multi .selectize-input {
+    padding: 19px 40px 0 16px;
+  }
+
+  &.Field--staticLabel .multi .selectize-input.has-items {
+    padding: 28px 40px 0 16px;
+  }
+
+  &.Field--staticLabel .multi.selectize-control {
+    border: 0;
+    height: auto;
+    min-height: 48px;
+    padding: 0;
+  }
+
+  &.focus .selectize-input {
+    border-color: color(brand);
+  }
+
+  .dropdown .Field-label {
+    left: 16px;
+  }
+
+  .single .selectize-input {
+    height: 48px;
+    padding: 8px 32px 8px 16px;
+
+    .item {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .item + input {
+      top: -10px;
+      position: relative;
+    }
+  }
+
+  &.Field--compact .single .selectize-input input {
+    height: 30px;
+  }
+
+  .Strip-fieldContainer & .selectize-input,
+  .FeedOptions & .single .selectize-input {
+    min-width: 136px;
+  }
+
+  &.Field--soloSelect .single .selectize-input,
+  &.Field--full .single .selectize-input,
+  .Field-duo & .single .selectize-input {
+    min-width: 0;
+  }
+
+  @include media("<=1024px") {
+    .dropdown > .selected {
+      display: inline-block;
+      height: 100%;
+      left: 0;
+      line-height: 1;
+      padding: 16px 15px 0;
+      position: absolute;
+      top: 0;
+    }
+
+    &.Field--compact .dropdown > .selected {
+      padding: 8px 8px 0;
+    }
+
+    &.Field--staticLabel .dropdown > .selected {
+      max-width: 100%;
+      padding: 24px 32px 0 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &.Field--soloSelect .dropdown > .selected {
+      position: relative;
+      padding-right: 24px;
+    }
+  }
+
+  &.Field--compact .single .selectize-input {
+    height: 32px;
+    padding: 0 32px 0 8px;
+  }
+
+  .selectize-control::after {
+    border: 1px solid color(brand);
+    border-radius: 4px;
+    bottom: 0;
+    content: '';
+    display: none;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+  }
+
+  &.focus .selectize-control::after {
+    display: block;
+  }
+
+  &.has-error .selectize-control::after {
+    border-color: color(red);
+  }
+
+  @media screen and (min-width: 0\0) {
+    .selectize-control::after {
+      display: none !important;
+    }
+  }
+
+  &.Field--compact .single .item {
+    line-height: 32px;
+  }
+
+  &.has-error .selectize-input {
+    border-color: color(red);
+  }
+
+  .selectize-control {
+    position: static;
+  }
+
+  .selectize-dropdown {
+    height: auto;
+    padding: 0;
+    margin-top: -1px;
+  }
+
+  .dropdown {
+    display: block;
+    position: relative;
+    min-height: 48px;
+  }
+
+  &.Field--compact .dropdown {
+    min-height: 32px;
+  }
+
+  &.full .dropdown {
+    @include media("<=medium") {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  .dropdown--noGrow .selectize-dropdown {
+    max-width: 100% !important;
+  }
+
+  .dropdown select {
+    @include media("<=medium") {
+      height: 100%;
+      z-index: 2;
+    }
+  }
+
+  .dropdown.disabled {
+    background-color: color(light);
+    color: color(secondary);
+  }
+
+  .selectize-input::before,
+  .selectize-input::after {
+    display: none !important;
+  }
+
+  .selectize-dropdown-content .option,
+  .selectize-dropdown-content .create {
+    padding-left: 16px;
+  }
+
+  &.Field--compact .selectize-dropdown-content .option,
+  &.Field--compact .selectize-dropdown-content .create {
+    padding-left: 8px;
+  }
+
+  .clear {
+    right: 28px;
+    top: 10px;
+    width: 30px;
+  }
+
+  .item .clear {
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    width: 16px;
+  }
+
+  .selectize-control .selectize-input.disabled + .clear {
+    display: none;
+  }
+
+  &.Field--compact .clear {
+    right: 20px;
+    top: 1px;
+  }
+
+  &.Field--compact .selectize-control > .clear .ss-standard {
+    font-size: 10px;
+  }
+
+  // Field icon
+
+  .dropdown + .Field-label + .Field-iconContainer--search {
+    display: none;
+  }
+
+  .Field-iconContainer--search + .Field-iconContainer--navigatedown {
+    display: none;
+  }
+
+  .dropdown + .Field-label + .Field-iconContainer--search + .Field-iconContainer--navigatedown {
+    display: block;
+  }
+
+  // Content selector
+
+  &:not(.Field--compact) .selectize-dropdown-content .excerpt {
+    padding-left: 72px;
+  }
+
+  &:not(.Field--compact) .selectize-dropdown-content .media {
+    left: 16px;
+  }
+
+  .excerpt p {
+    display: none;
+  }
+
+  &:not(.Field--compact) .at-mention .mention,
+  &:not(.Field--compact) .selectize-dropdown-content .mention {
+    padding-left: 64px;
+  }
+
+  .selectize-control.plugin-remove_button.single .items [data-value] {
+    padding-right: 0 !important;
+  }
+
+  .hasDatepicker {
+    padding-right: 60px !important;
+  }
+}
+
+.Field--staticLabel {
+  .single .selectize-input {
+    padding: 16px 32px 0 16px;
+  }
+}
+
+.Field--splitRight {
+  .single .selectize-input {
+    height: 48px;
+    padding: 8px 8px;
+  }
+
+  select[disabled] + .selectize-control {
+    background: white;
+  }
+}
+
+.Field--contentSelector .clear {
+  display: none !important;
+}
+
+.Field--contentSelector .Field-iconContainer--search {
+  display: block !important;
+}
+
+.Field--contentSelector.disabled .selectize-input {
+  background-color: color(light) !important;
+  border-color: color(medium) !important;
+  color: color(secondary) !important;
+}
+
+.Field.disabled .Field-iconContainer--navigatedown {
+  fill: color(tertiary);
+}
+
+.Field--contentSelector.is-maxWidth .selectize-dropdown {
+  max-width: 100% !important;
+}
+
+.Field--noBackground {
+  background-color: transparent;
+}
+
+.Field--hasLabelAbove {
+  .Field-label {
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    opacity: 1;
+    padding: 0;
+    pointer-events: initial;
+    position: static;
+  }
+  // If this component has ‘Field--hasLabelAbove’ class then
+  // field input placeholder will be vertical align centre
+  div[class$="placeholder"] {
+    top: 24%;
+  }
+
+  // specificity hack because of .Field.full:not(.Field--staticLabel) .Field-label
+  &.full .Field-label.Field-label {
+    display: block;
+  }
+
+  .Field-textarea {
+    padding-top: 8px;
+  }
+
+  .Field-label-note {
+    color: color(secondary);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+}
+
+.dropdown--noBorder {
+  // selectize only runs on large screens
+  @include media(">1024px") {
+    &,
+    .selectize-input {
+      border: 0;
+    }
+
+    &,
+    .selectize-control {
+      background-color: transparent;
+    }
+
+    .selectize-dropdown {
+      top: 40px !important;
+    }
+
+    .selectize-dropdown::after {
+      z-index: -1;
+    }
+  }
+
+  .selectize-dropdown {
+    border-radius: 2px;
+
+    // match the arrow color
+    &::after {
+      border-right-color: color(medium);
+      border-top-color: color(medium);
+    }
+  }
+
+  .selectize-input {
+    min-width: auto !important;
+
+    @include media(">medium") {
+      padding-right: 16px !important;
+      padding-left: 0 !important;
+    }
+  }
+
+  .selectize-dropdown-content {
+    padding: 10px 5px;
+  }
+
+  .selectize-dropdown-content .option {
+    color: color(secondary);
+    padding: 4px 15px;
+
+    // yuk
+    &.option.option {
+      padding-right: 15px !important;
+    }
+  }
+
+  .item {
+    font-weight: 500;
+  }
+}
+
+.dropdown--selectize-touch {
+  @media (max-width: 1024px) {
+    &.dropdown {
+      border: 0;
+      padding: 0;
+    }
+
+    .selectize-select {
+      display: block;
+    }
+
+    .selectized,
+    .selected {
+      display: none !important;
+    }
+  }
+}
+
+// remove faux border
+.Field.focus .dropdown--noBorder .selectize-control::after {
+  display: none;
+}
+
+// Really sorry about this https://simpplr.atlassian.net/browse/SV2-15683
+.Strip-fieldContainer .Field .dropdown--safari {
+  .selectize-input {
+    min-width: 161px !important;
+  }
+}
+
+.Field-countryCode {
+  .selectize-control {
+    min-width: 250px;
+
+    .selectize-input {
+      padding-right: 35px;
+    }
+  }
+}
+
+.Field--staticLabelWithImage {
+  .single .selectize-input {
+    display: flex;
+
+    &.full {
+      padding: 0 32px 0 8px;
+    }
+  }
+}

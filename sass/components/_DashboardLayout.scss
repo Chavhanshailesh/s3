@@ -1,0 +1,14 @@
+.DashboardLayout-column {
+  position: relative;
+
+  &::after {
+    background-color: transparent;
+    border-right: 1px dashed color(medium);
+    bottom: 16px;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+  }
+}

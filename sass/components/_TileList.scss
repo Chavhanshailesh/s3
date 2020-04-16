@@ -1,0 +1,120 @@
+
+.TileList {
+  padding: 0 16px;
+}
+
+.TileList-item {
+  border-bottom: 1px solid rgba(black, 0.075);
+  padding: 10px 0;
+  position: relative;
+
+  &:last-child {
+    border: 0;
+  }
+
+  .ListingItem {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    width: calc(100% - 40px);
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.TileList-item-download {
+  display: none;
+  padding: 0 0 0 12px;
+  vertical-align: middle;
+  width: 40px;
+
+  .Tooltip {
+    display: block;
+    fill: color(tertiary);
+  }
+
+  .TileList-item:hover & {
+    display: inline-block;
+  }
+}
+
+.TileList-link {
+  color: inherit;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+
+    .type--h6 {
+      text-decoration: underline;
+    }
+  }
+}
+
+.TileList-iconContainer {
+  fill: color(icon);
+  margin-top: -8px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 16px;
+}
+
+.TileList-item--hasIcon .TileList-link {
+  padding-right: 40px;
+}
+
+.TileList-body {
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 5px 0;
+}
+
+.TileList-link--showcase {
+  display: flex;
+
+  .TileList-link {
+    flex-basis: 100%;
+  }
+
+  .Image {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 180px;
+  }
+
+  .TileList-link-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+
+    .type--h6 {
+      width: 100%;
+    }
+  }
+
+  .CampaignItem-textOnly {
+    .Image--missing {
+      background: transparent;
+    }
+
+    .Image-missingIconContainer {
+      fill: color(white);
+      opacity: 1;
+    }
+  }
+}
+
+.TileList-link--showcase.TileList-link--narrow {
+  .Image {
+    width: 100px;
+  }
+
+  .TileList-body {
+    padding: 0;
+  }
+}

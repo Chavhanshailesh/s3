@@ -1,0 +1,59 @@
+.PlayButton {
+  background: rgba(black, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  fill: white;
+  height: 64px;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s background;
+  width: 64px;
+
+  .Icon {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    width: 64px;
+  }
+}
+
+.PlayButton-trigger {
+  cursor: pointer;
+}
+
+.PlayButton-trigger--darkBackground {
+  background: black;
+}
+
+.PlayButton.PlayButton-trigger {
+  pointer-events: auto;
+}
+
+.PlayButton-trigger:hover .PlayButton {
+  background: rgba(black, 0.8);
+}
+
+.PlayButton.PlayButton-trigger:hover {
+  background: rgba(black, 0.8);
+}
+
+
+.PlayButton--large {
+  @include media(">medium") {
+    height: 84px;
+    width: 84px;
+  }
+}
+
+.PlayButton--small {
+  height: 48px;
+  width: 48px;
+
+  .Icon {
+    width: 40px;
+  }
+}

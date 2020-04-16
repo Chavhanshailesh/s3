@@ -1,0 +1,19 @@
+.FieldSet-remove {
+  width: 20px;
+  vertical-align: top;
+
+  &:hover {
+    fill: color(red);
+  }
+}
+
+.FieldSet--bordered {
+  border: 1px solid color(formBorder);
+  background-color: color(wash);
+  border-radius: 4px;
+  padding: sketch-size(medium);
+
+  .Field {
+    background-color: transparent; // for when a field has error text
+  }
+}

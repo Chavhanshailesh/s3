@@ -1,0 +1,114 @@
+
+.AlbumPreview {
+  cursor: pointer;
+  display: block;
+  margin-left: -2px;
+
+  &.AlbumPreview--portrait {
+    margin-left: 0;
+  }
+}
+
+.AlbumPreview-first {
+  border-left: 2px solid white;
+  display: inline-block;
+  vertical-align: top;
+  width: 81.25%;
+
+  .AlbumPreview--portrait & {
+    border-left: none;
+    width: 100%;
+  }
+}
+
+.AlbumPreview-first--large {
+  width: 100%;
+}
+
+.AlbumPreview-imageList {
+  border-left: 2px solid white;
+  display: inline-block;
+  vertical-align: top;
+  width: 18.75%;
+
+  .AlbumPreview--portrait & {
+    border-left: none;
+    border-top: 2px solid white;
+    width: 100%;
+  }
+
+  .AlbumPreview--large & {
+    border-width: 5px;
+  }
+}
+
+.AlbumPreview-image {
+  display: block;
+  background-color: color(pale);
+  background-size: cover;
+  background-position: center center;
+  border-radius: 2px;
+  position: relative;
+  padding-bottom: 100%;
+
+  .AlbumPreview-first & {
+    padding-bottom: 69.25%;
+  }
+
+  .AlbumPreview-first--large & {
+    padding-bottom: 56%;
+  }
+
+  .AlbumPreview--portrait & {
+    padding-bottom: 82%;
+  }
+
+  .AlbumPreview--portrait .AlbumPreview-first--large & {
+    padding-bottom: 116.5%;
+  }
+
+  .AlbumPreview-imageList & + & {
+    border-top: 2px solid white;
+  }
+
+  .AlbumPreview--portrait .AlbumPreview-imageList & {
+    display: inline-block;
+    padding-bottom: 33.33333%;
+    vertical-align: top;
+    width: 33.33333%;
+  }
+
+  .AlbumPreview--portrait .AlbumPreview-imageList & + & {
+    border-top: none;
+    border-left: 2px solid white;
+  }
+
+  .AlbumPreview--large .AlbumPreview-imageList & + & {
+    border-width: 7px;
+  }
+
+  .Carousel & {
+    border-radius: 0;
+  }
+}
+
+.AlbumPreview-imageOverlay {
+  background: rgba(black, 0.5);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.AlbumPreview-count {
+  -webkit-font-smoothing: none;
+  color: white;
+  font-weight: 500;
+  left: 0;
+  margin-top: -8px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}

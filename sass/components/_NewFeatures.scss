@@ -1,0 +1,82 @@
+.NewFeatures {
+  padding-bottom: 30px;
+}
+
+.NewFeatures-title {
+  margin: 15px 0 10px;
+}
+
+.NewFeatures-body {
+  min-height: 155px;
+  padding: 25px 30px 0;
+}
+
+.NewFeatures-dots {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.NewFeatures-dot {
+  background: color(neutral);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 7px;
+  margin: 0 4px;
+  transition: 0.1s;
+  vertical-align: middle;
+  width: 7px;
+
+  &:hover {
+    background: color(secondary);
+  }
+}
+
+.NewFeatures-buttonWrapper {
+  margin-top: 20px;
+  padding-right: 30px;
+  text-align: right;
+}
+
+.NewFeatures .Button {
+  min-width: 96px;
+}
+
+.NewFeatures-image {
+  padding-bottom: 75%;
+  position: relative;
+
+  svg {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.NewFeatures-modalListingBox {
+  max-height: 253px;
+  overflow-y: auto;
+  border: 1px solid $light;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.NewFeatures-modalListing {
+  li {
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      background: black;
+      content: '';
+      display: block;
+      top: 8px;
+      border-radius: 50%;
+      left: 0;
+    }
+  }
+}

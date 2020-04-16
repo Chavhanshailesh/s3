@@ -1,0 +1,79 @@
+
+@each $name, $size in $sizes {
+  .u-marg-b--#{$name} {
+    margin-bottom: $size !important;
+  }
+
+  .u-marg-t--#{$name} {
+    margin-top: $size !important;
+  }
+
+  .u-marg-l--#{$name} {
+    margin-left: $size !important;
+  }
+
+  .u-marg-r--#{$name} {
+    margin-right: $size !important;
+  }
+
+  .u-marg--#{$name} {
+    margin-bottom: $size !important;
+    margin-top: $size !important;
+  }
+}
+
+@each $name, $size in $sizes {
+  .u-neg-b--#{$name} {
+    margin-bottom: -$size !important;
+  }
+
+  .u-neg-t--#{$name} {
+    margin-top: -$size !important;
+  }
+
+  .u-neg-l--#{$name} {
+    margin-left: -$size !important;
+  }
+
+  .u-neg-r--#{$name} {
+    margin-right: -$size !important;
+  }
+
+  .u-neg--#{$name} {
+    margin-bottom: -$size !important;
+    margin-top: -$size !important;
+  }
+}
+
+.u-neg-t--1 {
+  margin-top: -1px !important;
+}
+
+.u-neg-l--1 {
+  margin-left: -1px !important;
+}
+
+.u-neg-r--1 {
+  margin-right: -1px !important;
+}
+
+.u-marg-lr--auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.u-marg-l--auto {
+  margin-left: auto !important;
+}
+
+.u-marg-t--auto {
+  margin-top: auto !important;
+}
+
+.u-marg-l--auto {
+  margin-left: auto !important;
+}
+
+.u-collapsingMarginHack {
+  border-bottom: 1px solid transparent !important;
+}

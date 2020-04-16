@@ -1,0 +1,72 @@
+
+.ImageWrapper,
+.IframeWrapper {
+  background-color: color(wash);
+  border: 1px solid color(borderLight);
+}
+
+.ImageWrapper {
+  display: flex;
+  height: 100%;
+  min-height: 50px;
+  position: relative;
+}
+
+.ImageWrapper--cover {
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 100%;
+
+  .medium-12 & {
+    @include media(">medium") {
+      padding-bottom: 56.25%;
+    }
+  }
+}
+
+.ImageWrapper > div {
+  align-self: center;
+  flex: 0 0 auto;
+  margin: auto;
+  max-width: 100%;
+}
+
+.ImageWrapper-img {
+  width: auto;
+}
+
+.ImageWrapperGroup {
+  display: flex; // so we can equal height the children
+  flex-wrap: wrap;
+}
+
+.ImageWrapperGroup--notFullWidth {
+  width: 65%;
+}
+
+.ImageWrapper--hasViewMore {
+  background-color: black;
+}
+
+.ImageWrapper-viewMore {
+  background-color: rgba(black, 0.5);
+}
+
+.ImageWrapper-loading {
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.ImageWrapper-fallback {
+  padding: sketch-size(xxlarge) 0;
+
+  .Icon {
+    margin: 0 auto;
+    opacity: 0.2;
+    width: 56px;
+  }
+}

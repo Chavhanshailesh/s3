@@ -1,0 +1,68 @@
+
+.NotificationBadge {
+  border-radius: 50%;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    border: 1px solid color(border);
+    border-color: var(--branding-header-icon-color, color(border));
+    border-radius: 50%;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .p-primary-header &::after,
+  .p-dark-header &::after {
+    @include media(">small") {
+      border-color: white;
+      opacity: 0.4;
+    }
+  }
+
+  &.has-notifications {
+    background: var(--branding-header-notification-color, #eb5f5f);
+  }
+
+  &.has-notifications::after {
+    display: none;
+  }
+}
+
+.NotificationBadge-count {
+  color: white;
+  font-size: 14px;
+  left: 0;
+  padding: 0 2px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+
+  .NotificationBadge--small & {
+    font-size: 11px;
+  }
+}
+
+.NotificationBadge-iconContainer {
+  fill: var(--branding-header-icon-color, color(icon));
+  left: 50%;
+  margin-top: -1px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 17px;
+
+  .p-primary-header &,
+  .p-dark-header & {
+    @include media(">small") {
+      fill: white;
+    }
+  }
+}

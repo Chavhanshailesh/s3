@@ -1,0 +1,25 @@
+
+
+.ContentButton {
+  background: white;
+  border-radius: 4px;
+  border: 1px solid mix(color(border), color(formBorder), 50%);
+  color: color(secondary);
+  cursor: pointer;
+  font-weight: 500;
+  padding: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.ContentButton-iconContainer {
+  display: inline-block;
+  fill: color(secondary);
+  margin-bottom: 1px;
+  vertical-align: top;
+  width: 236px;
+
+  .ContentButton:hover & {
+    fill: color(dark);
+  }
+}

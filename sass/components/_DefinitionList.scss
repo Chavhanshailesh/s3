@@ -1,0 +1,148 @@
+
+.DefinitionList {
+  display: grid;
+  font-size: 0;
+  grid-column-gap: 20px;
+  grid-template-columns: auto 1fr;
+  line-height: 20px;
+}
+
+//
+// Fallback for CSS grid
+// limitation - the title will always be 200px wide
+.DefinitionList-title {
+  float: left;
+  font-weight: bold;
+  line-height: 21px;
+  margin-right: 20px;
+  width: 200px;
+
+  @supports (display: grid) {
+    margin-right: 0;
+    width: auto;
+  }
+}
+
+.DefinitionList-content {
+  line-height: 21px;
+  margin-left: 200px;
+
+  &::after {
+    clear: left;
+    content: " ";
+    display: block;
+  }
+
+  @supports (display: grid) {
+    margin-left: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+// end CSS grid fallback
+
+.DefinitionList-title,
+.DefinitionList-content {
+  font-size: 14px;
+  margin-bottom: sketch-size(xsmall);
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+.DefinitionList-seperator {
+  border-top: 1px solid color(light);
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.DefinitionList-seperator--dashed {
+  border-style: dashed;
+}
+
+// splits the dt and dd 50/50
+.DefinitionList--split {
+  display: block;
+
+  .DefinitionList-title,
+  .DefinitionList-content {
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 0;
+    margin-right: 0;
+    vertical-align: top;
+    width: 50%;
+    word-wrap: break-word;
+  }
+
+  .DefinitionList-title {
+    color: color(secondary);
+    font-weight: normal;
+  }
+
+  .DefinitionList-content {
+    text-align: right;
+  }
+}
+
+// Butts the title and description up against each other
+.DefinitionList--squashed {
+  display: block;
+
+  .DefinitionList-title {
+    float: none;
+    margin-right: sketch-size(xsmall);
+  }
+
+  .DefinitionList-title,
+  .DefinitionList-content {
+    display: inline;
+  }
+
+  // Remove the IE11 grid fallback styles
+  .DefinitionList-content {
+    margin-left: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .DefinitionList-title {
+    width: auto;
+  }
+}
+
+.DefinitionList--stacked {
+  display: block;
+
+  .DefinitionList-title {
+    float: none;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .DefinitionList-content {
+    margin-bottom: sketch-size(small);
+    margin-left: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.DefinitionList--lined {
+  display: block;
+  text-align: right;
+
+  .DefinitionList-title {
+    font-weight: normal;
+  }
+
+  .DefinitionList-item {
+    border-bottom: 1px solid color(border);
+    padding: 4px 0;
+  }
+}

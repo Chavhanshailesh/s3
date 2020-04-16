@@ -1,0 +1,81 @@
+
+.Steps {
+  height: 50px;
+  padding: 0 8px;
+}
+
+.Steps-list {
+  align-items: stretch;
+  display: flex;
+  margin-left: 10px;
+}
+
+.Steps-item {
+  display: inline-block;
+  flex: 1;
+  position: relative;
+  text-align: right;
+  width: 100%;
+
+  &.is-disabled {
+    color: color(secondary);
+    pointer-events: none;
+  }
+}
+
+.Steps-item:first-child {
+  position: absolute;
+  width: auto;
+}
+
+.Steps-circle {
+  color: color(border);
+  fill: white;
+  height: 20px;
+  margin-left: -10px;
+  position: relative;
+  stroke: currentColor;
+  width: 20px;
+  z-index: 2;
+
+  .Icon {
+    left: 50%;
+    position: absolute;
+    fill: white;
+    stroke: white;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    z-index: 8;
+  }
+
+  .is-complete & {
+    fill: color(brand);
+    stroke: color(brand);
+  }
+
+  .is-current & {
+    stroke: color(brand);
+  }
+}
+
+.Steps-name {
+  position: absolute;
+  margin-top: 12px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.Steps-barContainer {
+  background: color(border);
+  left: -5px;
+  margin-top: -4px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.Steps-link {
+  color: inherit;
+  display: inline-block;
+}

@@ -1,0 +1,33 @@
+.ReactSelectInput-icon {
+  width: 16px;
+  height: 16px;
+
+  svg {
+    fill: color(medium);
+  }
+
+  &.ReactSelectInput-icon--arrowDown {
+    width: 10px;
+    height: 10px;
+
+    svg {
+      fill: color(secondary);
+    }
+  }
+}
+
+.ReactSelectInput-clear {
+  width: 26px;
+  height: 26px;
+  padding: calc((26px - 10px) / 2);
+  cursor: pointer;
+
+  svg {
+    transition: fill 150ms ease 0s;
+    fill: color(medium);
+  }
+
+  &:hover svg {
+    fill: color(secondary);
+  }
+}

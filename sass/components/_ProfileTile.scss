@@ -1,0 +1,45 @@
+.ProfileTile {
+  background-color: white;
+  border-bottom-width: 1px;
+  border-color: color(border);
+  border-style: solid;
+  border-top-width: 1px;
+
+  @include media(">medium") {
+    border-left-width: 1px;
+    border-radius: 4px;
+    border-right-width: 1px;
+  }
+
+  @include media("<=medium") {
+    margin-top: -1px;
+  }
+}
+
+.ProfileTile-header {
+  border-bottom: 1px solid color(border);
+  font-weight: 500;
+  padding: 12px 16px;
+
+  .LabelledIcon {
+    display: inline-block;
+    font-size: inherit;
+  }
+
+  .LabelledIcon-iconContainer {
+    color: inherit;
+    fill: currentColor;
+    vertical-align: middle;
+    width: 28px;
+  }
+}
+
+//
+// Modifiers
+
+.ProfileTile-header--mobile {
+  background-color: color(pageBackground);
+  color: color(tertiary);
+  font-weight: 300;
+  padding: 7px 16px;
+}

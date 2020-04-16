@@ -1,0 +1,41 @@
+.RevealMore {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.RevealMore-button-container {
+  background: white;
+  bottom: 0;
+  font-weight: 500;
+  left: 0;
+  padding-top: 10px;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  z-index: 2;
+}
+
+.RevealMore-button:hover {
+  text-decoration: underline;
+}
+
+//
+// Modifiers
+
+.RevealMore--hasFade {
+  .RevealMore-button-container {
+    background: linear-gradient(rgba(255, 255, 255, 0), white  64px);
+    padding-top: 64px;
+  }
+}
+
+.RevealMore--wash {
+  .RevealMore-button-container {
+    background-color: color(wash);
+  }
+
+  &.RevealMore--hasFade .RevealMore-button-container {
+    background: linear-gradient(rgba(color(wash), 0), color(wash)  64px);
+  }
+}

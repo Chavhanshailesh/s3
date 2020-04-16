@@ -1,0 +1,179 @@
+.OptionsMenu {
+  -webkit-tap-highlight-color: rgba(black, 0);
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+
+.OptionsMenu-iconContainer {
+  -webkit-tap-highlight-color: rgba(black, 0);
+  background-color: #fff;
+  border: 1px solid color(medium);
+  border-radius: 2px;
+  display: inline-block;
+  fill: color(secondary);
+  height: 20px;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: 20px;
+
+  .touch-none .OptionsMenu--small & {
+    @include media(">small") {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .OptionsMenu--large &,
+  .OptionsMenu--xlarge & {
+    border-radius: 4px;
+    fill: color(icon);
+    height: 32px;
+    width: 32px;
+  }
+
+  .OptionsMenu--xlarge & {
+    height: 40px;
+    width: 40px;
+  }
+
+  .OptionsMenu--tile & {
+    background: none;
+    border: none;
+    fill: color(icon);
+    height: 28px;
+    width: 28px;
+  }
+
+  .OptionsMenu--hasText & {
+    padding: 0 12px 0 40px;
+    width: auto;
+  }
+}
+
+.OptionsMenu-iconContainer .Icon {
+  display: inline-block;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 7px;
+
+  .OptionsMenu--small & {
+    @include media(">small") {
+      margin-top: -2px;
+    }
+  }
+
+  .OptionsMenu--large &,
+  .OptionsMenu--xlarge &,
+  .OptionsMenu--tile & {
+    display: block;
+    left: 50%;
+    margin-left: -14px;
+    margin-top: -14px;
+    top: 50%;
+    width: 28px;
+  }
+}
+
+.OptionsMenu-panel {
+  position: absolute;
+  z-index: 3;
+  cursor: default;
+  min-width: 120px;
+
+  .OptionsMenu--right & {
+    left: 0;
+    right: auto;
+  }
+
+  .touch-none .OptionsMenu.is-legacy & {
+    visibility: hidden;
+  }
+
+  .touch-none .OptionsMenu.is-legacy:hover & {
+    visibility: visible;
+  }
+
+  // Ensure options menu hide whenever a modal is open on the page
+  .modal-open & {
+    visibility: hidden !important;
+  }
+}
+
+
+.OptionsMenu-panel-main {
+  margin-top: 19px;
+
+  .OptionsMenu-panel[style] & {
+    margin-top: -17px;
+    padding-top: 16px;
+  }
+
+  .OptionsMenu-panel[x-placement="top-end"] &,
+  .OptionsMenu-panel[data-placement="top-end"] & {
+    margin-bottom: -17px;
+    margin-top: 0;
+    padding-bottom: 16px;
+    padding-top: 0;
+  }
+
+  .OptionsMenu--imageOverlay & {
+    margin-top: 20px;
+  }
+
+  .OptionsMenu--small & {
+    @include media(">small") {
+      margin-top: 15px;
+    }
+  }
+
+  .OptionsMenu--large & {
+    margin-top: 31px;
+  }
+
+  .OptionsMenu-panel--withArrow[style] & {
+    margin-right: -31px;
+    margin-top: -17px;
+    padding-right: 16px;
+    padding-top: 24px;
+  }
+
+  .OptionsMenu-panel--withArrow[x-placement="top-end"] &,
+  .OptionsMenu-panel--withArrow[data-placement="top-end"] & {
+    margin-top: 0;
+    padding-bottom: 24px;
+    padding-top: 0;
+  }
+
+  .OptionsMenu--large .OptionsMenu-panel--withArrow & {
+    margin-right: -28px;
+    margin-top: -44px;
+    padding-top: 44px;
+  }
+
+  .OptionsMenu--xlarge .OptionsMenu-panel--withArrow & {
+    margin-right: -24px;
+    margin-top: -46px;
+    padding-top: 52px;
+  }
+}
+
+.OptionsMenu-select {
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  .touch-none & {
+    display: none;
+  }
+}
+
+

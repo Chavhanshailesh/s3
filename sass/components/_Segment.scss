@@ -1,0 +1,16 @@
+.SegmentList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.SegmentListItem {
+  border-bottom: 1px solid color(border);
+  margin-bottom: 32px;
+  padding-bottom: 40px;
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}

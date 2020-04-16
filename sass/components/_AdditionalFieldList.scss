@@ -1,0 +1,28 @@
+
+.AdditionalFieldList-item {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.AdditionalFieldList-label {
+  flex-grow: 1;
+}
+
+.AdditionalFieldList-delete {
+  width: 20px;
+  height: 20px;
+
+  svg {
+    fill: color(medium);
+  }
+}
+
+.AdditionalFieldList-move {
+  width: 20px;
+  height: 20px;
+
+  svg {
+    fill: color(medium);
+  }
+}

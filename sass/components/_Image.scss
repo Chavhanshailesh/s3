@@ -1,0 +1,103 @@
+.Image {
+  border-radius: 2px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    border-radius: inherit;
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.Image--noBorder {
+  border-radius: 0;
+
+  &::after {
+    display: none;
+  }
+}
+
+.Image--large,
+.Image--landscape {
+  border-radius: 0;
+}
+
+.Image--missing.Image--large.Image--landscape {
+  border-top: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.Image--large::after {
+  display: none;
+}
+
+.Image--landscape,
+.Image--missing {
+  padding-bottom: 100%;
+
+  img,
+  a {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.Image--missing {
+  background: color(fill);
+}
+
+.Image--landscape {
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.Image--square {
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.Image-element {
+  background-position: center;
+  background-repeat: no-repeat; // Failsafe for SV2-16528
+  background-size: cover;
+  border-radius: inherit;
+  transform: translateZ(0);
+  width: 100%;
+}
+
+.Image-missingIconContainer {
+  fill: black;
+  left: 50%;
+  opacity: 0.2;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+
+  .Image--medium & {
+    width: 24px;
+  }
+
+  .Image--large & {
+    width: 56px;
+  }
+}
+
+
+.Image--objectFit {
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}

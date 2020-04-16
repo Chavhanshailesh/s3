@@ -1,0 +1,128 @@
+
+.Crop {
+  background-color: color(fill);
+}
+
+.Crop-imageContainer {
+  background-color: white;
+  min-height: 480px;
+  padding: 16px 16px 48px;
+  position: relative;
+}
+
+.Crop-imageContainer::before {
+  background: color(medium);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.Crop-container--profilePrompt {
+  .Crop-imageContainer {
+    min-height: 0;
+    padding: 0 0 32px;
+  }
+
+  .Crop-imageContainer::before {
+    display: none;
+  }
+
+  .Crop-button {
+    bottom: -5px;
+  }
+
+  .Crop-imageContainer img {
+    max-height: 800px;
+  }
+}
+
+.Crop-container--single .Crop-imageContainer::before {
+  display: none;
+}
+
+.Crop-imageContainer img {
+  margin: 0 auto;
+  max-height: 288px;
+  width: auto;
+}
+
+.Crop-button {
+  bottom: 10px;
+  cursor: pointer;
+  fill: color(medium);
+  height: 32px;
+  left: 50%;
+  padding: 0 6px;
+  position: absolute;
+  transition: 0.2s background;
+  width: 32px;
+  z-index: 2;
+
+  &:hover {
+    fill: color(tertiary);
+  }
+}
+
+.Crop-button--left {
+  margin-left: -24px;
+}
+
+.Crop-button--right {
+  margin-left: 8px;
+}
+
+.Crop-list-item {
+  background-color: white;
+  border: 1px solid rgba(black, 0.075);
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin-bottom: -1px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  &:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  &:hover {
+    background-color: color(wash);
+  }
+
+  &.is-active {
+    border: 2px solid currentColor;
+    z-index: 1;
+
+    .Crop-list-item-button {
+      border: 0;
+    }
+  }
+}
+
+.Crop-list-item-button {
+  border: 1px solid transparent;
+  font-weight: 500;
+  padding: 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.Crop-list-item-icon {
+  float: right;
+  width: 20px;
+}
+
+.Crop-list-item.is-active .Crop-list-item-icon,
+.Crop-list-item.is-active + .Crop-list-item .Crop-list-item-icon {
+  fill: color(icon);
+}

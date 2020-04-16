@@ -1,0 +1,171 @@
+// DO NOT ADD TO THIS FILE
+// We should be trying to pull these selectors out into
+// their relevant css file
+
+.theme--color,
+.fr-simpplr-theme.fr-modal-head .fr-modal-tags a {
+  color: var(--branding-primary-color);
+}
+
+.theme--border,
+.theme--after--border::after,
+.fr-simpplr-theme .fr-image-resizer,
+.fr-simpplr-theme .fr-image-upload-layer.fr-drop,
+.fr-simpplr-theme .fr-element table td.fr-selected-cell,
+.fr-simpplr-theme .fr-element table th.fr-selected-cell {
+  border-color: var(--branding-primary-color);
+}
+
+.theme--bg,
+.theme--before--bg::before,
+.theme--after--bg::after,
+.custom-input .radio-custom:checked ~ .checked {
+  background-color: var(--branding-primary-color);
+}
+
+.custom-input .checkbox-custom:checked ~ .checked .Icon,
+.fr-simpplr-themediv.fr-modal-body div.fr-image-list div.fr-image-container .fr-insert-img,
+.fr-simpplr-theme.fr-toolbar .fr-command.fr-btn.fr-active,
+.fr-simpplr-theme.fr-popup .fr-command.fr-btn.fr-active,
+.fr-simpplr-theme.fr-toolbar .fr-command.fr-btn.fr-active:hover,
+.fr-simpplr-theme.fr-popup .fr-command.fr-btn.fr-active:hover,
+.button {
+  color: var(--branding-primary-color);
+}
+
+.tabs .current::before,
+.Navigation-item::after,
+.Stamp--brand,
+.view .Stamp,
+.view .stamp,
+.fr-simpplr-theme .fr-image-resizer .fr-handler,
+.fr-simpplr-theme .fr-image-progress-bar-layer > div.fr-loader span {
+  background-color: var(--branding-primary-color);
+}
+
+.profile.current,
+.Field.focus input[type=text].Field-input,
+.Field.focus .selectize-input,
+input[type=tel].Field-input:focus,
+.Field .selectize-control::after,
+input[type=text].Field-input:focus,
+.Field-textarea:focus,
+.Field-search:focus,
+.fr-simpplr-theme .fr-file-upload-layer.fr-drop,
+.IconToggle-input:checked ~ .IconToggle-label::after,
+.IconToggle.is-active .IconToggle-label::after,
+.touch-none .Button:hover {
+  border-color: var(--branding-primary-color);
+}
+
+.fr-simpplr-theme .fr-line-breaker {
+  border-top-color: var(--branding-primary-color);
+}
+
+.fr-simpplr-theme .fr-table-resizer div {
+  border-right-color: var(--branding-primary-color);
+}
+
+.fr-simpplr-theme .fr-file-progress-bar-layer > div.fr-loader span,
+.custom-input .checkbox-custom:checked + .checked {
+  background-color: var(--branding-primary-color);
+}
+
+.fr-simpplr-theme.fr-desktop .fr-command.fr-active.fr-selected,
+.fr-simpplr-theme.fr-popup .fr-action-buttons button.fr-command,
+div.fr-modal-body div.fr-image-list div.fr-image-container .fr-insert-img {
+  color: var(--branding-primary-color);
+}
+
+.fr-simpplr-theme.fr-popup .fr-colors-tabs .fr-colors-tab[data-param1='background']::after,
+.fr-simpplr-theme .fr-drag-helper,
+.CarouselItem-info--brand,
+.Content .fr-text-callout-centered:not(.fr-command)::before,
+.Content .fr-text-callout-right:not(.fr-command)::before,
+.Content .fr-text-callout-left:not(.fr-command)::before {
+  background-color: var(--branding-primary-color);
+}
+
+.fr-simpplr-theme.fr-popup .fr-input-line textarea:focus,
+.fr-simpplr-theme.fr-popup .fr-input-line input[type='text']:focus,
+.Content .fr-text-callout-centered:not(.fr-command),
+.Content .fr-text-callout-right:not(.fr-command),
+.Content .fr-text-callout-left:not(.fr-command) {
+  border-color: var(--branding-primary-color);
+}
+
+.fr-simpplr-theme.fr-modal .fr-modal-wrapper .fr-modal-head {
+  background-color: var(--branding-primary-color);
+}
+
+.fr-modal .fr-modal-wrapper div.fr-modal-body .fr-command.fr-keep-word,
+.fr-modal .fr-modal-wrapper div.fr-modal-body .fr-command.fr-keep-word:hover {
+  background-color: var(--branding-primary-color);
+  border-color: var(--branding-primary-color);
+}
+
+.fr-modal .fr-modal-wrapper div.fr-modal-body .fr-command.fr-remove-word,
+.fr-modal .fr-modal-wrapper div.fr-modal-body .fr-command.fr-remove-word:hover {
+  border-color: var(--branding-primary-color);
+}
+
+.fr-simpplr-theme.fr-box .fr-video-resizer .fr-handler {
+  background-color: var(--branding-primary-color);
+}
+
+.MobileNavigationBottom-item.is-current a,
+.IconToggle-input:checked + .IconToggle-iconContainer {
+  color: var(--branding-primary-color);
+}
+
+input[type=text].Field-input:focus,
+.Field-textarea:focus,
+.Field-select:focus,
+.fr-simpplr-theme.fr-box .fr-video-resizer,
+.fr-simpplr-theme .fr-video-upload-layer.fr-drop {
+  border-color: var(--branding-primary-color);
+}
+
+.toolbar-exposed a.current::before,
+.fr-simpplr-theme .fr-video-progress-bar-layer > div.fr-loader span {
+  background-color: var(--branding-primary-color);
+}
+
+.branding path,
+.fr-simpplr-theme.fr-box a.fr-floating-btn svg,
+.fr-simpplr-theme.fr-box a.fr-floating-btn:hover svg,
+.fr-checkbox path,
+.Like.is-liked,
+.Like.is-liked:hover,
+.theme--fill,
+.ToggleGroup--minimal .IconToggle-input:checked + .IconToggle-iconContainer,
+.theme--active--fill.is-active,
+.theme--hover--fill:hover {
+  fill: var(--branding-primary-color);
+}
+
+.event .excerpt a.post-date {
+  background-color: var(--branding-primary-color);
+}
+
+.file-overlay input[type="file"]:hover ~ .button {
+  border-color: var(--branding-primary-color);
+}
+
+.topics .custom-input .checkbox-custom:checked + label .topic::before {
+  border-color: var(--branding-primary-color);
+  background-color: var(--branding-primary-color);
+}
+
+.ToggleField-input--radio:checked + .ToggleField-button {
+  background-color: var(--branding-primary-color);
+}
+
+td .folder a:first-child,
+.ToggleField-input--checkbox:checked + .ToggleField-button .Icon {
+  color: var(--branding-primary-color);
+}
+
+.ToggleField-input--checkbox:not(:indeterminate):checked + .ToggleField-button--checkbox-input .Icon--check-input {
+  color: var(--branding-primary-color);
+}

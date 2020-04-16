@@ -1,0 +1,88 @@
+
+.LabelledSocial {
+  border-radius: 4px;
+  min-width: 160px;
+  padding: 4px 0;
+  position: relative;
+  text-align: center;
+
+  &.is-disabled {
+    opacity: 1;
+  }
+}
+
+.LabelledSocial--small {
+  min-width: 0;
+
+  @include media(">small") {
+    min-width: 120px;
+  }
+}
+
+.LabelledSocial-label {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+
+  .is-disabled & {
+    color: color(medium);
+  }
+
+  .LabelledSocial--small & {
+    @include media("<=small") {
+      display: none;
+    }
+  }
+}
+
+.LabelledSocial-iconContainer {
+  color: color(tertiary);
+  display: inline-block;
+  fill: color(tertiary);
+  height: 48px;
+  margin: 0;
+  position: relative;
+  top: 0;
+  transition: 0.2s;
+  vertical-align: middle;
+  width: 48px;
+
+  .is-disabled & {
+    opacity: 0.1;
+  }
+
+  .Icon {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+  }
+}
+
+.LabelledSocial--small .LabelledSocial-iconContainer {
+  height: 32px;
+  margin-right: 2px;
+  width: 32px;
+
+  .Icon {
+    width: 20px;
+  }
+}
+
+$socials: twitter facebook linkedin;
+
+@each $social in $socials {
+  .LabelledSocial-iconContainer--#{$social} .Icon {
+    fill: color($social);
+  }
+}
+
+.LabelledSocial-iconContainer--twitter {
+  margin-left: -4px;
+}
+
+.LabelledSocial-iconContainer--linkedin,
+.LabelledSocial-iconContainer--facebook {
+  margin-left: -2px;
+}

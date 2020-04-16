@@ -1,0 +1,128 @@
+.Flash {
+  @extend %transition;
+
+  border: none;
+  border-bottom: 1px solid rgba(white, 0.4);
+  border-radius: 0;
+  color: #fff;
+  min-height: 32px;
+  padding: 6px 48px;
+  position: relative;
+  text-align: center;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.Flash--hasButton {
+  @include media("<=medium") {
+    padding-right: 40px;
+  }
+}
+
+$flashes: (
+  success: color(green),
+  alert: color(primary),
+  info: color(blue),
+  warning: color(orange),
+  danger: color(red)
+);
+
+@each $flash-name, $flash-color in $flashes {
+  .Flash--#{$flash-name} {
+    background-color: $flash-color;
+  }
+
+  .Flash--duplicate.Flash--#{$flash-name} {
+    animation: duplicate-flash-#{$flash-name} 1s;
+  }
+
+  @keyframes duplicate-flash-#{$flash-name} {
+    0% {
+      background: $flash-color;
+    }
+
+    50% {
+      background: darken($flash-color, 10%);
+    }
+
+    100% {
+      background-color: $flash-color;
+    }
+  }
+}
+
+.Flash--alert {
+  min-height: 40px;
+  padding: 10px 8px;
+  background-color: var(--branding-alert-bg-color, color(primary));
+}
+
+.Flash--alert,
+.Flash.Flash--alert a {
+  color: var(--branding-alert-text-color, white);
+}
+
+.Flash--alert .Flash-iconContainer {
+  fill: var(--branding-alert-text-color, white);
+}
+
+.Flash-clearContainer {
+  background-color: rgba(black, 0.1);
+  cursor: pointer;
+  fill: white;
+  height: 32px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+
+  &:hover {
+    background-color: rgba(black, 0.15);
+  }
+
+  .Flash--alert & {
+    height: 40px;
+    padding: 14px;
+    width: 40px;
+  }
+}
+
+.Flash-iconContainer {
+  display: inline-block;
+  fill: white;
+  margin-right: 6px;
+  position: relative;
+  vertical-align: middle;
+  width: 14px;
+  top: -1px;
+}
+
+.Flash-stampContainer {
+  display: inline-block;
+  margin-left: 6px;
+
+  .Stamp {
+    margin-right: 0;
+  }
+}
+
+.Flash-siteContainer {
+  position: absolute;
+  left: 8px;
+
+  .touch & {
+    display: none;
+  }
+
+  @include media("<=medium") {
+    display: none;
+  }
+}

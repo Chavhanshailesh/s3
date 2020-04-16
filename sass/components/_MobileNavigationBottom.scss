@@ -1,0 +1,95 @@
+
+.MobileNavigationBottom {
+  background: white;
+  border-top: 1px solid color(medium);
+  bottom: 0;
+  height: 56px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+
+  .touch.fixfixed & {
+    position: absolute;
+  }
+
+  @supports (height: max(0)) {
+    height: calc(56px + constant(safe-area-inset-bottom));
+    height: calc(56px + env(safe-area-inset-bottom));
+  }
+
+  @include media($breakpoint-smallUp) {
+    display: none;
+  }
+}
+
+.MobileNavigationBottom-list {
+  display: flex;
+  font-size: 0;
+  justify-content: space-between;
+}
+
+.MobileNavigationBottom-item {
+  font-size: 16px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: (100% / 5);
+}
+
+.MobileNavigationBottom-item a {
+  color: color(secondary);
+  display: block;
+  fill: currentColor;
+  height: 70px;
+  padding-top: 6px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    background: rgba(black, 0.1);
+  }
+}
+
+.MobileNavigationBottom-item a.is-active {
+  color: color(brand);
+}
+
+.MobileNavigationBottom-text {
+  font-size: 11px;
+}
+
+.MobileNavigationBottom-iconContainer {
+  height: 28px;
+  margin: 0 auto;
+  position: relative;
+  width: 28px;
+
+  .Icon {
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 100%;
+  }
+}
+
+.MobileNavigationBottom-badge {
+  background-color: #c81424;
+  border: 1px solid;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  height: 18px;
+  line-height: 18px;
+  min-width: 18px;
+  overflow: hidden;
+  padding: 0 2px;
+  position: absolute;
+  right: -6px;
+  text-align: center;
+  top: -4px;
+}

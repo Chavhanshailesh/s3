@@ -1,0 +1,70 @@
+
+.ContentBar-wrapper {
+  bottom: -32px;
+  height: 53px;
+  margin-left: -48px;
+  margin-right: -48px;
+  position: relative;
+}
+
+.ContentBar {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+}
+
+.ContentBar--center {
+  text-align: center;
+}
+
+.ContentBar-inner {
+  background: white;
+  border: solid color(border);
+  border-width: 1px 0 0;
+  padding: 12px 16px;
+
+  @include media(">medium") {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.ContentBar-link {
+  float: left;
+  padding-top: 12px;
+}
+
+.ContentBar-actionContainer {
+  display: inline-block;
+  position: relative;
+}
+
+
+// State
+.ContentBar.is-fixed {
+  bottom: 0;
+  display: none;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  transition: 0.2s transform cubic-bezier(0.42, 0, 0.58, 1);
+  z-index: 3;
+
+  .panel-open-right & {
+    transform: translateX(-104px);
+  }
+
+  @include media("<=small") {
+    display: none;
+  }
+
+  &.is-visible {
+    display: block;
+    //transform: translateY(0%);
+  }
+
+  .ContentBar-inner {
+    border-width: 1px 1px 0;
+  }
+}

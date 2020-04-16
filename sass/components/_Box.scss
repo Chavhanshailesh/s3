@@ -1,0 +1,86 @@
+
+.Box {
+  padding: 8px;
+  position: relative;
+}
+
+.Box--gray {
+  background-color: color(wash);
+  border: 1px solid color(light);
+
+  &.has-justClicked {
+    animation: BoxGrayChange 1s;
+  }
+}
+
+.Box--white {
+  background-color: white;
+  border: 1px solid color(medium);
+}
+
+.Box--fill {
+  background-color: color(fill);
+  border: 1px solid color(light);
+}
+
+.Box--wash {
+  background-color: color(wash);
+  border: 1px solid color(border);
+}
+
+.Box--dashed {
+  border: 1px dashed color(medium);
+  border-radius: 2px;
+}
+
+.Box--large {
+  padding: 16px;
+}
+
+.Box--medium {
+  padding: 10px;
+}
+
+.Box--noSideBorder {
+  border-left: none;
+  border-right: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.Box--stacked {
+  background-color: white;
+  border: 1px solid rgba(black, 0.1);
+  padding: 0 16px;
+
+  & + &,
+  .Tile--box + &,
+  & + .Tile--box {
+    border-top: none;
+    margin-bottom: 0;
+  }
+}
+
+.Box-main {
+  margin: 0 -16px;
+  overflow: hidden;
+}
+
+.Box-main-inner {
+  margin: -1px;
+}
+
+
+@keyframes BoxGrayChange {
+  0% {
+    background: color(wash);
+  }
+
+  50% {
+    background: white;
+  }
+
+  100% {
+    background-color: color(wash);
+  }
+}

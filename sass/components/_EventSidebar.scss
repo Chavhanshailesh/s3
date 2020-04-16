@@ -1,0 +1,25 @@
+.EventSidebar {
+  background: color(wash);
+  border: solid color(border);
+  border-width: 1px 0;
+  margin: -(sketch-size(xxlarge) + 1) -16px sketch-size(small);
+
+  @include media(">small") {
+    border-radius: 4px;
+    border-width: 1px;
+    margin: 0 0 sketch-size(small);
+  }
+}
+
+.EventSidebar-item {
+  padding: sketch-size(medium);
+
+  & + &,
+  &.EventSidebar-item--borderTop {
+    border-top: 1px solid color(border);
+  }
+}
+
+.EventSidebar-header {
+  padding-bottom: sketch-size(small);
+}

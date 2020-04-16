@@ -1,0 +1,26 @@
+
+
+.PeopleTile {
+  display: flex;
+}
+
+.PeopleTile-list {
+}
+
+.PeopleTile-card {
+  color: white;
+  text-align: center;
+}
+
+.PeopleTile-card-count {
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 1;
+  padding-top: 38px;
+}
+
+.PeopleTile-card-text {
+  font-weight: 500;
+  max-width: 128px;
+  margin: 24px auto;
+}

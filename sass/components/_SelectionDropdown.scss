@@ -1,0 +1,39 @@
+
+.SelectionDropdown {
+  font-size: 14px;
+  position: relative;
+}
+
+.SelectionDropdown-selection {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-right: 16px;
+}
+
+.SelectionDropdown-value {
+  display: inline-block;
+  position: relative;
+}
+
+.SelectionDropdown-button {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.SelectionDropdown-iconContainer {
+  color: color(secondary);
+  fill: currentColor;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 8px;
+  z-index: 2;
+}
+
+.SelectionDropdown-panel {
+  position: absolute;
+  top: 32px;
+  z-index: 3;
+}

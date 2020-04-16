@@ -1,0 +1,33 @@
+.StatusBadge {
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 8px;
+
+  &.new,
+  &.sent,
+  &.published {
+    background: color(brand);
+  }
+
+  &.rejected,
+  &.deleted {
+    background: color(red);
+  }
+
+  &.pending,
+  &.scheduled {
+    background-color: color(orange);
+  }
+
+  &.draft {
+    background-color: color(blue);
+  }
+
+  &.unpublished,
+  &.on_hold {
+    background-color: color(tertiary);
+  }
+}

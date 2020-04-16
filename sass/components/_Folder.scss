@@ -1,0 +1,33 @@
+.Folder {
+  display: inline-block;
+  fill: currentColor;
+  left: 0;
+  line-height: 1;
+  position: absolute;
+  top: -3px;
+  width: 32px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.Folder--large {
+  width: 64px;
+}
+
+.Folder .Icon--settings {
+  bottom: -4px;
+  fill: #fff;
+  position: absolute;
+  right: -1px;
+  stroke-width: 1px;
+  stroke: currentColor;
+  width: 17px;
+  z-index: 2;
+}
+
+.Folder--large .Icon--settings {
+  bottom: -8px;
+  width: 28px;
+}

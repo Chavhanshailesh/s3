@@ -1,0 +1,171 @@
+.Navigation {
+  white-space: nowrap;
+}
+
+.Navigation-item {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 26px;
+  position: relative;
+  padding: 15px 2px;
+
+  @include media(">small" "<=medium") {
+    margin-left: 16px;
+    padding: 5px 2px;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  .Navigation--withExtraItem & {
+    @include media(">small" "<=xlarge") {
+      margin-left: 20px;
+    }
+
+    @include media(">small" "<=large") {
+      padding: 5px 2px;
+    }
+  }
+
+  .panel-open-right & {
+    @include media("<=xlarge") {
+      padding: 5px 2px;
+    }
+  }
+
+  &::after {
+    background: color(brand);
+    bottom: -1px;
+    content: '';
+    display: none;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  .p-primary-header &::after,
+  .p-dark-header &::after {
+    @include media(">small") {
+      background: white;
+    }
+  }
+
+  &.is-active::after {
+    display: block;
+  }
+}
+
+// Hide the feed icon if dashboard is on homepage
+// TODO: remove this when SPA
+
+.home-dashboard-has-feed .Navigation-item--feed {
+  display: none;
+}
+
+.Navigation-item--user::after {
+  left: 4px;
+}
+
+.Navigation-item--sites::after {
+  left: 6px;
+}
+
+.Navigation-item--feed::after {
+  left: 2px;
+}
+
+.Navigation-item--search {
+  display: none;
+
+  @include media(">small" "<=1083px") {
+    display: inline-block;
+  }
+}
+
+.Navigation--withExtraItem .Navigation-item::after {
+  @include media(">small" "<=large") {
+    left: 0;
+  }
+}
+
+.Navigation--withExtraItem .Navigation-item + .Navigation-item--knowledge {
+  @include media(">small" "<=medium") {
+    margin-left: 20px;
+  }
+
+  @include media(">medium" "<=large") {
+    margin-left: 16px;
+  }
+}
+
+@mixin iconsAboveText() {
+  display: block;
+  margin: 0 auto;
+}
+
+.Navigation-item-iconContainer {
+  display: inline-block;
+  fill: var(--branding-header-icon-color, color(icon));
+  margin-right: 8px;
+  width: 28px;
+  vertical-align: middle;
+  text-align: center;
+
+  @include media(">small" "<=medium") {
+    margin-right: 4px;
+
+    @include iconsAboveText();
+  }
+
+  .Navigation--withExtraItem & {
+    @include media(">small" "<=large") {
+      @include iconsAboveText();
+    }
+  }
+
+  .panel-open-right & {
+    @include media("<=xlarge") {
+      @include iconsAboveText();
+    }
+  }
+
+  .p-primary-header &,
+  .p-dark-header & {
+    @include media(">small") {
+      fill: white;
+    }
+  }
+}
+
+.Navigation-item-text {
+  color: var(--branding-header-text-color, color(primary));
+  display: inline-block;
+  font-weight: 500;
+
+  .p-primary-header &,
+  .p-dark-header & {
+    @include media(">small") {
+      color: white;
+    }
+  }
+}
+
+.Navigation-launchpadContainer {
+  margin-right: -44px;
+  position: absolute;
+  right: 100%;
+  top: 62px;
+  width: 400px;
+  z-index: 3;
+
+  @include media(">small" "<=large") {
+    right: 50%;
+    margin-right: -28px;
+  }
+
+  .Panel {
+    overflow: visible;
+  }
+}

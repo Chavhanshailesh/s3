@@ -1,0 +1,16 @@
+.ContentImageIcon {
+  position: relative;
+}
+
+.ContentImageIcon-icon {
+  border: 1px solid color(borderLight);
+  border-radius: 4px;
+  background: white;
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 2px;
+  pointer-events: none;
+}

@@ -1,0 +1,155 @@
+
+.Table {
+  font-size: 12px;
+  text-align: right;
+}
+
+.Table--layoutFixed {
+  table-layout: fixed;
+}
+
+.Table--fontSizeInherit {
+  font-size: inherit;
+
+  .Table-header {
+    font-size: 12px;
+  }
+}
+
+.Table-dot {
+  display: inline-block;
+  fill: color(tertiary);
+  margin-right: 20px;
+  width: 8px;
+
+  .u-textCenter & {
+    margin-right: 0;
+  }
+}
+
+.Table-icon {
+  color: color(medium);
+  fill: color(medium);
+  left: 50%;
+  margin-left: 8px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Table-details {
+  min-height: 40px;
+  padding-left: 48px;
+  position: relative;
+
+  @include media(">medium") {
+    min-height: 48px;
+    padding-left: 64px;
+  }
+}
+
+.Table-details--site {
+  padding-top: 14px;
+}
+
+.Table-details--siteInactive {
+  padding-top: 4px;
+}
+
+.Table-emblemContainer {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+
+  @include media(">medium") {
+    width: 48px;
+  }
+}
+
+.Table-header {
+  font-weight: bold;
+}
+
+.Table-cell {
+  border-bottom: 1px solid rgba(black, 0.075);
+  min-width: 44px;
+  overflow: visible;
+  padding: 16px 0 16px 8px;
+  position: relative;
+
+  &::before {
+    display: none;
+  }
+}
+
+.Table-cell--smallPadding {
+  padding: 8px 0 8px 8px;
+}
+
+.Table-cell--extraPadding {
+  box-sizing: content-box;
+
+  @include media(">medium") {
+    padding-right: 40px;
+  }
+
+  @include media(">small" "<=medium") {
+    padding-right: 30px;
+  }
+}
+
+th.Table-cell:first-of-type,
+td.Table-cell:first-of-type {
+  padding-left: 0;
+  text-align: left;
+}
+
+.Table--noBorder td,
+.Table--noLastBorder tr:last-of-type td {
+  border: none;
+}
+
+// TODO: refactor
+.Table-cell--options {
+  .custom-input {
+    float: right;
+    margin-left: 8px;
+  }
+}
+
+.Table-download {
+  cursor: pointer;
+  fill: color(tertiary);
+  vertical-align: middle;
+  width: 28px;
+}
+
+.touch-none .Table-download--hoverShow {
+  display: none;
+}
+
+.touch-none .Table-row:hover .Table-download--hoverShow {
+  display: inline-block;
+}
+
+.Table-download--external .Icon {
+  transform: rotate(-90deg);
+}
+
+.Table--leftAligned {
+  .Table-cell {
+    text-align: left;
+  }
+}
+
+.Table--topAligned {
+  .Table-cell {
+    vertical-align: top;
+  }
+}
+
+.Table-row.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

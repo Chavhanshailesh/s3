@@ -1,0 +1,10 @@
+
+@for $i from 1 through 10 {
+  .u-opacity--#{$i}0 {
+    opacity: (1 / 10) * $i !important;
+  }
+}
+
+.u-opacity--0 {
+  opacity: 0 !important;
+}

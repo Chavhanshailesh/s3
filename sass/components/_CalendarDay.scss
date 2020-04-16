@@ -1,0 +1,162 @@
+.CalendarDay {
+  background: white;
+  border-radius: 2px;
+  color: white;
+  display: block;
+  font-family: font(sans);
+  padding-bottom: 100%;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  &::after {
+    border: 1px solid color(border);
+    border-radius: inherit;
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .selectize-dropdown [data-selectable] & .highlight {
+    background: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.CalendarDay-month {
+  border-radius: 2px 2px 0 0;
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  left: 0;
+  line-height: 1;
+  padding: 4px 0;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+  z-index: 2;
+
+  .CalendarDay--large & {
+    font-size: 14px;
+  }
+
+  .Mention--large & {
+    padding: 6px 0;
+  }
+
+  .CalendarDay--medium & {
+    font-size: 11px;
+    padding: 2px 0;
+  }
+
+  .CalendarDay--small &,
+  .Mention:not(.Mention--large) & {
+    font-size: 9px;
+    padding: 2px 0;
+  }
+
+  .CalendarDay--XLarge & {
+    @include media(">small") {
+      font-size: 16px;
+      line-height: 1;
+      padding: 10px 0;
+    }
+  }
+}
+
+.CalendarDay-date {
+  bottom: 50%;
+  color: color(secondary);
+  display: block;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  padding-top: 20px;
+  position: absolute;
+  transform: translateY(50%);
+  width: 100%;
+
+  .CalendarDay--large & {
+    font-size: 30px;
+    padding-top: 14px;
+  }
+
+  .CalendarDay--medium & {
+    font-size: 16px;
+    padding-top: 15px;
+  }
+
+  .Mention--large & {
+    font-size: 18px;
+    padding-top: 19px;
+  }
+
+  .CalendarDay--XLarge & {
+    font-size: 30px;
+    padding-top: 12px;
+
+    @include media(">small") {
+      font-size: 60px;
+      font-weight: 100;
+      opacity: 0.6;
+      padding-top: 26px;
+    }
+  }
+
+  .CalendarDay--small &,
+  .Mention:not(.Mention--large) & {
+    font-size: 14px;
+    padding-top: 13px;
+  }
+}
+
+.CalendarDayNew-wrapper {
+  display: block;
+  padding-bottom: 100%;
+  position: relative;
+
+  &::after {
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.CalendarDayNew-wrapper--widescreen {
+  padding-bottom: 56.25%;
+}
+
+.CalendarDayNew {
+  bottom: 0;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  left: 0;
+  padding: 16px;
+  position: absolute;
+}
+
+.CalendarDayNew-eventDate {
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 1.2;
+}
+
+.CalendarDayNew-eventWeekday {
+  font-size: 20px;
+  line-height: 1.15;
+  opacity: 0.8;
+}

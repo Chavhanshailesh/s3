@@ -1,0 +1,89 @@
+.Meta {
+  color: color(tertiary);
+  min-height: 40px;
+  padding-left: 40px;
+  position: relative;
+
+  .type--fauxLink {
+    text-align: left;
+  }
+}
+
+.Meta-thumb {
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 32px;
+
+  .Meta--selector & {
+    top: 0;
+  }
+}
+
+// Modifers
+
+.Meta--large,
+.Meta--medium,
+.Meta--xlarge {
+  .Meta-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    min-height: 50px;
+    min-width: 0;
+    position: relative;
+  }
+
+  .Meta-thumb {
+    top: 0;
+  }
+}
+
+.Meta--large {
+  min-height: 50px;
+  padding-left: 60px;
+
+  .Meta-thumb {
+    width: 50px;
+  }
+}
+
+.Meta--medium {
+  min-height: 48px;
+  padding-left: 55px;
+
+  .Meta-body {
+    min-height: 48px;
+  }
+
+  .Meta-thumb {
+    width: 45px;
+  }
+}
+
+.Meta--xlarge {
+  padding-left: 100px + sketch-size(medium);
+
+  .Meta-body {
+    min-height: 100px;
+  }
+
+  .Meta-thumb {
+    width: 100px;
+  }
+}
+
+.Meta--white {
+  color: white;
+  display: inline-block;
+}
+
+.Meta--selector {
+  margin-top: 0;
+}
+
+.Meta--noEmblem {
+  min-height: 0;
+  padding-left: 0;
+}

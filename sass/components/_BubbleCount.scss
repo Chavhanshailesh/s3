@@ -1,0 +1,24 @@
+
+.BubbleCount {
+  background: color(medium);
+  border-radius: 50%;
+  height: 25px;
+  padding: 2px 0;
+  text-align: center;
+  width: 25px;
+
+  @include media($breakpoint-smallDown) {
+    height: 18px;
+    padding: 0;
+    width: 18px;
+  }
+}
+
+.BubbleCount-text {
+  color: white;
+  font-size: 13px;
+
+  @include media($breakpoint-smallDown) {
+    font-size: 11px;
+  }
+}

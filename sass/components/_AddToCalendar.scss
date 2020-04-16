@@ -1,0 +1,46 @@
+
+.AddToCalendar {
+  font-size: 0;
+}
+
+.AddToCalendar-item {
+  display: block;
+  font-size: 16px;
+
+  &:last-child a {
+    border-bottom: none;
+  }
+}
+
+.AddToCalendar-iconContainer {
+  fill: color(medium);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+}
+
+.AddToCalendar-iconContainer--large {
+  width: 18px;
+}
+
+.AddToCalendar-item a {
+  border-bottom: 1px solid color(light);
+  display: block;
+  font-size: 14px;
+  height: 48px;
+  line-height: 1;
+  padding: 17px 8px 17px 48px;
+  position: relative;
+
+  @include media(">small") {
+    padding: 20px 16px 20px 48px;
+    height: 54px;
+  }
+
+  @include active-hover {
+    background-color: $fill;
+    text-decoration: none;
+  }
+}

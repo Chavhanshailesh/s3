@@ -1,0 +1,139 @@
+.Form.is-disabled {
+  color: $tertiary;
+  filter: grayscale(1);
+  opacity: 0.8;
+  pointer-events: none;
+  user-select: none;
+}
+
+.Form-panel {
+  position: relative;
+
+  &::after {
+    background: color(light);
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @include media(">small") {
+      height: 100%;
+      width: 1px;
+    }
+  }
+}
+
+.Form-panel--stacked {
+  padding: 32px 0 0;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:first-of-type::after {
+    display: none;
+  }
+
+  &::after {
+    @include media(">small") {
+      height: 1px;
+      width: 100%;
+    }
+  }
+}
+
+.Form-panel--minHeight,
+.Form-panelGroup {
+  min-height: 170px;
+}
+
+.Form-panel--noBorder::after {
+  display: none;
+}
+
+.Form-panel--left {
+  @include media(">medium") {
+    padding-right: 32px;
+  }
+
+  &::after {
+    right: -16px;
+
+    @include media("<=small") {
+      display: none;
+    }
+  }
+}
+
+.Form-panel--right {
+  padding-top: 16px;
+
+  @include media(">small") {
+    padding-top: 0;
+  }
+
+  @include media(">medium") {
+    padding-left: 32px;
+  }
+
+  &::after {
+    left: -17px;
+
+    @include media("<=small") {
+      left: 0;
+    }
+  }
+}
+
+.Form-header {
+  margin-bottom: 24px;
+}
+
+.Form-header-title {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: size(small);
+}
+
+.Form-set {
+  margin-bottom: 32px;
+}
+
+.Form-group + .Form-group {
+  margin-top: 32px;
+}
+
+.FormPanel {
+  margin-bottom: 32px;
+  border-top: 1px solid color(light);
+  padding-top: 32px;
+
+  &:first-of-type {
+    padding-top: 0;
+    border-top: none;
+  }
+}
+
+.FormPanel--noTopBorder {
+  border-top: none !important;
+}
+
+.FormPanel-heading {
+  font-size: 16px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.FormPanel-intro {
+  color: color(secondary);
+}
+
+.FormPanel-field {
+  margin-bottom: 32px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

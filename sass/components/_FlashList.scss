@@ -1,0 +1,43 @@
+/* flashes */
+
+.FlashList {
+  position: fixed;
+  display: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 8;
+}
+
+.FlashList--alerts {
+  display: block;
+  transition: margin 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+
+  .panel-open-right & {
+    margin-right: 208px;
+  }
+}
+
+.has-galleryOpen .FlashList--modal,
+.modal-open .FlashList--modal {
+  display: block;
+}
+
+.FlashList--lower {
+  display: block;
+  left: 0;
+  margin-top: -16px;
+  position: fixed;
+  right: 0;
+  top: auto;
+  transition: left 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+  z-index: 10; // Stop froala editor appearing above alerts - SV2-16296
+
+  @include media(">medium") {
+    margin-top: -32px;
+  }
+
+  .modal-open & {
+    display: none;
+  }
+}

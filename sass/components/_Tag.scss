@@ -1,0 +1,177 @@
+.Tag {
+  background-color: #fff;
+  border: 1px solid color(medium);
+  border-radius: 2px;
+  color: color(secondary);
+  display: inline-block;
+  font-size: 0;
+  line-height: 22px;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+
+  .Field.disabled & {
+    pointer-events: none;
+  }
+}
+
+// I’m sorry, had to overwrit an !important, will revist when we redo the feed
+.selectize-control.plugin-remove_button [data-value].Tag--alt {
+  background: color(fill) !important;
+  margin: 0 8px 8px 0;
+  padding: 0 !important;
+  vertical-align: top;
+}
+
+.Field--compact .selectize-control.plugin-remove_button [data-value].Tag--alt {
+  margin: 0 4px 3px 0;
+}
+
+.Tag-text {
+  display: inline-block;
+  font-size: 12px;
+  height: 22px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 7px;
+  text-overflow: ellipsis;
+  vertical-align: top;
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+a.Tag-text:hover {
+  background-color: color(fill);
+  text-decoration: none;
+}
+
+.Tag-action {
+  background: none;
+  border: none;
+  border-left: 1px solid color(medium);
+  border-radius: 0;
+  color: color(tertiary);
+  cursor: pointer;
+  display: inline-block;
+  fill: color(tertiary);
+  height: 22px;
+  padding: 7px 6px;
+  position: relative;
+  vertical-align: top;
+  width: 24px;
+
+  .Icon {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 7px;
+    z-index: 2;
+  }
+
+  &:hover {
+    background-color: color(fill);
+    border-color: color(medium) !important;
+  }
+
+  .Tag--alt &:hover {
+    background: color(pale);
+  }
+}
+
+.Tag-action .Icon--check {
+  display: none;
+}
+
+.Tag-action.is-active {
+  .Icon--plus {
+    display: none;
+  }
+
+  .Icon--check {
+    animation: 0.6s tickAnimation linear;
+    display: block;
+  }
+}
+
+.Tag-childrenContainer {
+  display: inline-block;
+  padding: 6px 12px 4px 0;
+  vertical-align: middle;
+}
+
+.Tag--noHover {
+  .Tag-text {
+    cursor: default;
+  }
+}
+
+.Tag--plain {
+  background-color: color(fill);
+  border: 0;
+  border-radius: 4px;
+  color: inherit;
+  line-height: normal;
+  vertical-align: top;
+
+  &:not(.Tag--noHover):hover .Tag-text {
+    background: color(pale);
+  }
+
+  .Tag-text {
+    border-radius: 4px;
+    color: inherit;
+    height: auto;
+    padding: 6px 12px;
+  }
+
+  .Tag-childrenContainer.remove {
+    cursor: pointer;
+    margin-left: -5px;
+    padding: 9px 6px 4px 0;
+    width: 20px;
+  }
+
+  .selectize-control.plugin-remove_button &[data-value] {
+    padding: 0 !important;
+  }
+}
+
+.Tag--withMargin {
+  margin-bottom: 7px;
+  margin-right: 8px;
+}
+
+.Tag--hasRemove {
+  .Tag-text {
+    padding-right: 30px;
+  }
+
+  .Tag-childrenContainer {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.Tag--hasClearButton {
+  display: flex;
+  align-items: center;
+}
+
+.Tag--hasClearButton .Tag-text {
+  padding-right: 0;
+}
+
+.Tag-clearButton {
+  width: 24px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.Tag-remove {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+}

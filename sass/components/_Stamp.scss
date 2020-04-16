@@ -1,0 +1,117 @@
+.Stamp {
+  background: white;
+  border: 1px solid color(medium);
+  color: color(secondary);
+  display: inline-block;
+  font-size: 10px;
+  line-height: 13px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  padding: 1px 3px 0 3px;
+  position: relative;
+  text-transform: uppercase;
+
+  .InlineList-item & {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+
+  .view & {
+    @extend .Stamp--brand;
+
+    margin: 11px 0 0 8px;
+
+    @include media("<=small") {
+      margin-top: 0;
+    }
+  }
+}
+
+.Stamp--noMarginBottom {
+  margin-bottom: 0;
+}
+
+.Stamp--brand {
+  background: color(brand);
+}
+
+.Stamp--brand,
+.Stamp--coloured {
+  border: 0;
+  color: white;
+  font-weight: bold;
+  padding: 2px 4px 1px;
+}
+
+.Stamp-extra,
+.Stamp span {
+  @include line;
+
+  display: inline-block;
+  margin-left: 2px;
+  padding-left: 4px;
+
+  &::before {
+    bottom: 0;
+    left: 0;
+    top: -1px;
+    width: 1px;
+  }
+}
+
+.Stamp--stat {
+  margin-right: 0;
+  text-align: center;
+  min-width: 68px;
+}
+
+// Selectize override
+.Stamp .highlight {
+  background: none !important;
+  border: none !important;
+  display: inline;
+  margin-left: 0;
+  padding-left: 0;
+
+  &::before {
+    display: none;
+  }
+}
+
+.Stamp--isRounded {
+  border: 0;
+  border-radius: 2px;
+  color: white;
+  font-size: 10px;
+  line-height: 1.3;
+  padding: 1px 5px;
+  text-transform: unset;
+}
+
+.Stamp--positive {
+  background-color: info-state-color(positive);
+}
+
+.Stamp--negative {
+  background-color: info-state-color(negative);
+}
+
+.Stamp--warning {
+  background-color: info-state-color(warning);
+}
+
+.Stamp--draft {
+  background-color: color(blue);
+}
+
+.Stamp--disabled {
+  background-color: color(tertiary);
+}
+
+.Stamp--inactive {
+  background-color: color(secondary);
+}
+
+.StampList-item {
+  padding-right: 5px;
+}

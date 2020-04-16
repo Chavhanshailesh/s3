@@ -1,0 +1,71 @@
+
+.SiteGridItem {
+  position: relative;
+}
+
+.SiteGridItem-emblemContainer {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.SiteGridItem-heading {
+  margin-bottom: 3px;
+}
+
+.SiteGridItem-info {
+  padding-bottom: sketch-size(small);
+}
+
+.SiteGridItem-description {
+  line-height: 1.3;
+  margin-bottom: sketch-size(small);
+  margin-top: sketch-size(xsmall);
+}
+
+.SiteGridItem-buttonsContainer {
+  margin-top: sketch-size(small);
+}
+
+// Modifiers
+
+.SiteGridItem--album {
+  padding-bottom: 10px;
+
+  .SiteGridItem-heading {
+    margin-bottom: 5px;
+  }
+}
+
+
+.SiteGridItem--requestAccess {
+  .SiteGridItem-heading {
+    margin-bottom: 6px;
+  }
+
+  .SiteGridItem-requestNote {
+    margin-bottom: 26px;
+  }
+
+  .SiteGridItem-emblemContainer {
+    display: inline-block;
+    margin-bottom: 20px;
+    max-width: 250px;
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+
+.SiteGridItem--small {
+  .SiteGridItem-emblemContainer {
+    margin-bottom: 8px;
+  }
+
+  .SiteGridItem-heading {
+    margin-bottom: 0;
+  }
+
+  .SiteGridItem-info {
+    padding-bottom: 8px;
+  }
+}

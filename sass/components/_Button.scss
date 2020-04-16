@@ -1,0 +1,307 @@
+$button-icon-width: 32px;
+$button-icon-width-large: 40px;
+
+.Button {
+  background: white;
+  border: 1px solid color(medium);
+  border-radius: 4px;
+  color: color(primary);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  min-height: 32px;
+  line-height: 30px;
+  padding: 0 15px;
+  position: relative;
+  text-align: center;
+  transform: translateZ(0);
+  transition: 0.2s fill, 0.2s border-color;
+  width: auto;
+  z-index: 1;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  .touch-none &:hover {
+    border-color: var(--branding-primary-color);
+  }
+
+  &.disabled,
+  &[disabled] {
+    -webkit-tap-highlight-color: rgba(black, 0);
+    background: white !important;
+    border: 1px solid color(medium);
+    color: color(tertiary) !important;
+    filter: grayscale(1);
+    opacity: 0.8;
+    pointer-events: none;
+
+    &:hover {
+      border: 1px solid color(medium);
+      color: color(tertiary) !important;
+    }
+  }
+}
+
+/* ========================================
+=            Button Varaiants            =
+======================================== */
+
+.Button--large {
+  font-size: 14px;
+  min-height: 40px;
+  line-height: 1;
+  padding: 12px 20px;
+}
+
+.Button--hasIcon {
+  padding: 0 15px 0 ($button-icon-width);
+}
+
+.Button--full {
+  width: 100%;
+}
+
+.Button--hasIcon.Button--large {
+  padding: 12px 20px 12px 48px;
+}
+
+.Button--minWidth,
+// TODO: remove this when all in react
+.button[data-follow] {
+  min-width: 104px;
+}
+
+.Button--minWidth.Button--micro {
+  min-width: 70px;
+}
+
+.Button--minWidth.Button--large {
+  min-width: 115px;
+}
+
+.Button--rounded {
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  border-color: var(--branding-primary-color);
+}
+
+.Button--small,
+// TODO: remove this when all in react
+.Button--small[data-follow] {
+  min-height: 24px;
+  line-height: 23px;
+  padding: 0 16px;
+  width: auto;
+}
+
+.Button--micro {
+  border-radius: 2px;
+  font-size: 11px;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 0 9px;
+  width: auto;
+}
+
+.Button--micro.Button--follow {
+  border-color: var(--branding-primary-color);
+}
+
+.Button--fill {
+  background-color: color(fill);
+  border: none;
+}
+
+.Button--brand,
+.Button--rounded {
+  background: var(--branding-primary-color);
+  border-color: var(--branding-primary-color);
+  color: white;
+  font-weight: bold;
+  transition: none;
+
+  &::after {
+    background: black;
+  }
+
+  &.disabled::after,
+  &[disabled]::after {
+    display: none !important;
+  }
+
+  .Button + & {
+    margin-left: 16px;
+  }
+
+  &.button {
+    color: white !important;
+  }
+}
+
+.Button--transparent {
+  background: transparent;
+  border-color: white;
+  color: white;
+}
+
+.Button--brandHover,
+.Button--brand,
+.Button--rounded,
+.Button--danger,
+.Button--confirm {
+  &::after {
+    border-radius: inherit;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.2s opacity;
+  }
+
+  .touch-none &:hover::after,
+  .touch-none &:focus::after {
+    opacity: 0.1;
+  }
+}
+
+/* ====================================
+=            Button Text             =
+==================================== */
+
+.Button-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====================================
+=            Button Icons            =
+==================================== */
+
+.Button-iconContainer {
+  bottom: 0;
+  display: inline-block;
+  fill: currentColor;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: $button-icon-width;
+  z-index: 2;
+
+  .Button--large & {
+    left: 8px;
+    width: $button-icon-width-large;
+  }
+
+  .Button--brand & {
+    color: white;
+  }
+
+  .Button--fill & {
+    color: color(secondary);
+  }
+
+  .Button--outline & {
+    fill: currentColor;
+  }
+
+  .Button.disabled &,
+  .Button[disabled] & {
+    color: var(--branding-primary-color);
+  }
+}
+
+.Button-iconContainer .Icon {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+
+  .Button--large & {
+    width: 20px;
+  }
+}
+
+.Button--danger,
+.Button--danger:hover {
+  border-color: color(red) !important;
+  color: color(primary);
+}
+
+.Button--danger::after {
+  background: color(red);
+}
+
+.Button--dangerHover:hover {
+  border-color: color(red) !important;
+}
+
+.Button--warningHover:hover {
+  border-color: color(orange) !important;
+}
+
+.Button--confirm::after {
+  background: color(green);
+}
+
+.Button--confirm,
+.Button--confirm:hover {
+  border-color: color(green) !important;
+  color: color(primary);
+}
+
+.Button--small.Button--danger {
+  color: color(red);
+
+  &:hover {
+    color: color(red);
+  }
+}
+
+.Button--small.Button--confirm {
+  color: color(green);
+
+  &:hover {
+    color: color(green);
+  }
+}
+
+.Button--brandOutline {
+  color: inherit;
+
+  &:hover {
+    border-color: color(tertiary) !important;
+    color: inherit !important;
+  }
+}
+
+.Button--inInput {
+  min-height: 48px;
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+.Button--isFieldHeight {
+  min-height: 48px;
+}
+
+// Old
+.Button .ss-standard {
+  color: inherit !important;
+  background-color: rgba(black, 0.06) !important;
+  opacity: 0.8;
+}
+
+// This will remove the icon if class Button--hasIcon is not set, will save the backend team having to update every page
+.Button:not(.Button--hasIcon) .Button-iconContainer {
+  display: none;
+}

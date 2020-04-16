@@ -1,0 +1,101 @@
+
+.Footer {
+  background-color: var(--branding-footer-bg-color, white);
+  border-top: 1px solid rgba(0, 0, 0, 0.15); // Same as header border-bottom
+  color: var(--branding-footer-text-color, color(secondary));
+  font-size: 12px;
+  padding-top: sketch-size(large);
+
+  a,
+  .type--fauxLink {
+    color: var(--branding-footer-text-color, var(--branding-primary-color, color(brand)));
+  }
+
+  .is-editingContent & {
+    display: none;
+  }
+
+  .p-primary-footer & {
+    background-color: var(--branding-primary-color, color(brand));
+    color: white;
+
+    a,
+    .type--fauxLink {
+      color: inherit;
+    }
+  }
+
+  .p-dark-footer & {
+    background-color: $dark;
+    color: $light;
+
+    a,
+    .type--fauxLink {
+      color: white;
+    }
+  }
+}
+
+.Footer-top {
+  padding-bottom: sketch-size(small);
+  position: relative;
+  min-height: 76px;
+}
+
+.Footer-bottom {
+  font-weight: 500;
+  margin-bottom: size(medium);
+  opacity: 0.4;
+  padding-top: size(medium);
+  position: relative;
+  text-align: center;
+
+  &::after {
+    background-color: color(tertiary);
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .p-dark-footer &::after,
+  .p-primary-footer &::after {
+    background-color: currentColor;
+    opacity: 0.4;
+  }
+}
+
+.Footer-simpplrLogo {
+  color: inherit;
+  fill: currentColor;
+  height: 1.6em; // for IE
+  vertical-align: middle;
+  width: 5em;
+}
+
+.Footer-mobilePromotion {
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Footer-mobilePromotionLogo {
+  width: 104px;
+  display: inline-block;
+  margin-top: 10px;
+
+  & + & {
+    margin-left: 7px;
+  }
+}
+
+.Footer-navLinks-box {
+  margin-top: 50px;
+  position: relative;
+}

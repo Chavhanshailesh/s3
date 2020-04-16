@@ -1,0 +1,46 @@
+
+.SocialCount {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+
+  &.is-disabled {
+    opacity: 0.3;
+  }
+}
+
+.SocialCount-value {
+  color: color(tertiary);
+  display: inline-block;
+  font-size: 13px;
+  line-height: 16px;
+  margin-left: 4px;
+  vertical-align: top;
+}
+
+.SocialCount-checkContainer {
+  display: inline-block;
+  fill: currentColor;
+  margin-left: 4px;
+  margin-top: 2px;
+  vertical-align: top;
+  width: 12px;
+}
+
+.SocialCount-iconContainer {
+  display: inline-block;
+  vertical-align: top;
+  width: 16px;
+}
+
+.SocialCount-iconContainer--twitter {
+  margin-top: 1px;
+}
+
+$socials: twitter facebook linkedin;
+
+@each $social in $socials {
+  .SocialCount-iconContainer--#{$social} {
+    fill: color($social);
+  }
+}

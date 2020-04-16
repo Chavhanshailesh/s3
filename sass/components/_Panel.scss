@@ -1,0 +1,331 @@
+.Panel {
+  background-color: #fff;
+  border: 1px solid color(borderPanel);
+  border-radius: 2px;
+  box-shadow: 0 0 7px rgba(black, 0.05);
+  padding: 0;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+
+  &.Panel--naked {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+.Panel--withArrow::after,
+.Panel-arrow {
+  background: white;
+  border: 1px solid color(borderPanel);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  content: "";
+  height: 14px;
+  position: absolute;
+  right: 20px;
+  top: -7px;
+  transform: rotate(-45deg);
+  transition: 0.2s background;
+  width: 14px;
+  z-index: 1;
+}
+
+.Panel--withArrowBottom::after,
+.OptionsMenu-panel[data-placement^="top"] .Panel-arrow {
+  bottom: -7px;
+  top: auto;
+  transform: rotate(-225deg);
+}
+
+.Panel--withArrowCenter::after {
+  margin-right: -5px;
+  right: 50%;
+}
+
+.Panel--withArrowLeft::after {
+  left: 20px;
+  right: auto;
+}
+
+.Panel--greyArrow::after {
+  background: color(fill);
+}
+
+.Panel--alignToArrow {
+  transform: translateY(4px);
+
+  @include media(">small") {
+    &.Panel--withArrow {
+      transform: translate(calc(-100% + 33px), 12px);
+    }
+
+    &.Panel--withArrowLeft {
+      transform: translate(-23px, 12px);
+    }
+  }
+}
+
+.Panel-inner {
+  color: color(secondary);
+  padding: 16px;
+}
+
+.Panel-window {
+  -webkit-overflow-scrolling: touch;
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+}
+
+// TODO: pull out and repalce with a new component, Menu or something
+.Panel-group {
+  padding: 10px 5px;
+  position: relative;
+  z-index: 2;
+
+  .Panel--naked & {
+    padding: 0;
+  }
+
+  & + &::after {
+    background: rgba(black, 0.075);
+    content: '';
+    height: 1px;
+    left: 16px;
+    position: absolute;
+    right: 16px;
+    top: 0;
+  }
+}
+
+.Panel-group--large {
+  padding: 8px 5px;
+  z-index: 2;
+}
+
+.Panel-group + .Panel-group::after {
+  left: 0;
+  right: 0;
+}
+
+.Panel-group--heading,
+.Panel-list--heading {
+  padding: 4px 16px;
+}
+
+.Panel-item {
+  border-radius: 2px;
+  color: color(secondary);
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  padding: 5px 11px; // 11 becuase the parent has 5px, making 16px - one of our sizes
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
+
+  &:hover,
+  &.is-active {
+    background: color(fill);
+    text-decoration: none;
+  }
+
+  .Panel--naked & {
+    padding: 9px 15px;
+  }
+
+  .Panel--naked &:hover {
+    background: none;
+    color: black;
+  }
+
+  .Panel--naked &.is-active {
+    background: color(fill);
+    color: black;
+    font-weight: 500;
+  }
+
+  // TODO: remove once everything is in React
+  a,
+  a:hover {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+  }
+
+  a .CalendarDay-month {
+    color: white;
+  }
+}
+
+.Panel-item--danger {
+  color: color(red);
+
+  &:hover {
+    background: color(red);
+    color: white;
+  }
+}
+
+.Panel-item--withIcon {
+  color: color(primary);
+  font-weight: 500;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 15px 0 53px;
+}
+
+.Panel-iconContainer {
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  width: 28px;
+
+  .Panel-item--withSmallIcon & {
+    fill: color(icon);
+    left: auto;
+    margin-top: -8px;
+    right: 16px;
+    top: 50%;
+    width: 16px;
+  }
+}
+
+.Panel-item-remove {
+  bottom: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+
+  @include media(">medium") {
+    display: none;
+
+    .Panel-item:hover & {
+      display: block;
+    }
+  }
+
+  .Clear {
+    width: 30px;
+    height: 100%;
+  }
+}
+
+.Panel-footer {
+  background-color: color(wash);
+  border: solid color(medium);
+  border-width: 0 1px 1px;
+  box-shadow: 0 4px 4px rgba(black, 0.1);
+  display: block;
+  height: 40px;
+  padding: 10px 16px;
+}
+
+//
+// Modifiers
+
+.Panel-item--hasPopOut {
+  position: relative;
+
+  .Panel {
+    margin-right: sketch-size(small) + 1px;
+    opacity: 1;
+    position: absolute;
+    right: 100%;
+    top: - sketch-size(small);
+    transition-delay: 0.2s;
+    transition-property: opacity;
+    min-width: 230px; // NOTE: this is only for user navigation panel
+  }
+}
+
+.Panel-group > .Panel-group {
+  padding: 0;
+
+  &::after {
+    display: none;
+  }
+}
+
+.Panel-item-rightIcon {
+  fill: color(tertiary);
+  float: right;
+  padding-top: 5px;
+  width: 10px;
+}
+
+.Panel-item--withImage {
+  .Panel-item-image {
+    flex-shrink: 0;
+    margin-right: sketch-size(small);
+    width: 30px;
+  }
+
+  .Panel-item-image > .Icon {
+    fill: color(tertiary);
+    margin: 6px;
+  }
+
+  .type-iconContainer {
+    fill: color(icon);
+    top: -1px;
+  }
+
+  .type--stamp {
+    margin-bottom: 3px;
+  }
+
+  .Panel-item-content {
+    line-height: 1;
+    width: 100%;
+
+    // :hover required to overide the `a:hover` further up in this file
+    &,
+    &:hover {
+      align-items: center;
+      display: flex;
+    }
+  }
+}
+
+.Field--staticLabel {
+  .Field--staticLabelWithImage {
+    &.full {
+      .Field-label {
+        left: 48px;
+      }
+
+      + .Field-label {
+        left: 48px;
+      }
+    }
+
+    .single .selectize-input {
+      .Panel-item {
+        &:hover,
+        &.is-active {
+          background: #fff;
+          text-decoration: none;
+        }
+      }
+
+      .Panel-item-image {
+        margin-right: 4px;
+        width: 36px;
+
+        + span {
+          position: relative;
+          top: 8px;
+          left: 4px;
+        }
+      }
+    }
+  }
+}

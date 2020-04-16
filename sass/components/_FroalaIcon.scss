@@ -1,0 +1,115 @@
+.fr-simpplr-theme.fr-toolbar .fr-command.fr-btn .FroalaIcon,
+.fr-simpplr-theme.fr-popup .fr-command.fr-btn .FroalaIcon {
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .has-smallControls & {
+    font-size: 11px;
+  }
+}
+
+.fr-simpplr-theme.fr-toolbar .fr-command.fr-btn,
+.fr-simpplr-theme.fr-popup .fr-command.fr-btn {
+  .FroalaIcon--arrows-v {
+    width: 6px;
+  }
+
+  .FroalaIcon--hash-tag {
+    width: 10px;
+  }
+
+  .FroalaIcon--trash,
+  .FroalaIcon--columns,
+  .FroalaIcon--rows,
+  .FroalaIcon--paragraph {
+    width: 11px;
+  }
+
+  .FroalaIcon--bold,
+  .FroalaIcon--italic,
+  .FroalaIcon--expand,
+  .FroalaIcon--underline,
+  .FroalaIcon--drop,
+  .FroalaIcon--link,
+  .FroalaIcon--arrows-alt,
+  .FroalaIcon--at-sign {
+    width: 12px;
+  }
+
+  .FroalaIcon--list-ul,
+  .FroalaIcon--list-ol,
+  .FroalaIcon--minus {
+    width: 13px;
+  }
+
+  .FroalaIcon--code {
+    width: 18px;
+  }
+
+  // has dropdown arrow
+  .FroalaIcon--paint-brush,
+  .FroalaIcon--align-left,
+  .FroalaIcon--paragraph,
+  .FroalaIcon--square-o,
+  .FroalaIcon--rows,
+  .FroalaIcon--columns,
+  .FroalaIcon--arrows-v {
+    margin-left: -3px;
+  }
+}
+
+.has-smallControls .fr-simpplr-theme.fr-toolbar .fr-command.fr-btn,
+.has-smallControls .fr-simpplr-theme.fr-popup .fr-command.fr-btn {
+  .FroalaIcon--bold,
+  .FroalaIcon--paragraph,
+  .FroalaIcon--italic,
+  .FroalaIcon--drop,
+  .FroalaIcon--minus {
+    width: 10px;
+  }
+
+  .FroalaIcon--underline,
+  .FroalaIcon--list-ol {
+    width: 11px;
+  }
+
+  .FroalaIcon--list-ul {
+    width: 12px;
+  }
+
+  .FroalaIcon--smile,
+  .FroalaIcon--align-left,
+  .FroalaIcon--strikethrough {
+    width: 13px;
+  }
+}
+
+
+.fr-command.fr-title .FroalaIcon {
+  fill: currentColor;
+  padding: 12px 6px;
+  width: 13px;
+}
+
+.fr-floating-btn {
+  text-align: center;
+
+
+  .FroalaIcon {
+    display: inline-block;
+    fill: currentColor;
+    width: 16px;
+  }
+
+  .FroalaIcon--minus,
+  .FroalaIcon--plus {
+    top: 1px;
+  }
+}
+
+.fr-simpplr-theme.fr-box .fr-qi-helper a.fr-floating-btn .FroalaIcon svg {
+  fill: color(secondary);
+}

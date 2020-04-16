@@ -1,0 +1,143 @@
+
+.NewsletterBuilderItem {
+  background: white;
+  border: 1px solid color(border);
+  border-radius: 2px;
+  position: relative;
+  z-index: 2;
+
+  .fr-simpplr-theme.fr-box .fr-wrapper,
+  .fr-simpplr-theme.fr-toolbar,
+  .Field-textarea,
+  .Field-input {
+    border-color: color(border);
+  }
+}
+
+.NewsletterBuilderItem--draggable {
+  z-index: 1;
+}
+
+.NewsletterBuilderItem-header {
+  background: color(pageBackground);
+  border-radius: 2px 2px 0 0;
+  border-bottom: 1px solid color(border);
+  padding: 8px 15px;
+  position: relative;
+}
+
+.NewsletterBuilderItem-optionsMenu {
+  position: absolute;
+  right: 15px;
+  top: 2px;
+  width: 16px;
+  z-index: 3;
+}
+
+.NewsletterBuilderItem-overlay {
+  border-radius: inherit;
+  border: 2px solid;
+  bottom: -1px;
+  cursor: move;
+  left: -1px;
+  opacity: 0;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  transition: 0.2s;
+  z-index: 2;
+
+  .NewsletterBuilderItem:hover & {
+    opacity: 1;
+  }
+
+  .NewsletterBuilderItem--hovering:hover & {
+    opacity: 0;
+  }
+}
+
+.NewsletterBuilderItem-main {
+  margin: -1px;
+  position: relative;
+}
+
+.NewsletterBuilderItem-headerOverlay {
+  border-radius: inherit;
+  border: 2px solid;
+  bottom: -1px;
+  cursor: move;
+  left: -1px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  transition: 0.2s;
+  visibility: hidden;
+  z-index: 2;
+
+  .NewsletterBuilderItem-header:hover + & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .NewsletterBuilderItem--hovering .NewsletterBuilderItem-header:hover + & {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.NewsletterBuilderItem-iconContainer {
+  float: left;
+  margin-right: 8px;
+  position: relative;
+  top: -1px;
+  width: 17px;
+}
+
+.NewsletterBuilderItem--draggable {
+  .NewsletterBuilderItem-header {
+    padding: 8px;
+  }
+}
+
+.NewsletterBuilderItem--missing {
+  border: 1px solid info-state-color(warning);
+  padding: 46px 16px;
+  position: relative;
+  text-align: center;
+  z-index: 3;
+
+  p {
+    margin: 6px auto 0;
+    max-width: 468px;
+  }
+}
+
+.NewsletterBuilderItem-close {
+  cursor: pointer;
+  fill: color(icon);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: 0.2s;
+  width: 20px;
+
+  &:hover {
+    fill: color(primary);
+  }
+}
+
+.NewsletterBuilderItem-spacer {
+  margin-bottom: 20px;
+
+  .NewsletterBuilderItem & {
+    margin-bottom: 0;
+  }
+}
+
+.NewsletterBuilderItem-main {
+  hr {
+    margin: 22px auto;
+  }
+}

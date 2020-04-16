@@ -1,0 +1,69 @@
+
+.State {
+  background-color: color(fill);
+  border-radius: 2px;
+  color: color(secondary);
+  display: inline-block;
+  font-size: 0;
+  line-height: 32px;
+  padding: 0 12px;
+  text-align: center;
+  min-width: 104px;
+}
+
+.State--small {
+  width: 76px;
+}
+
+.State--noBg {
+  background: none;
+  line-height: 1;
+  padding: 0;
+  vertical-align: top;
+  min-width: auto;
+}
+
+.State--fluidWidth {
+  padding: 0 16px;
+  min-width: auto;
+}
+
+.State--outlined {
+  background: none;
+  color: white;
+  padding: 0;
+}
+
+.State-iconContainer {
+  display: inline-block;
+  color: color(medium);
+  fill: color(medium);
+  font-size: 12px;
+  margin-right: 1ch;
+  vertical-align: middle;
+  width: 14px;
+
+  .State--outlined & {
+    color: white;
+    fill: white;
+  }
+
+  .State--noBg & {
+    color: inherit;
+    fill: currentColor;
+    margin-right: 5px;
+    width: 16px;
+  }
+}
+
+.State-iconContainer--lock,
+.State-iconContainer--small {
+  position: relative;
+  width: 10px;
+}
+
+.State-text {
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: middle;
+}

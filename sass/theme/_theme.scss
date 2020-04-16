@@ -1,0 +1,17 @@
+// $name: $property
+$propertyList: (
+  bg: background-color,
+  color: color,
+  border: border-color,
+  fill: fill
+);
+
+@each $name, $property in $propertyList {
+  .theme--active--#{$name}.is-active,
+  .theme--before--#{$name}::before,
+  .theme--after--#{$name}::after,
+  .theme--hover--#{$name}:hover,
+  .theme--#{$name} {
+    #{$property}: color(brand);
+  }
+}

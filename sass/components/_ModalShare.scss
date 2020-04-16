@@ -1,0 +1,20 @@
+
+
+.ModalShare-linkContainer {
+  background-color: color(fill);
+  border: 1px solid color(medium);
+  clear: both;
+  font-size: 12px;
+  margin-bottom: 12px;
+  padding: 7px;
+}
+
+.ModalShare-more {
+  display: block;
+  font-size: 12px;
+  text-align: right;
+
+  & + & {
+    margin-top: 8px;
+  }
+}

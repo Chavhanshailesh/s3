@@ -1,0 +1,32 @@
+.HeaderOptions-panel {
+  display: block;
+  padding-bottom: 0;
+  position: absolute;
+  right: 0;
+  top: 46px;
+  z-index: 5;
+
+  &::after {
+    background: white;
+    border: 1px solid color(medium);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    content: '';
+    height: 8px;
+    position: absolute;
+    right: 16px;
+    top: -4px;
+    transform: rotate(-45deg);
+    transition: 0.2s background;
+    width: 8px;
+    z-index: 2;
+  }
+}
+
+.HeaderOptions-panel--star {
+  min-width: 140px;
+}
+
+.HeaderOptions-panel--star::after {
+  right: 20px;
+}

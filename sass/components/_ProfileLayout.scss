@@ -1,0 +1,32 @@
+
+.ProfilePageLayout {
+
+  // Desktop
+  @include media(">medium") {
+    > .column {
+      max-width: 880px;
+      width: calc(100% - 340px);
+    }
+
+    > .column + .column {
+      width: 340px;
+    }
+  }
+
+  // Tablet
+  @include media("<medium") {
+    margin-bottom: -17px;
+    margin-top: -16px;
+
+    &,
+    .column {
+      padding: 0;
+    }
+  }
+}
+
+.ProfilePageLayout-item {
+  @include media(">medium") {
+    margin-bottom: 10px;
+  }
+}

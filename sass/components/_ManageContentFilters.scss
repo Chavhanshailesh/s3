@@ -1,0 +1,28 @@
+.ManageContentFilters-panelWrapper {
+  z-index: 5;
+  margin-top: 10px;
+}
+
+.ManageContentFilters-panel {
+  width: 490px;
+  padding: 20px;
+}
+
+.ManageContentFilters-rightFilters {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  max-width: 320px;
+}
+
+.ManageContentFilters-button {
+  margin-left: 10px;
+}
+
+.ManageContentFilters-button .Button {
+  white-space: nowrap;
+}
+
+.ManageContentFilters-sortBy {
+  width: 200px;
+}

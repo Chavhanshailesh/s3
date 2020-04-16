@@ -1,0 +1,15 @@
+
+.ImageUploadButton {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  fill: currentColor;
+  height: 44px;
+  justify-content: center;
+  text-align: center;
+  width: 44px;
+
+  .Icon {
+    width: 28px;
+  }
+}

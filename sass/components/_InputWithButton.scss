@@ -1,0 +1,21 @@
+
+.InputWithButton {
+  display: flex;
+}
+
+.InputWithButton-input {
+  flex: 1;
+  margin-right: sketch-size(small);
+  min-width: 0;
+}
+
+.InputWithButton-button {
+  .Button {
+    height: 32px; // not 100% as the field height can change
+    min-width: 96px;
+  }
+
+  .Button--large {
+    height: 48px; // not 100% as the field height can change
+  }
+}

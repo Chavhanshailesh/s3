@@ -1,0 +1,91 @@
+
+.FieldStrip {
+  margin-bottom: 8px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.FieldStrip--withControls {
+  padding-right: 80px;
+}
+
+.FieldStrip-row {
+  border: 1px solid color(medium);
+  height: 32px;
+  position: relative;
+
+  & + & {
+    border-top: 0;
+  }
+
+  &.has-error {
+    border-color: color(red);
+  }
+}
+
+.FieldStrip-label,
+.FieldStrip-selectType {
+  border-right: 1px solid rgba(black, 0.075);
+  font-size: 12px;
+  height: 100%;
+  left: 0;
+  padding: 6px 8px;
+  position: absolute;
+  top: 0;
+  width: 56px;
+  z-index: 2;
+}
+
+.FieldStrip-selectType {
+  padding: 0;
+
+  .Field-select {
+    border: none;
+    font-size: 12px;
+  }
+}
+
+.FieldStrip-input[type="text"] {
+  border: none;
+  height: 100%;
+  padding-left: 56px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.FieldStrip-error {
+  margin: 0 0 7px;
+}
+
+.FieldStrip--options {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.FieldStrip-clearContainer {
+  display: inline-block;
+  margin-right: 16px;
+  vertical-align: middle;
+}
+
+.FieldStrip-handleContainer {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  vertical-align: middle;
+}
+
+.FieldStrip-iconContainer {
+  display: inline-block;
+  fill: color(medium);
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 16px;
+}

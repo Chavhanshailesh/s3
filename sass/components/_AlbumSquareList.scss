@@ -1,0 +1,21 @@
+
+.AlbumSquareList {
+  padding: 0 0 30px;
+
+  @include media(">small") {
+    padding-bottom: 50px;
+  }
+}
+
+.AlbumSquareList-addToAlbum {
+  margin-bottom: 16px;
+  text-align: right;
+
+  @include media(">small") {
+    margin-bottom: 0;
+  }
+
+  @include media(">medium") {
+    display: none;
+  }
+}

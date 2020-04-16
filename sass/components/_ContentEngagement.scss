@@ -1,0 +1,32 @@
+.ContentEngagement {
+  background: white;
+  padding: 10px 20px 30px;
+}
+
+.ContentEngagement-datePicker {
+  margin-bottom: 20px;
+}
+
+.ContentEngagement-heading {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.ContentEngagement-stats {
+  margin-top: 20px;
+  transition: 0.1s;
+}
+
+.ContentEngagement-stats.is-loading {
+  filter: grayscale(100%);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.ContentEngagement-datePicker--bordered {
+  border-bottom: 1px solid color(border);
+  padding-bottom: 10px;
+}

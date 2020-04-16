@@ -1,0 +1,189 @@
+.Hint {
+  font-size: 50px;
+  height: 1em;
+  position: absolute;
+  width: 1em;
+  z-index: 3;
+}
+
+.Hint-dot {
+  padding: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.Hint-dot-inner {
+  background: currentColor;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 34px;
+  height: 1em;
+  position: relative;
+  vertical-align: top;
+  width: 1em;
+
+  &::before {
+    animation: pulsate 2s ease-out;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+    border: 3px solid currentColor;
+    bottom: 0;
+    box-shadow: 0 0 2px currentColor;
+    color: inherit;
+    content: "";
+    display: block;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.Hint-reminder {
+  bottom: 15px;
+  left: 15px;
+  position: fixed;
+  z-index: 2;
+}
+
+.Hint-dot-icon {
+  fill: white;
+  margin: 5px 3px 0 5px;
+  width: 20px;
+}
+
+.Hint-footer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+
+  .Button {
+    flex-shrink: 0;
+
+    .Button-text {
+      span {
+        text-transform: lowercase;
+      }
+    }
+  }
+}
+
+.Hint-dot-count {
+  background: color(notifications);
+  border-radius: 50%;
+  bottom: 0;
+  color: white;
+  height: 25px;
+  padding: 2px 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 25px;
+}
+
+.Hint-nextUp {
+  margin-right: 10px;
+  position: relative;
+  top: -2px;
+}
+
+.Hint-dot--large {
+  padding: 0;
+
+  .Hint-dot-inner {
+    font-size: 56px;
+  }
+
+  .Hint-dot-icon {
+    margin: 11px auto;
+    width: 28px;
+  }
+}
+
+@keyframes pulsate {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1, 1);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1.8, 1.8);
+  }
+}
+
+.Hint-panel {
+  font-size: 14px;
+  z-index: 3;
+
+  .Panel {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.05), 0 0 50px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+  }
+}
+
+.Hint-panelInner {
+  padding: 20px;
+  position: relative;
+  width: 412px;
+}
+
+.Hint-reminderText {
+  display: block;
+  margin-bottom: 3px;
+}
+
+$arrowSize: 15px;
+$arrowDiagonal: 7px;
+
+.Hint-popperArrow {
+  background: white;
+  border: 1px solid color(borderPanel);
+  width: $arrowSize;
+  height: $arrowSize;
+  border-style: solid;
+  position: absolute;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+/* =============================================
+=            Placements                       =
+============================================= */
+
+.Hint-panel[data-placement^='top'] .Hint-popperArrow {
+  border-right-color: transparent;
+  border-top-color: transparent;
+  bottom: -$arrowDiagonal;
+  left: calc(50% - #{$arrowDiagonal});
+}
+
+.Hint-panel[data-placement^='bottom'] .Hint-popperArrow {
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  left: calc(50% - #{$arrowDiagonal});
+  top: -$arrowDiagonal;
+}
+
+.Hint-panel[data-placement^='right'] .Hint-popperArrow {
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  left: -$arrowDiagonal;
+  top: calc(50% - #{$arrowDiagonal});
+}
+
+.Hint-panel[data-placement^='left'] .Hint-popperArrow {
+  border-left-color: transparent;
+  border-top-color: transparent;
+  right: -$arrowDiagonal;
+  top: calc(50% - #{$arrowDiagonal});
+}

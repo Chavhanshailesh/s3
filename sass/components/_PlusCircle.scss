@@ -1,0 +1,42 @@
+.PlusCircle {
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    border: 1px solid color(medium);
+    border-radius: 50%;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  a,
+  span {
+    color: color(tertiary);
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    margin-top: -24px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.PlusCircle .Icon {
+  display: inline-block;
+  fill: color(medium);
+  margin-right: 2px;
+  width: 10px;
+}

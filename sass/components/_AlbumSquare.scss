@@ -1,0 +1,101 @@
+
+.AlbumSquare {
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.AlbumSquare-inner {
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 100%;
+
+  .is-uploading & {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .AlbumSquare--edit & {
+    border: 1px solid color(medium);
+  }
+}
+
+.AlbumSquare-button {
+  cursor: pointer;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.AlbumSquare-description {
+  margin-top: -2px;
+}
+
+.AlbumSquare-loading {
+  bottom: 80px;
+  height: 4px;
+  left: 1px;
+  position: absolute;
+  right: 1px;
+  z-index: 2;
+
+  @include media("<=small") {
+    bottom: 64px;
+  }
+}
+
+.AlbumSquare-loading-bar {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.AlbumSquare-caption {
+  background: rgba(black, 0.95);
+  bottom: 0;
+  color: white;
+  font-size: 12px;
+  left: 0;
+  overflow: hidden;
+  padding: 4px 8px;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.AlbumSquare-videoIconContainer {
+  bottom: 16px;
+  fill: color(medium);
+  left: 16px;
+  position: absolute;
+  width: 24px;
+}
+
+.AlbumSquare-handle {
+  bottom: 0;
+  cursor: move;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.AlbumSquare-loaderContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -40px;
+}
+
+.AlbumSquare .Field-textarea {
+  @include media("<=small") {
+    min-height: 64px;
+  }
+}

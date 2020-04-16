@@ -1,0 +1,14 @@
+
+
+.Block {
+  padding-bottom: 16px;
+
+  @include media(">small") {
+    padding-bottom: 32px;
+  }
+}
+
+
+.Block-header {
+  margin-bottom: 8px;
+}

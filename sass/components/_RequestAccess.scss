@@ -1,0 +1,48 @@
+.RequestAccess {
+  text-align: center;
+}
+
+.RequestAccess-avatar {
+  display: block;
+  margin: 0 auto 15px;
+  max-width: 120px;
+}
+
+.RequestAccess-separator {
+  display: block;
+  margin: 30px auto 36px;
+  max-width: 350px;
+  position: relative;
+
+  &::before {
+    background: color(border);
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+}
+
+.RequestAccess-separatorText {
+  background: white;
+  padding: 0 8px;
+  position: relative;
+}
+
+.RequestAccess-emblem {
+  display: inline-block;
+  vertical-align: middle;
+  width: 45px;
+}
+
+.RequestAccess-name {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.RequestAccess-buttons {
+  margin-top: 40px;
+}

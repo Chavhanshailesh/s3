@@ -1,0 +1,100 @@
+.ContentViews {
+  background: white;
+  border-bottom: 1px solid color(border);
+  padding: 10px 20px;
+}
+
+.ContentViews-body {
+  transition: 0.1s;
+}
+
+.ContentViews-body.is-loading {
+  filter: grayscale(100%);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.ContentViews-datePicker {
+  margin-bottom: 20px;
+}
+
+.ContentViews-datePicker--bordered {
+  border-bottom: 1px solid color(border);
+  padding-bottom: 10px;
+}
+
+.ContentViews-header {
+  text-align: center;
+}
+
+.ContentViews-heading {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 7px;
+}
+
+.ContentViews-unique {
+  margin-bottom: 20px;
+}
+
+.ContentViews-chart {
+  margin: 0 -8px 0;
+}
+
+.ContentViews-footer {
+  text-align: right;
+  margin-top: -10px;
+}
+
+.ContentViews-download {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ContentViews-infoBox {
+  margin-bottom: 20px;
+}
+
+.ContentViews-infoBox-text {
+  margin: 4px 0 10px;
+  line-height: 1.3;
+}
+
+.ContentViews-infoBox-or {
+  color: color(secondary);
+  font-weight: bold;
+  font-size: 10px;
+  margin: 0 10px;
+  text-transform: uppercase;
+}
+
+.ContentViews-buttons {
+  .Button {
+    vertical-align: middle;
+  }
+}
+
+.AnalyticsPanel {
+  background: color(pageBackground);
+  padding: 15px;
+
+  .ContentViews {
+    margin-bottom: 10px;
+    border: 1px solid color(light);
+
+    .ContentViews-datePicker--bordered {
+      margin: 0 -20px 20px;
+      padding: 0 20px 10px;
+    }
+  }
+
+  .ContentEngagement {
+    border: 1px solid color(light);
+
+    .ContentEngagement-datePicker--bordered {
+      margin: 0 -20px 20px;
+      padding: 0 20px 10px;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.Field .DayPickerInput {
+  display: block;
+}
+
+.DayPickerInput-OverlayWrapper {
+  z-index: 99;
+}
+
+.DayPickerInput-Overlay {
+  top: -1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.DayPicker-wrapper {
+  padding-bottom: 0;
+}
+
+.DayPicker {
+  z-index: 8 !important;
+  font-size: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  min-width: 240px;
+}
+
+.Field-input--dayPicker {
+  caret-color: transparent;
+}
+
+.DayPicker-Weekday {
+  color: #999;
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0 3px;
+  font-size: 12px;
+  padding: 3px 0;
+}
+
+.DayPicker-Month {
+  margin: 7px;
+}
+
+.DayPicker-Day {
+  color: var(--branding-primary-color);
+  border-radius: 0;
+  padding: 0;
+
+  &:not(.DayPicker-Day--disabled):hover {
+    color: white;
+    background: var(--branding-primary-color) !important;
+  }
+}
+
+.DayPicker [role="columnheader"] {
+  width: 32px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.DayPicker [role="gridcell"] {
+  width: 32px;
+  line-height: 32px;
+}
+
+.DayPicker-Day--outside {
+  color: #999;
+  visibility: hidden;
+}
+
+.DayPicker-Day--today {
+  font-weight: normal;
+  background: #f5f5f5;
+}
+
+.DayPicker-Day--disabled {
+  color: #ccc;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  background: var(--branding-primary-color) !important;
+}
+
+.DayPicker-Caption {
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.DayPicker-Caption .NativeSelect {
+  margin-right: 8px;
+  width: auto !important;
+}
+
+.DayPicker-NavBar {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.DayPicker-NavBarButton {
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+
+  svg {
+    fill: #ccc;
+    transition: fill 0.2s;
+  }
+
+  &:hover svg {
+    fill: #666;
+  }
+
+  .Icon--circle {
+    margin: 3px;
+  }
+}

@@ -1,0 +1,29 @@
+.Bulk {
+  float: right;
+  margin-bottom: 32px;
+}
+
+.Bulk--footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  background: #fff;
+  float: none;
+  padding: 10px;
+  z-index: 4;
+  border-top: 1px solid color(border);
+  display: flex;
+  justify-content: center;
+}
+
+.Bulk-fieldContainer {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+
+  .Bulk--footer & {
+    min-width: 257px;
+  }
+}

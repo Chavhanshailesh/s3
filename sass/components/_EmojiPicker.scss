@@ -1,0 +1,237 @@
+
+
+.EmojiPicker {
+  background: white;
+  border: 1px solid color(medium);
+  box-shadow: 0 4px 4px rgba(black, 0.1);
+  width: 342px;
+  z-index: 3;
+
+  .modal-open & {
+    z-index: 9;
+  }
+
+  &::after {
+    background: color(fill);
+    border: 1px solid color(medium);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    content: '';
+    height: 8px;
+    position: absolute;
+    right: 27px;
+    top: -4px;
+    transform: rotate(-45deg);
+    transition: 0.2s background;
+    width: 8px;
+    z-index: 2;
+  }
+
+  &.EmojiPicker--flipped::after {
+    background: white;
+    bottom: -4px;
+    top: auto;
+    transform: rotate(135deg);
+  }
+
+  .touch & {
+    display: none;
+  }
+
+  @include media("<=small") {
+    display: none;
+  }
+}
+
+.EmojiPicker--small {
+  width: 306px;
+}
+
+.EmojiPicker-header {
+  background: color(fill);
+  border-bottom: 1px solid color(medium);
+  font-size: 0;
+  padding: 0 8px;
+}
+
+.EmojiPicker-header-item {
+  cursor: pointer;
+  display: inline-block;
+  fill: color(tertiary);
+  font-size: 16px;
+  height: 36px;
+  position: relative;
+  vertical-align: top;
+  width: 36px;
+
+  &:hover:not(.is-active) {
+    fill: color(primary);
+  }
+}
+
+.EmojiPicker-header-item .Icon {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+}
+
+.EmojiPicker-header-item--flag .Icon {
+  width: 11px;
+}
+
+.EmojiPicker-header-item--leaf .Icon {
+  width: 18px;
+}
+
+.EmojiPicker-header-item--burger .Icon {
+  width: 17px;
+}
+
+.EmojiPicker-header-item--lightbulb .Icon {
+  width: 11px;
+}
+
+.EmojiPicker-main {
+  height: 268px;
+  overflow: auto;
+  position: relative;
+}
+
+.EmojiPicker-searchContainer {
+  background: color(wash);
+  border-bottom: 1px solid color(medium);
+  padding: 8px;
+}
+
+.EmojiPicker-section {
+  padding: 8px 8px 0;
+}
+
+.EmojiPicker-heading {
+  padding-left: 8px;
+}
+
+.EmojiPicker-set {
+  font-size: 0;
+}
+
+.EmojiPicker-emoji {
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  height: 36px;
+  padding: 12px 0;
+  text-align: center;
+  transition: 0.2s background;
+  width: 11%;
+
+  &.is-active {
+    background: color(fill);
+    transition: none;
+  }
+
+  .EmojiPicker-settingsContainer &.is-active,
+  .EmojiPicker-settingsContainer &:hover {
+    background: color(pale);
+  }
+}
+
+.EmojiPicker-emoji--tone {
+  width: 16.6666667%;
+}
+
+.EmojiPicker-footer {
+  border-top: 1px solid color(medium);
+  height: 48px;
+  padding: 4px 8px;
+  position: relative;
+}
+
+.EmojiPicker-preview {
+  position: relative;
+}
+
+.EmojiPicker-preview-emoji {
+  display: inline-block;
+  font-size: 32px;
+  height: 40px;
+  margin-right: 0.5ch;
+  padding: 14px 0;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  width: 40px;
+  line-height: 0.5;
+}
+
+.EmojiPicker-preview-name {
+  left: 0;
+  margin-top: -9px;
+  overflow: hidden;
+  padding: 0 32px 0 48px;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: 50%;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.EmojiPicker-settings {
+  cursor: pointer;
+  fill: color(medium);
+  margin-top: -10px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 20px;
+
+  &:hover {
+    fill: color(primary);
+  }
+}
+
+.EmojiPicker-settingsButton {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+}
+
+.EmojiPicker-settingsContainer {
+  background: color(fill);
+  border: 1px solid color(medium);
+  bottom: 28px;
+  box-shadow: 0 4px 4px rgba(black, 0.1);
+  padding: 8px;
+  position: absolute;
+  right: -2px;
+  width: 234px;
+  z-index: 2;
+
+  &::after {
+    background: color(fill);
+    border: 1px solid color(medium);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    content: '';
+    height: 8px;
+    position: absolute;
+    right: 8px;
+    bottom: -4px;
+    transform: rotate(45deg);
+    transition: 0.2s background;
+    width: 8px;
+    z-index: 2;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.EmojiPicker .no-results {
+  border: none;
+  padding: 100px 15px;
+}

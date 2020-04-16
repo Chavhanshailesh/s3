@@ -1,0 +1,141 @@
+
+$FileExtensionBackground: color(wash);
+$FileExtensionBorder: color(border);
+
+.FileExtension {
+  display: block;
+  left: 0;
+  padding-bottom: 100%;
+  position: relative;
+
+  &::before {
+    background: $FileExtensionBackground;
+    border: 1px solid $FileExtensionBorder;
+    border-radius: 0 0 2px 2px;
+    border-top: 0;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 11px;
+    width: 100%;
+  }
+}
+
+.FileExtension--hideExtensionName.FileExtension::before {
+  @include media("<=small") {
+    top: 6px;
+  }
+}
+
+.FileExtension-name {
+  bottom: 8px;
+  color: color(tertiary);
+  font-size: 12px;
+  font-weight: bold;
+  left: 5%;
+  line-height: 14px !important;
+  margin-top: 0;
+  overflow: hidden;
+  padding: 0 2px;
+  position: absolute;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: lowercase;
+  top: auto;
+  white-space: nowrap;
+  width: 90%;
+
+  .FileExtension--small &,
+  .FileList--small & {
+    font-size: 10px !important;
+    line-height: 12px !important;
+  }
+}
+
+.FileExtension-top {
+  &::after {
+    border: 6px solid $FileExtensionBorder;
+    border-radius: 0 0 0 2px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &::before {
+    background: $FileExtensionBackground;
+    border: 1px solid $FileExtensionBorder;
+    border-bottom: 0;
+    border-radius: 2px 0 0 0;
+    border-right: 0;
+    content: "";
+    height: 11px;
+    left: 0;
+    position: absolute;
+    right: 11px;
+    top: 0;
+  }
+}
+
+.FileExtension-missing {
+  color: color(primary);
+  left: 50%;
+  margin: -7px 0 0 -4px;
+  position: absolute;
+  top: 50%;
+}
+
+.FileExtension-icon {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 52%;
+}
+
+.FileExtension-icon--withOffset {
+  margin-top: -8px;
+}
+
+//
+// Modifiers
+
+.FileExtension--hideExtensionName {
+  .FileExtension-top {
+    @include media("<=small") {
+      &::after {
+        border-width: 3px;
+      }
+
+      &::before {
+        height: 6px;
+        right: 6px;
+      }
+    }
+  }
+
+  .FileExtension-name {
+    @include media("<=small") {
+      display: none;
+    }
+  }
+}
+
+.FileExtension--portrait {
+  max-width: 70px;
+  padding-bottom: 125%;
+
+  &::before {
+    top: 11px;
+  }
+}
+
+.FileExtension--white {
+  &::before,
+  .FileExtension-top::before {
+    background-color: white;
+  }
+}

@@ -1,0 +1,265 @@
+.Page {
+  background: white;
+  position: relative;
+  z-index: 1;
+
+  @include media($breakpoint-smallUp) {
+    margin: -16px -16px 0;
+    padding: 16px;
+  }
+
+  @include media(">medium") {
+    border-radius: 4px;
+    border: 1px solid color(border);
+    margin: 0;
+    padding: 32px;
+  }
+}
+
+.Page:not(.Page--dashboard) {
+  @include media(">small" "<=medium") {
+    min-height: calc(100vh - 58px);
+  }
+}
+
+.Page--dashboard {
+  @include media($breakpoint-smallUp) {
+    margin-bottom: 16px;
+    padding-bottom: 0;
+  }
+
+  @include media(">medium") {
+    margin-bottom: 16px;
+    padding-bottom: 0;
+  }
+}
+
+.Page--bottomMargin {
+  @include media($breakpoint-smallUp) {
+    margin-bottom: 32px;
+  }
+
+  @include media(">medium") {
+    margin-bottom: 32px;
+  }
+}
+
+.Page-header {
+  border-bottom: 1px solid color(border);
+  margin-bottom: 32px;
+  position: relative;
+
+  @include media("<=medium") {
+    margin: 0 -16px 32px;
+  }
+}
+
+.Page-header--noBorder {
+  border-bottom: 0;
+  margin-bottom: 0;
+
+  @include media($breakpoint-smallDown) {
+    border-bottom: 0;
+    margin-bottom: 0 !important;
+  }
+}
+
+.Page-header-inner {
+  padding-bottom: 8px;
+
+  @include media("<=medium") {
+    padding: 0 16px 16px;
+  }
+
+  @include media("<=small") {
+    padding: 0 0 16px;
+  }
+}
+
+.Page-header-inner--noTabsWithButton {
+  padding-bottom: 24px;
+}
+
+.Page-header-contents {
+  @include media("<=medium") {
+    padding: 0 16px;
+  }
+}
+
+.Page-header-inner,
+.Page-header {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.Page-heading {
+  float: left;
+}
+
+.Page-subHeading {
+  clear: both;
+  float: left;
+  margin-top: 4px;
+}
+
+.Page-tabsContainer {
+  float: left;
+  margin-bottom: -1px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @include media("<=medium") {
+    border-top: 1px solid color(border);
+  }
+}
+
+.Page-tabsContainer--bottom {
+  border-top: 1px solid color(border);
+  z-index: 1;
+
+  @include media(">medium") {
+    padding-top: 8px;
+  }
+}
+
+.Page-buttonContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .Button {
+    vertical-align: top;
+  }
+
+  @include media(">small" "<=medium") {
+    right: 16px;
+    top: 6px;
+  }
+
+  @include media("<=small") {
+    right: 16px;
+    top: 4px;
+  }
+}
+
+.Page-row {
+  display: flex;
+  margin: 0 -16px;
+
+  @include media(">medium") {
+    margin: 0 -32px;
+  }
+}
+
+.Page-row--flush {
+  @include media(">small") {
+    margin-top: -32px;
+  }
+
+  @include media(">medium") {
+    margin-top: -32px;
+  }
+}
+
+.Page-row--settings {
+  @include media("<small") {
+    display: block;
+  }
+}
+
+.Page-main {
+  min-width: 0;
+  padding: 0 16px;
+  width: 100%;
+
+  @include media(">medium") {
+    padding: 0 32px;
+  }
+
+  .Page-row--flush & {
+    @include media(">small") {
+      padding-top: 32px;
+    }
+  }
+}
+
+.Page-sidebar {
+  min-width: 0;
+  padding: 0 16px;
+
+  @include media(">medium") {
+    padding: 0 32px;
+  }
+
+  .Page-row--flush & {
+    @include media(">small") {
+      padding-top: 32px;
+    }
+  }
+}
+
+.Page-sidebar--files {
+  display: none;
+
+  @include media(">medium") {
+    display: block;
+    flex: 0 0 380px;
+  }
+}
+
+.Page-sidebar--settings {
+  border-right: 1px solid color(border);
+  flex: 0 0 240px;
+
+  @include media("<small") {
+    border-bottom: 1px solid color(border);
+    border-right: none;
+    margin: -16px 0 32px;
+    width: 100%;
+
+    .Panel {
+      display: none;
+    }
+  }
+
+  @include media(">medium") {
+    padding: 0 16px;
+  }
+}
+
+.Page-feedContainer {
+  background: color(wash);
+  border-radius: 0 0 4px 4px;
+  border-top: 1px solid color(border);
+  margin: 32px -16px -16px;
+  padding: 16px;
+
+  @include media(">small") {
+    margin: 32px -16px -16px;
+  }
+
+  @include media(">medium") {
+    margin: 32px -32px -32px;
+    padding: 32px 32px 16px;
+  }
+
+  &:empty {
+    border: 0;
+    padding: 0;
+  }
+}
+
+.Page-searchContainer {
+  float: right;
+  position: relative;
+  top: -4px;
+  width: 266px;
+}

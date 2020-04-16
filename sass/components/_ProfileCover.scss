@@ -1,0 +1,57 @@
+
+.ProfileCover {
+  background-color: color(pale);
+  border-radius: 4px 4px 0 0;
+  height: 0;
+  z-index: 1;
+
+  &,
+  .Image {
+    padding-bottom: 56%;
+
+    // Tablet
+    @include media($breakpoint-smallUp) {
+      padding-bottom: 50%;
+    }
+    // Desktop
+    @include media(">medium") {
+      padding-bottom: 40.7%;
+    }
+  }
+}
+
+.ProfileCover.ProfileCover--smallHeight {
+  height: 150px;
+  padding-bottom: 0;
+
+  // Tablet
+  @include media($breakpoint-smallUp) {
+    padding-bottom: 0;
+  }
+  // Desktop
+  @include media(">medium") {
+    padding-bottom: 0;
+  }
+}
+
+.ProfileCover-image {
+  background-color: color(light);
+  border-radius: 4px 4px 0 0;
+}
+
+.ProfileCover-emptyMessage {
+  color: white;
+  text-align: center;
+}
+
+.ProfileCover-emptyMessage-wrapper {
+  @include media($breakpoint-smallDown) {
+    margin-top: -20px;
+  }
+}
+
+.ProfileCover-emptyMessage-icon {
+  fill: currentColor;
+  margin: 0 auto sketch-size(small);
+  width: 56px;
+}

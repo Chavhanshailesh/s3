@@ -1,0 +1,38 @@
+.Like {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  fill: color(medium);
+  line-height: 1;
+  position: relative;
+  top: 2px;
+
+  .Action--large & {
+    fill: color(tertiary);
+  }
+}
+
+.Like .Icon {
+  position: relative;
+  transition: none;
+  width: 1.142857143em;
+  z-index: 2;
+}
+
+.touch-none .Like:hover {
+  fill: color(tertiary);
+}
+
+.Like.is-liked,
+.Like.is-liked:hover {
+  fill: var(--branding-primary-color);
+}
+
+.Like-target {
+  bottom: -4px;
+  left: -4px;
+  position: absolute;
+  right: -4px;
+  top: -4px;
+}

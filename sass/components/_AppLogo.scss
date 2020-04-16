@@ -1,0 +1,33 @@
+
+.AppLogo {
+  display: block;
+}
+
+.AppLogo-image {
+  max-height: 48px;
+  max-width: 100%;
+  width: auto;
+}
+
+.AppLogo svg {
+  max-height: 40px;
+  width: 120px;
+  display: block;
+  fill: var(--branding-primary-color);
+
+  .p-primary-header &,
+  .p-dark-header & {
+    fill: white;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .AppLogo {
+    height: 40px;
+  }
+
+  .AppLogo-image[src$=".svg"] {
+    width: 100%;
+    height: 100%;
+  }
+}

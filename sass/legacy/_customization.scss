@@ -1,0 +1,112 @@
+/*
+* Simpplr 'Brand Editor'
+*/
+
+.customization {
+  .customization-section {
+    border-bottom: 4px solid rgba(black, 0.075);
+  }
+
+  .customization-options {
+    padding-top: 16px;
+  }
+
+  .FieldOptions {
+    padding: 0;
+  }
+
+  .attach-preview {
+    width: 100%;
+  }
+
+  .attach-preview img {
+    background-color: white;
+    background-size: contain;
+  }
+
+  .prefix {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 16px;
+
+    .clear {
+      font-size: 12px;
+      border: none;
+      top: 1px;
+      right: 31px;
+      width: 32px;
+      height: 30px;
+
+      .ss-standard {
+        font-size: 12px;
+        top: 10px;
+      }
+    }
+
+    input {
+      text-transform: uppercase;
+    }
+  }
+
+  .hash {
+    font-size: 12px;
+    line-height: 20px;
+    color: $secondary;
+    position: absolute;
+    top: 6px;
+    left: 0;
+  }
+
+  .attach {
+    margin-bottom: 16px;
+  }
+
+  .attached-file-local {
+    display: none;
+  }
+
+  .FieldOptions > label {
+    display: inline-block;
+  }
+
+  .field {
+    background-color: #fff;
+  }
+
+  .dropdown {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .strip {
+    border-left: none;
+    border-right: none;
+    padding: 15px 0;
+    margin-top: 32px;
+
+    > div {
+      @include clearfix;
+
+      float: left;
+      width: 100%;
+      border-top: 1px solid $medium;
+      margin-top: 16px;
+      padding-top: 15px;
+      clear: both;
+
+      .cancel {
+        line-height: 20px;
+      }
+
+      .back {
+        float: right;
+        border: none;
+        padding: none;
+
+        .ss-standard {
+          display: none;
+        }
+      }
+    }
+  }
+}

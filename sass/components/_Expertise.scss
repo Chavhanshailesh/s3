@@ -1,0 +1,84 @@
+
+.Expertise {
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  display: inline-block;
+  line-height: 1.4;
+  padding: sketch-size(xsmall) sketch-size(small);
+
+  &:not(.Expertise--userAgrees) {
+    color: color(border);
+  }
+
+  .Icon {
+    display: inline-block;
+    margin-right: sketch-size(small);
+    vertical-align: bottom;
+    width: 22px;
+  }
+
+  button {
+    color: inherit;
+  }
+
+  .touch & .theme--hover--fill:hover {
+    fill: inherit;
+  }
+}
+
+.Expertise-endorseButton {
+  border-right: 1px solid color(border);
+  display: inline-block;
+  margin-right: size(small);
+  vertical-align: middle;
+}
+
+.Expertise-count {
+  margin-left: - sketch-size(xsmall);
+  margin-right: sketch-size(small);
+}
+
+.Expertise-link {
+  color: color(primary);
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.Expertise-removeButton {
+  position: absolute;
+  right: sketch-size(xsmall);
+
+  .Icon {
+    margin-right: 0;
+  }
+}
+
+
+//
+// Modifiers
+
+.Expertise--userAgrees {
+  fill: currentColor; // brand color
+}
+
+.Expertise--editing {
+  position: relative;
+
+  .Expertise-endorseButton {
+    opacity: 0;
+  }
+
+  .Expertise-link {
+    left: sketch-size(small);
+    position: absolute;
+    top: 7px;
+  }
+}
+
+
+.Expertise--inactive {
+  .Expertise-endorseButton {
+    margin-left: size(small);
+    pointer-events: none;
+  }
+}

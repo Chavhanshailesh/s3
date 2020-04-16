@@ -1,0 +1,96 @@
+
+.InfoBox {
+  padding: 20px;
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    border-radius: inherit;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.05;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &::after {
+    border-style: solid;
+    border-width: 1px;
+    opacity: 1;
+  }
+}
+
+.InfoBox-inner {
+  position: relative;
+  z-index: 2;
+
+  &.Content a:not(.Button),
+  &.Content .type--fauxLink {
+    color: $primary;
+    text-decoration: underline;
+  }
+}
+
+.InfoBox-heading {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.InfoBox-button {
+  white-space: nowrap;
+  margin: 5px 0 0 10px;
+}
+
+// Modifiers
+.InfoBox--small {
+  padding: 10px;
+}
+
+.InfoBox--large {
+  padding: 30px;
+  border-radius: 4px;
+}
+
+// State Modifiers. e.g .InfoBox--warning
+@each $_state, $_color in $infoStates {
+  $_color: color($_color);
+
+  .InfoBox--#{$_state} {
+    background-color: rgba($_color, 0.05);
+
+    &::after {
+      border-color: $_color;
+      opacity: 1;
+    }
+
+    &.isContentValidationBox {
+      background-color: #fff;
+      text-align: center;
+
+      .InfoBox-heading {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+    }
+
+    // .Content a:not(.Button),
+    // .Content .type--fauxLink {
+    //   color: $_color;
+    // }
+  }
+}
+
+.InfoBox-icon {
+  color: color(darkest);
+  fill: currentColor;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+}

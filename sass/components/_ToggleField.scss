@@ -1,0 +1,164 @@
+.ToggleField {
+  min-height: 20px;
+  min-width: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ToggleField--withControls {
+  background: white;
+  min-height: 36px;
+  padding: 8px 56px 8px 0;
+}
+
+.ToggleField--checkbox {
+  display: inline-block;
+}
+
+.ToggleField--checkbox-input {
+  display: inline-block;
+  padding: 0;
+}
+
+.ToggleField-button {
+  background: white;
+  border: 1px solid color(medium);
+  border-radius: 2px;
+  display: block;
+  font-size: 0;
+  height: 20px;
+  line-height: 0;
+  pointer-events: none;
+  position: absolute;
+  padding: 4px 3px;
+  width: 20px;
+
+  .ToggleGroup & {
+    left: 16px;
+  }
+
+  .ToggleGroup--light & {
+    left: 0;
+
+    @include media("<=small") {
+      top: 8px;
+    }
+  }
+}
+
+.ToggleField-button--checkbox-input .Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.ToggleField-button--radio {
+  border-radius: 50%;
+
+  &::before {
+    border-radius: 50%;
+    border: 4px solid white;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.ToggleField-label {
+  cursor: pointer;
+  padding: 0 8px 0 32px;
+
+  .ToggleGroup & {
+    padding: 13px 8px 13px 48px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .ToggleGroup--light & {
+    padding: 13px 8px 13px 32px;
+
+    @include media("<=small") {
+      padding: 8px 8px 8px 32px;
+    }
+  }
+
+  .ToggleField--checkbox & {
+    display: inline-block;
+  }
+
+  .ToggleGroup .ToggleField--checkbox & {
+    width: 100%;
+  }
+}
+
+.ToggleField-input {
+  border-radius: 2px;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .ToggleField--checkbox & {
+    width: 20px;
+  }
+
+  &[disabled] {
+    opacity: 0 !important;
+  }
+}
+
+.ToggleField-input[disabled] ~ .ToggleField-label {
+  color: color(tertiary);
+  cursor: default;
+}
+
+.ToggleField-input[disabled] + .ToggleField-button {
+  filter: grayscale(1);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.ToggleField-input--radio:checked + .ToggleField-button {
+  background-color: color(brand);
+}
+
+.ToggleField-input--checkbox + .ToggleField-button .Icon {
+  opacity: 0;
+}
+
+.ToggleField-input--checkbox:checked + .ToggleField-button:not(.ToggleField-button--checkbox-input) .Icon {
+  color: color(brand);
+  opacity: 1;
+}
+
+.ToggleField-input--checkbox:not(:indeterminate):checked + .ToggleField-button--checkbox-input .Icon--check-input {
+  color: color(brand);
+  opacity: 1;
+}
+
+.ToggleField-input--checkbox:indeterminate + .ToggleField-button--checkbox-input .Icon--check-indeterminate {
+  color: color(brand);
+  opacity: 1;
+}
+
+.ToggleField-controls {
+  height: 16px;
+  margin-top: -8px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  text-align: right;
+  width: 56px;
+}

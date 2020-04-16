@@ -1,0 +1,91 @@
+.StatsList {
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.StatsList-item {
+  display: inline-block;
+  flex-grow: 1;
+  width: 100%;
+
+  .StatsList--normal &,
+  .StatsList--reverse & {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  & + & {
+    border-left: 1px solid color(border);
+  }
+}
+
+.StatsList-value {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.StatsList-name {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.StatsList--normal {
+  text-align: center;
+  margin: 0 -8px;
+
+  .StatsList-item {
+    padding: 0 8px;
+  }
+}
+
+.StatsList--small {
+  .StatsList-name {
+    margin-bottom: 4px;
+  }
+
+  .StatsList-value {
+    font-size: 18px;
+  }
+
+  .StatsList-item {
+    padding-right: 20px;
+    white-space: nowrap;
+  }
+
+  .StatsList-item + .StatsList-item {
+    padding-left: 20px;
+  }
+}
+
+.StatsList--large {
+  .StatsList-value {
+    font-size: 45px;
+  }
+}
+
+.StatsList--row-reverse {
+  .StatsList-item {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 10px;
+  }
+
+  .StatsList-item + .StatsList-item {
+    padding-left: 10px;
+  }
+
+  .StatsList-value {
+    font-size: 12px;
+  }
+
+  .StatsList-name {
+    margin: 0 0 0 4px;
+  }
+}
+

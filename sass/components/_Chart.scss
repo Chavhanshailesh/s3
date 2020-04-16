@@ -1,0 +1,17 @@
+.Chart {
+  position: relative;
+}
+
+.Chart-legend {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.Chart-legendItem {
+  padding-right: 30px;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}

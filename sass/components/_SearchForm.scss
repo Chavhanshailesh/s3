@@ -1,0 +1,119 @@
+.SearchForm {
+  background: white;
+  border: 1px solid color(medium);
+  border-radius: 4px;
+  height: 32px;
+  min-width: 256px;
+  position: relative;
+  width: 100%;
+  zoom: 1;
+
+  &.SearchForm--large {
+    height: 48px;
+  }
+}
+
+.SearchForm-input {
+  @include placeholder-text($primary, 0.6);
+
+  appearance: none;
+  background: white;
+  border-radius: 4px;
+  height: 100%;
+  left: 0;
+  padding: 0 48px 0 8px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &:not(:placeholder-shown) {
+    padding: 0 62px 0 8px;
+  }
+
+  .SearchForm--advanced &:not(:placeholder-shown) {
+    right: 90px;
+  }
+
+  .SearchForm--large & {
+    padding-left: 16px;
+  }
+}
+
+.SearchForm-clear {
+  position: absolute;
+  margin-top: -10px;
+  right: 56px;
+  top: 50%;
+
+  .SearchForm--advanced & {
+    right: 72px;
+    z-index: 2;
+  }
+}
+
+.SearchForm-button {
+  border: none;
+  border-left: 1px solid color(medium);
+  border-radius: 0;
+  bottom: 4px;
+  fill: color(medium);
+  padding: 4px 0;
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 48px;
+
+  &:hover {
+    fill: color(tertiary);
+    border-color: color(medium);
+  }
+
+  .Icon {
+    margin-left: 14px;
+    height: 14px;
+  }
+}
+
+.SearchForm-container--people {
+  margin-bottom: 24px;
+  margin-top: 4px;
+
+  form {
+    max-width: 342px;
+  }
+
+  .single .item {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &.has-InlineList {
+    margin-bottom: 8px;
+  }
+
+  .Field .single .selectize-input {
+    min-width: auto;
+  }
+
+  @include media($breakpoint-smallUp) {
+    .column {
+      margin-bottom: 6px;
+    }
+  }
+
+  @include media(">small" "<=medium") {
+    margin-bottom: 0;
+  }
+
+  @include media($breakpoint-smallDown) {
+    background-color: color(pageBackground);
+    border-bottom: 1px solid color(light);
+    border-top: 1px solid color(light);
+    margin: 0 -16px 16px;
+    padding: 10px 16px;
+
+    .Field {
+      margin-bottom: 5px;
+    }
+  }
+}

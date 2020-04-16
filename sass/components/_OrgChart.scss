@@ -1,0 +1,325 @@
+.OrgChart {
+  position: relative;
+  text-align: center;
+  overflow-anchor: none;
+
+  @include media($breakpoint-smallDown) {
+    -webkit-overflow: touch;
+    background: color(pageBackground);
+    height: calc(100vh - 156px);
+    margin: -32px -24px -24px;
+    overflow-y: scroll;
+    padding: 16px;
+  }
+}
+
+.OrgChart-grid {
+  text-align: center;
+
+  @include media($breakpoint-smallDown) {
+    background: white;
+    border: 1px solid color(border);
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 16px;
+    vertical-align: top;
+    width: 83.33333%;
+
+    .u-grid-item,
+    .u-grid {
+      margin-bottom: 0;
+    }
+
+    .u-grid-item .ListingItem {
+      margin: 0;
+    }
+
+    .u-grid-item .ListingItem::after {
+      display: none;
+    }
+  }
+}
+
+.OrgChart-grid--offset2 {
+  @include media(">small") {
+    transform: translateX(17%);
+  }
+
+  @include media(">medium") {
+    transform: translateX(10.25%);
+  }
+}
+
+.OrgChart-grid--offset4 {
+  @include media(">medium") {
+    transform: translateX(10.25%);
+  }
+}
+
+.OrgChart-grid--left {
+  text-align: left;
+}
+
+.OrgChart-grid--leftTablet {
+  @include media("<medium") {
+    text-align: left;
+  }
+}
+
+.OrgChart-item {
+  min-height: 260px;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .OrgChart-slider &::after {
+    border-color: color(border);
+  }
+}
+
+.OrgChart-item.is-active::after {
+  border-color: var(--branding-primary-color);
+}
+
+.OrgChart-item--linear {
+  min-height: 0;
+  padding: 10px 40px 0 10px;
+
+  @include media($breakpoint-smallDown) {
+    background: white;
+    border-radius: 4px;
+  }
+}
+
+.OrgChart-item-buttonContainer {
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+
+  .OrgChart-item.is-active &,
+  .is-selected & {
+    opacity: 1;
+    z-index: 3;
+  }
+
+  .Button {
+    vertical-align: top;
+  }
+}
+
+.OrgChart-item-iconContainer {
+  bottom: 4px;
+  fill: color(primary);
+  opacity: 0;
+  position: absolute;
+  right: 7px;
+  width: 28px;
+  z-index: 2;
+
+  .OrgChart-item.is-active & {
+    opacity: 1;
+    z-index: 3;
+  }
+}
+
+.OrgChart-item-coverButton {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.OrgChart-slider {
+  margin: 0 -5px;
+  min-height: 260px; // matches .OrgChart-item
+}
+
+.OrgChart-slider .flickity-viewport {
+  overflow: visible;
+}
+
+.OrgChart-slider .flickity-prev-next-button.previous {
+  border-radius: 4px 0 0 4px;
+  left: -26px;
+}
+
+.OrgChart-slider .flickity-prev-next-button.next {
+  border-radius: 0 4px 4px 0;
+  right: -26px;
+}
+
+.OrgChart-slider-item {
+  padding: 0 5px;
+  opacity: 0.2;
+
+  @include media($breakpoint-smallDown) {
+    opacity: 1;
+  }
+
+  &.is-selected {
+    opacity: 1;
+  }
+}
+
+.OrgChart-spacer {
+  min-height: 260px + 67px; // matches .OrgChart-item PLUS .OrgChart-separator
+}
+
+.OrgChart-separator {
+  margin: 0 auto;
+  padding: 44px 0 22px;
+  position: relative;
+  max-width: 400px;
+  text-align: center;
+
+  &::after,
+  &::before {
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 200px;
+    z-index: 2;
+  }
+
+  &::after {
+    background: linear-gradient(90deg, white, rgba(white, 0));
+    left: 0;
+
+    @include media($breakpoint-smallDown) {
+      background: linear-gradient(90deg, color(pageBackground), rgba(color(pageBackground), 0));
+    }
+  }
+
+  &::before {
+    background: linear-gradient(90deg, rgba(white, 0), white);
+    right: 0;
+
+    @include media($breakpoint-smallDown) {
+      background: linear-gradient(90deg, rgba(color(pageBackground), 0), color(pageBackground));
+    }
+  }
+}
+
+.OrgChart-separator-line {
+  border-top: 1px dashed color(tertiary);
+  width: 100%;
+
+  &::before {
+    border-left: 1px dashed color(tertiary);
+    content: "";
+    height: 44px;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    width: 1px;
+  }
+}
+
+.OrgChart-separator-value {
+  background: white;
+  color: color(tertiary);
+  font-size: 12px;
+  left: 50%;
+  position: absolute;
+  top: 12px;
+  transform: translateX(-50%);
+  width: 100%;
+
+  @include media($breakpoint-smallDown) {
+    background: color(pageBackground);
+  }
+}
+
+.OrgChart-loadMore {
+  display: inline-block;
+  height: 45px;
+  position: relative;
+  transition: 0.2s;
+  vertical-align: top;
+  width: 30px;
+  z-index: 0;
+
+  &.is-loading {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &.is-disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.OrgChart-loadMore-svgContainer {
+  fill: color(tertiary);
+  left: 50%;
+  position: absolute;
+  top: 0;
+  width: 1px;
+  z-index: 1;
+}
+
+.OrgChart-loadMore-button {
+  background: white;
+  border: 1px solid color(border);
+  border-radius: 2px;
+  height: 28px;
+  padding: 5px 5px 0;
+  position: relative;
+  text-align: center;
+  width: 28px;
+  z-index: 2;
+
+  .Icon {
+    width: 16px;
+  }
+}
+
+.OrgChart-loadMore-placeholder {
+  height: 45px;
+  width: 30px;
+}
+
+.OrgChart-rowPlaceholder {
+  @include media($breakpoint-smallUp) {
+    animation: rowPlaceholder 0.5s ease-in-out;
+    animation-fill-mode: backwards;
+    background: white;
+    height: 372px;
+    overflow: hidden;
+    position: relative;
+    will-change: height;
+    z-index: 0;
+  }
+}
+
+.OrgChart-countContainer {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+@keyframes rowPlaceholder {
+  from {
+    height: 45px;
+  }
+
+  to {
+    height: 372px;
+  }
+}

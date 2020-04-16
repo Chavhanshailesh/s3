@@ -1,0 +1,31 @@
+.ChartStats {
+  text-align: center;
+}
+
+.ChartStats-value {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+  padding-right: 7px;
+
+  .ChartStats--small & {
+    font-size: 12px;
+    padding-right: 4px;
+  }
+}
+
+.ChartStats-label {
+  font-size: 28px;
+  line-height: 1;
+
+  .ChartStats--small & {
+    font-size: 12px;
+    opacity: 0.5;
+    color: black;
+    font-weight: 500;
+  }
+}
+
+.ChartStats-subheading {
+  margin-top: 7px;
+}

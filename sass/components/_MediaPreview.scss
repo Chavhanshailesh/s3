@@ -1,0 +1,46 @@
+.MediaPreview {
+  background-color: white;
+  border: 1px solid color(neutral);
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.MediaPreview--button {
+  cursor: pointer;
+  transition: 0.2s border-color;
+
+  &:hover {
+    border: 1px solid var(--branding-primary-color);
+  }
+}
+
+.MediaPreview-inner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.MediaPreview-folderContainer {
+  display: inline-block;
+  margin-top: -24px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+}
+
+.MediaPreview-folderName {
+  margin-top: 48px;
+  left: 50%;
+  padding: 0 8px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}

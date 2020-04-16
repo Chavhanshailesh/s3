@@ -1,0 +1,30 @@
+@media print {
+  .alerts,
+  .alert,
+  .comment,
+  .action-alt,
+  .search-view,
+  .filter,
+  .event-navigation,
+  .tabs,
+  .post .dropdown,
+  .loading,
+  .CustomizationPanel,
+  .post .dropdown,
+  .file-download,
+  .post .post-date::before,
+  .search-site,
+  .MobileNavigationBottom,
+  .u-hidePrint {
+    display: none !important;
+  }
+
+  .main,
+  .post .post-date {
+    padding: 0;
+  }
+
+  .row {
+    max-width: 100%;
+  }
+}

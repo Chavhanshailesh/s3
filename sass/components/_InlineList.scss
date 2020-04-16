@@ -1,0 +1,72 @@
+.InlineList {
+  font-size: 0;
+  width: 100%;
+}
+
+.InlineList-item {
+  display: inline-block;
+  font-size: 14px;
+  line-height: inherit;
+  margin-bottom: sketch-size(xsmall);
+  margin-right: sketch-size(xsmall);
+  max-width: 100%;
+  vertical-align: top;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .InlineList--large > & {
+    margin-bottom: 8px;
+    margin-right: 8px;
+  }
+
+  .InlineList--dashed > &,
+  .InlineList--mobileStacked > & {
+    margin-bottom: 0;
+    margin-right: 4px;
+
+    @include media("<=small") {
+      display: block;
+    }
+  }
+
+  .InlineList--stacked > & {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .InlineList-item {
+    margin-bottom: 0;
+  }
+
+  .InlineList--dashed > & + &::before {
+    @include media(">small") {
+      content: '-';
+      font-size: 14px;
+      margin-right: 4px;
+    }
+  }
+
+  .InlineList--dotted > & + &::before {
+    @include media(">small") {
+      background-color: currentColor;
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: 3px;
+      margin-right: 4px;
+      opacity: 0.5;
+      vertical-align: middle;
+      width: 3px;
+    }
+  }
+}
+
+.InlineList--noBottom {
+  margin-bottom: - sketch-size(xsmall);
+}
+
+.InlineList--large.InlineList--noBottom {
+  margin-bottom: - sketch-size(small);
+}

@@ -1,0 +1,24 @@
+
+.Replies {
+  background: color(wash);
+  border-radius: 0 0 4px 4px;
+  border-top: 1px solid color(replyBorder);
+}
+
+.Replies-viewMore {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 10px 15px;
+  text-align: left;
+  width: 100%;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.Replies-list + .Replies-formContainer {
+  border-top: 1px solid color(replyBorder);
+}

@@ -1,0 +1,56 @@
+.Analytics {
+  margin-left: -20px;
+}
+
+@supports (display: grid) {
+  .Analytics {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    margin: 0;
+
+    & + & {
+      border-top: 1px solid color(border);
+      margin-top: 30px;
+      padding-top: 30px;
+    }
+  }
+}
+
+.Analytics-donutWrapper {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.Analytics-filters {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid color(border);
+  display: inline-block;
+  padding: 20px;
+  position: relative;
+  width: calc(100% - 20px);
+  margin: 0 20px;
+
+  @supports (display: grid) {
+    flex-direction: column;
+    grid-column: span 6;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.Analytics-filtersInner {
+  position: relative;
+
+  &::after {
+    background: color(border);
+    bottom: 50px;
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: 1px;
+  }
+}
