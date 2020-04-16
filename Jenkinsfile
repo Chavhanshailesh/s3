@@ -7,7 +7,7 @@ pipeline{
         stage('Generate Build'){
             steps{
                 echo "***************************STARTING BUILD****************************************"
-
+                sh 'node -v'
                 sh 'yarn'
                 sh 'yarn dist'
                 dir('dist'){
